@@ -250,7 +250,8 @@ declare const globalapi: {
     /** y */
     z: Fixed,
     /**
-     @defaultValue `Fix32(0.0)`
+     * z
+     * @defaultValue `Fix32(0.0)`
      */
     y: Fixed | null,
   ) => FVector3;

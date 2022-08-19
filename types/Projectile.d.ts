@@ -179,7 +179,8 @@ declare interface Projectile {
     /** 所属玩家 */
     role: Role | null,
     /**
-     @defaultValue `1`
+     * 可见性规则
+     * @defaultValue `1`
      */
     visible_type: UInt32 | null,
   ) => void;
@@ -212,7 +213,8 @@ declare interface Projectile {
     /** 所属玩家 */
     role: Role | null,
     /**
-     @defaultValue `1`
+     * 可见性规则
+     * @defaultValue `1`
      */
     visible_type: UInt32 | null,
   ) => Sfx;
@@ -232,7 +234,7 @@ declare interface Projectile {
     /** 起始挂节点 */
     from_socket_name: string,
     /** 目标投射物 */
-    target_unit: ProjectileEntity,
+    target_unit: Projectile,
     /** 目标挂节点 */
     target_socket_name: string,
     /** 特效编号 */
@@ -244,7 +246,8 @@ declare interface Projectile {
     /** 所属玩家 */
     role: Role | null,
     /**
-     @defaultValue `1`
+     * 可见性规则
+     * @defaultValue `1`
      */
     visible_type: UInt32 | null,
   ) => void;

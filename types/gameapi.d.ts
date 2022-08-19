@@ -389,7 +389,7 @@ declare const gameapi: {
     /** Key */
     key: string,
     /** value */
-    value: ModifierEntity,
+    value: Modifier,
   ) => void;
 
   /**
@@ -479,7 +479,7 @@ declare const gameapi: {
     /** Key */
     key: string,
     /** value */
-    value: ProjectileEntity,
+    value: Projectile,
   ) => void;
 
   /**
@@ -1304,7 +1304,7 @@ declare const gameapi: {
     /** Key */
     key: string,
     /** value */
-    value: ModifierEntity,
+    value: Modifier,
   ) => void;
 
   /**
@@ -1379,7 +1379,7 @@ declare const gameapi: {
     /** Key */
     key: string,
     /** value */
-    value: ProjectileEntity,
+    value: Projectile,
   ) => void;
 
   /**
@@ -2114,7 +2114,7 @@ declare const gameapi: {
     /** Key */
     key: string,
     /** value */
-    value: ModifierEntity,
+    value: Modifier,
   ) => void;
 
   /**
@@ -2189,7 +2189,7 @@ declare const gameapi: {
     /** Key */
     key: string,
     /** value */
-    value: ProjectileEntity,
+    value: Projectile,
   ) => void;
 
   /**
@@ -2924,7 +2924,7 @@ declare const gameapi: {
     /** Key */
     key: string,
     /** value */
-    value: ModifierEntity,
+    value: Modifier,
   ) => void;
 
   /**
@@ -2999,7 +2999,7 @@ declare const gameapi: {
     /** Key */
     key: string,
     /** value */
-    value: ProjectileEntity,
+    value: Projectile,
   ) => void;
 
   /**
@@ -3734,7 +3734,7 @@ declare const gameapi: {
     /** Key */
     key: string,
     /** value */
-    item: ModifierEntity | null,
+    item: Modifier | null,
   ) => void;
 
   /**
@@ -3809,7 +3809,7 @@ declare const gameapi: {
     /** Key */
     key: string,
     /** value */
-    item: ProjectileEntity | null,
+    item: Projectile | null,
   ) => void;
 
   /**
@@ -9589,92 +9589,92 @@ declare const gameapi: {
    * Get MODIFIER_ENTITY key-value pair of unit ID.
    * @param unit_key Unit ID
    * @param key Key
-   * @returns ModifierEntity
+   * @returns Modifier
    */
   get_unit_key_modifier_entity_kv: (
     /** Unit ID */
     unit_key: UnitKey,
     /** Key */
     key: string,
-  ) => ModifierEntity;
+  ) => Modifier;
 
   /**
    * Get MODIFIER_ENTITY key-value pair of item ID.
    * @param item_key Item ID
    * @param key Key
-   * @returns ModifierEntity
+   * @returns Modifier
    */
   get_item_key_modifier_entity_kv: (
     /** Item ID */
     item_key: ItemKey,
     /** Key */
     key: string,
-  ) => ModifierEntity;
+  ) => Modifier;
 
   /**
    * Get MODIFIER_ENTITY key-value pair of ability ID.
    * @param ability_key Ability ID
    * @param key Key
-   * @returns ModifierEntity
+   * @returns Modifier
    */
   get_ability_key_modifier_entity_kv: (
     /** Ability ID */
     ability_key: AbilityKey,
     /** Key */
     key: string,
-  ) => ModifierEntity;
+  ) => Modifier;
 
   /**
    * Get MODIFIER_ENTITY key-value pair of modifier ID.
    * @param modifier_key Modifier ID
    * @param key Key
-   * @returns ModifierEntity
+   * @returns Modifier
    */
   get_modifier_key_modifier_entity_kv: (
     /** Modifier ID */
     modifier_key: ModifierKey,
     /** Key */
     key: string,
-  ) => ModifierEntity;
+  ) => Modifier;
 
   /**
    * Get MODIFIER_ENTITY key-value pair of particle ID.
    * @param projectile_key Particle ID
    * @param key Key
-   * @returns ModifierEntity
+   * @returns Modifier
    */
   get_projectile_key_modifier_entity_kv: (
     /** Particle ID */
     projectile_key: ProjectileKey,
     /** Key */
     key: string,
-  ) => ModifierEntity;
+  ) => Modifier;
 
   /**
    * Get MODIFIER_ENTITY key-value pair of tech ID.
    * @param tech_key Tech ID
    * @param key Key
-   * @returns ModifierEntity
+   * @returns Modifier
    */
   get_tech_key_modifier_entity_kv: (
     /** Tech ID */
     tech_key: TechKey,
     /** Key */
     key: string,
-  ) => ModifierEntity;
+  ) => Modifier;
 
   /**
    * Get MODIFIER_ENTITY key-value pair.
    * @param kvbase Custom key carrier
    * @param key Key
-   * @returns ModifierEntity
+   * @returns Modifier
    */
   get_kv_pair_value_modifier_entity: (
     /** Custom key carrier */
     kvbase: KVBase,
     /** Key */
     key: string,
-  ) => ModifierEntity;
+  ) => Modifier;
 
   /**
    * Get MODIFIER_TYPE key-value pair of unit ID.
@@ -10044,92 +10044,92 @@ declare const gameapi: {
    * Get PROJECTILE_ENTITY key-value pair of unit ID.
    * @param unit_key Unit ID
    * @param key Key
-   * @returns ProjectileEntity
+   * @returns Projectile
    */
   get_unit_key_projectile_entity_kv: (
     /** Unit ID */
     unit_key: UnitKey,
     /** Key */
     key: string,
-  ) => ProjectileEntity;
+  ) => Projectile;
 
   /**
    * Get PROJECTILE_ENTITY key-value pair of item ID.
    * @param item_key Item ID
    * @param key Key
-   * @returns ProjectileEntity
+   * @returns Projectile
    */
   get_item_key_projectile_entity_kv: (
     /** Item ID */
     item_key: ItemKey,
     /** Key */
     key: string,
-  ) => ProjectileEntity;
+  ) => Projectile;
 
   /**
    * Get PROJECTILE_ENTITY key-value pair of ability ID.
    * @param ability_key Ability ID
    * @param key Key
-   * @returns ProjectileEntity
+   * @returns Projectile
    */
   get_ability_key_projectile_entity_kv: (
     /** Ability ID */
     ability_key: AbilityKey,
     /** Key */
     key: string,
-  ) => ProjectileEntity;
+  ) => Projectile;
 
   /**
    * Get PROJECTILE_ENTITY key-value pair of modifier ID.
    * @param modifier_key Modifier ID
    * @param key Key
-   * @returns ProjectileEntity
+   * @returns Projectile
    */
   get_modifier_key_projectile_entity_kv: (
     /** Modifier ID */
     modifier_key: ModifierKey,
     /** Key */
     key: string,
-  ) => ProjectileEntity;
+  ) => Projectile;
 
   /**
    * Get PROJECTILE_ENTITY key-value pair of particle ID.
    * @param projectile_key Particle ID
    * @param key Key
-   * @returns ProjectileEntity
+   * @returns Projectile
    */
   get_projectile_key_projectile_entity_kv: (
     /** Particle ID */
     projectile_key: ProjectileKey,
     /** Key */
     key: string,
-  ) => ProjectileEntity;
+  ) => Projectile;
 
   /**
    * Get PROJECTILE_ENTITY key-value pair of tech ID.
    * @param tech_key Tech ID
    * @param key Key
-   * @returns ProjectileEntity
+   * @returns Projectile
    */
   get_tech_key_projectile_entity_kv: (
     /** Tech ID */
     tech_key: TechKey,
     /** Key */
     key: string,
-  ) => ProjectileEntity;
+  ) => Projectile;
 
   /**
    * Get PROJECTILE_ENTITY key-value pair.
    * @param kvbase Custom key carrier
    * @param key Key
-   * @returns ProjectileEntity
+   * @returns Projectile
    */
   get_kv_pair_value_projectile_entity: (
     /** Custom key carrier */
     kvbase: KVBase,
     /** Key */
     key: string,
-  ) => ProjectileEntity;
+  ) => Projectile;
 
   /**
    * Get PROJECTILE_GROUP key-value pair of unit ID.
@@ -14214,45 +14214,45 @@ declare const gameapi: {
   /**
    * Get the global trigger’s MODIFIER_ENTITY non-array variable.
    * @param key Variable name
-   * @returns ModifierEntity
+   * @returns Modifier
    */
   get_trigger_variable_modifier_entity: (
     /** Variable name */
     key: string,
-  ) => ModifierEntity;
+  ) => Modifier;
 
   /**
    * Get the trigger’s MODIFIER_ENTITY non-array group variable.
    * @param actor Unit entity
    * @param key Variable name
-   * @returns ModifierEntity
+   * @returns Modifier
    */
   get_trigger_actor_variable_modifier_entity: (
     /** Unit entity */
     actor: Actor,
     /** Variable name */
     key: string,
-  ) => ModifierEntity;
+  ) => Modifier;
 
   /**
    * Get the sub-item of the global trigger’s MODIFIER_ENTITY array variable.
    * @param key Variable name
    * @param index Subscript
-   * @returns ModifierEntity
+   * @returns Modifier
    */
   get_trigger_list_variable_modifier_entity: (
     /** Variable name */
     key: string,
     /** Subscript */
     index: UInt32,
-  ) => ModifierEntity;
+  ) => Modifier;
 
   /**
    * Get the sub-item of the trigger’s MODIFIER_ENTITY array group variable.
    * @param actor Unit entity
    * @param key Variable name
    * @param index Subscript
-   * @returns ModifierEntity
+   * @returns Modifier
    */
   get_trigger_list_actor_variable_modifier_entity: (
     /** Unit entity */
@@ -14261,7 +14261,7 @@ declare const gameapi: {
     key: string,
     /** Subscript */
     index: UInt32,
-  ) => ModifierEntity;
+  ) => Modifier;
 
   /**
    * Get the global trigger’s MODIFIER_ENTITY array variable.
@@ -14589,45 +14589,45 @@ declare const gameapi: {
   /**
    * Get the global trigger’s PROJECTILE_ENTITY non-array variable.
    * @param key Variable name
-   * @returns ProjectileEntity
+   * @returns Projectile
    */
   get_trigger_variable_projectile_entity: (
     /** Variable name */
     key: string,
-  ) => ProjectileEntity;
+  ) => Projectile;
 
   /**
    * Get the trigger’s PROJECTILE_ENTITY non-array group variable.
    * @param actor Unit entity
    * @param key Variable name
-   * @returns ProjectileEntity
+   * @returns Projectile
    */
   get_trigger_actor_variable_projectile_entity: (
     /** Unit entity */
     actor: Actor,
     /** Variable name */
     key: string,
-  ) => ProjectileEntity;
+  ) => Projectile;
 
   /**
    * Get the sub-item of the global trigger’s PROJECTILE_ENTITY array variable.
    * @param key Variable name
    * @param index Subscript
-   * @returns ProjectileEntity
+   * @returns Projectile
    */
   get_trigger_list_variable_projectile_entity: (
     /** Variable name */
     key: string,
     /** Subscript */
     index: UInt32,
-  ) => ProjectileEntity;
+  ) => Projectile;
 
   /**
    * Get the sub-item of the trigger’s PROJECTILE_ENTITY array group variable.
    * @param actor Unit entity
    * @param key Variable name
    * @param index Subscript
-   * @returns ProjectileEntity
+   * @returns Projectile
    */
   get_trigger_list_actor_variable_projectile_entity: (
     /** Unit entity */
@@ -14636,7 +14636,7 @@ declare const gameapi: {
     key: string,
     /** Subscript */
     index: UInt32,
-  ) => ProjectileEntity;
+  ) => Projectile;
 
   /**
    * Get the global trigger’s PROJECTILE_ENTITY array variable.
@@ -18153,7 +18153,7 @@ declare const gameapi: {
     /** Subscript */
     index: UInt32,
     /** Value */
-    value: ModifierEntity | null,
+    value: Modifier | null,
   ) => void;
 
   /**
@@ -18171,7 +18171,7 @@ declare const gameapi: {
     /** Subscript */
     index: UInt32,
     /** Value */
-    value: ModifierEntity | null,
+    value: Modifier | null,
   ) => void;
 
   /**
@@ -18183,7 +18183,7 @@ declare const gameapi: {
     /** Variable name */
     key: string,
     /** Value */
-    value: ModifierEntity | null,
+    value: Modifier | null,
   ) => void;
 
   /**
@@ -18198,7 +18198,7 @@ declare const gameapi: {
     /** Variable name */
     key: string,
     /** Value */
-    value: ModifierEntity | null,
+    value: Modifier | null,
   ) => void;
 
   /**
@@ -18453,7 +18453,7 @@ declare const gameapi: {
     /** Subscript */
     index: UInt32,
     /** Value */
-    value: ProjectileEntity | null,
+    value: Projectile | null,
   ) => void;
 
   /**
@@ -18471,7 +18471,7 @@ declare const gameapi: {
     /** Subscript */
     index: UInt32,
     /** Value */
-    value: ProjectileEntity | null,
+    value: Projectile | null,
   ) => void;
 
   /**
@@ -18483,7 +18483,7 @@ declare const gameapi: {
     /** Variable name */
     key: string,
     /** Value */
-    value: ProjectileEntity | null,
+    value: Projectile | null,
   ) => void;
 
   /**
@@ -18498,7 +18498,7 @@ declare const gameapi: {
     /** Variable name */
     key: string,
     /** Value */
-    value: ProjectileEntity | null,
+    value: Projectile | null,
   ) => void;
 
   /**
@@ -22639,14 +22639,14 @@ declare const gameapi: {
    * Get an item of MODIFIER_ENTITY array.
    * @param l List
    * @param i Subscript
-   * @returns ModifierEntity
+   * @returns Modifier
    */
   get_modifier_entity_list_value: (
     /** List */
     l: List,
     /** Subscript */
     i: UInt32,
-  ) => ModifierEntity;
+  ) => Modifier;
 
   /**
    * Set an item of MODIFIER_ENTITY array.
@@ -22660,7 +22660,7 @@ declare const gameapi: {
     /** Subscript */
     i: UInt32,
     /** Value */
-    v: ModifierEntity,
+    v: Modifier,
   ) => void;
 
   /**
@@ -22673,21 +22673,21 @@ declare const gameapi: {
     /** Length */
     n: UInt32,
     /** Value */
-    v: ModifierEntity | null,
+    v: Modifier | null,
   ) => List;
 
   /**
    * Get an item of PROJECTILE_ENTITY array.
    * @param l List
    * @param i Subscript
-   * @returns ProjectileEntity
+   * @returns Projectile
    */
   get_projectile_entity_list_value: (
     /** List */
     l: List,
     /** Subscript */
     i: UInt32,
-  ) => ProjectileEntity;
+  ) => Projectile;
 
   /**
    * Set an item of PROJECTILE_ENTITY array.
@@ -22701,7 +22701,7 @@ declare const gameapi: {
     /** Subscript */
     i: UInt32,
     /** Value */
-    v: ProjectileEntity,
+    v: Projectile,
   ) => void;
 
   /**
@@ -22714,7 +22714,7 @@ declare const gameapi: {
     /** Length */
     n: UInt32,
     /** Value */
-    v: ProjectileEntity | null,
+    v: Projectile | null,
   ) => List;
 
   /**
@@ -22725,7 +22725,7 @@ declare const gameapi: {
    */
   is_modifier_id: (
     /** BUFF case */
-    modifier1: ModifierEntity,
+    modifier1: Modifier,
     /** BUFFID */
     modifier_key: ModifierKey,
   ) => boolean;
@@ -22738,9 +22738,9 @@ declare const gameapi: {
    */
   is_modifier_instance: (
     /** BUFF case */
-    modifier1: ModifierEntity,
+    modifier1: Modifier,
     /** BUFF case */
-    modifier2: ModifierEntity,
+    modifier2: Modifier,
   ) => boolean;
 
   /**
@@ -22751,7 +22751,7 @@ declare const gameapi: {
    */
   judge_modifier_effect_type: (
     /** BUFF case */
-    modifier1: ModifierEntity,
+    modifier1: Modifier,
     /** BUFF type */
     modifier_type: ModifierEffectType,
   ) => boolean;
@@ -22763,7 +22763,7 @@ declare const gameapi: {
    */
   get_type_of_modifier_entity: (
     /** BUFF case */
-    modifier1: ModifierEntity,
+    modifier1: Modifier,
   ) => ModifierKey;
 
   /**
@@ -23077,11 +23077,13 @@ declare const gameapi: {
     /** Terrain obstacle */
     terrain_block: boolean | null,
     /**
-     @defaultValue `1`
+     * Priority number
+     * @defaultValue `1`
      */
     priority: Int32 | null,
     /**
-     @defaultValue `False`
+     * Using absolutely height
+     * @defaultValue `false`
      */
     is_absolute_height: boolean | null,
     /** Mover complete event */
@@ -23153,11 +23155,13 @@ declare const gameapi: {
     /** Terrain obstacle */
     terrain_block: boolean | null,
     /**
-     @defaultValue `1`
+     * Priority number
+     * @defaultValue `1`
      */
     priority: Int32 | null,
     /**
-     @defaultValue `False`
+     * Using absolutely height
+     * @defaultValue `false`
      */
     is_absolute_height: boolean | null,
     /** Mover complete event */
@@ -23230,13 +23234,15 @@ declare const gameapi: {
     /** Terrain obstacle */
     terrain_block: boolean | null,
     /**
-     @defaultValue `1`
+     * Priority number
+     * @defaultValue `1`
      */
     priority: Int32 | null,
     /** Using absolutely height */
     target_pos: boolean | null,
     /**
-     @defaultValue `False`
+     * Target coordinates
+     * @defaultValue `false`
      */
     is_absolute_height: Vector2 | null,
     /** Mover complete event */
@@ -23306,11 +23312,13 @@ declare const gameapi: {
     /** Terrain obstacle */
     terrain_block: boolean | null,
     /**
-     @defaultValue `1`
+     * Priority number
+     * @defaultValue `1`
      */
     priority: Int32 | null,
     /**
-     @defaultValue `False`
+     * Using absolutely height
+     * @defaultValue `false`
      */
     is_absolute_height: boolean | null,
     /** Path */
@@ -23607,7 +23615,7 @@ declare const gameapi: {
    * @param owner_unit Affiliation unit
    * @param related_ability Affiliation ability
    * @param visibility Particle visibility rules
-   * @returns ProjectileEntity
+   * @returns Projectile
    */
   create_projectile_on_socket: (
     /** Projectile ID */
@@ -23623,10 +23631,11 @@ declare const gameapi: {
     /** Affiliation ability */
     related_ability: Ability | null,
     /**
-     @defaultValue `1`
+     * Particle visibility rules
+     * @defaultValue `1`
      */
     visibility: Int32 | null,
-  ) => ProjectileEntity;
+  ) => Projectile;
 
   /**
    * Create a projectile.
@@ -23639,7 +23648,7 @@ declare const gameapi: {
    * @param is_open_duration Whether to enable duration
    * @param height Height
    * @param visibility Particle visibility rules
-   * @returns ProjectileEntity
+   * @returns Projectile
    */
   create_projectile_in_scene: (
     /** Projectile ID */
@@ -23647,7 +23656,8 @@ declare const gameapi: {
     /** Location */
     location: FVector3,
     /**
-     @defaultValue `Fix32(0.0)`
+     * Orientation
+     * @defaultValue `Fix32(0.0)`
      */
     face: Fixed | null,
     /** Affiliation unit */
@@ -23657,16 +23667,18 @@ declare const gameapi: {
     /** Duration */
     duration: Fixed | null,
     /**
-     @defaultValue `False`
+     * Whether to enable duration
+     * @defaultValue `false`
      */
     is_open_duration: boolean | null,
     /** Height */
     height: Fixed | null,
     /**
-     @defaultValue `1`
+     * Particle visibility rules
+     * @defaultValue `1`
      */
     visibility: Int32 | null,
-  ) => ProjectileEntity;
+  ) => Projectile;
 
   /**
    * Play BGM for a single player.
@@ -23776,7 +23788,8 @@ declare const gameapi: {
     /** Sound */
     sound: SoundEntity,
     /**
-     @defaultValue `True`
+     * Whether to stop instantly
+     * @defaultValue `true`
      */
     whether_stop_immediately: boolean | null,
   ) => void;
@@ -23818,12 +23831,12 @@ declare const gameapi: {
   /**
    * Get projectile by projectile ID.
    * @param projectile_id Projectile ID
-   * @returns ProjectileEntity
+   * @returns Projectile
    */
   get_projectile_by_id: (
     /** Projectile ID */
     projectile_id: ProjectileID,
-  ) => ProjectileEntity;
+  ) => Projectile;
 
   /**
    * Filter unit group in traversing.
@@ -24728,15 +24741,18 @@ declare const gameapi: {
     /** Display ending panel */
     show: boolean,
     /**
-     @defaultValue `False`
+     * Whether to upload the player’s leaderboard score
+     * @defaultValue `false`
      */
     send: boolean | null,
     /**
-     @defaultValue `0`
+     * Leaderboard score
+     * @defaultValue `0`
      */
     score: Int32 | null,
     /**
-     @defaultValue `False`
+     * Whether to accumulate scores
+     * @defaultValue `false`
      */
     accumulate: boolean | null,
   ) => void;
@@ -24753,7 +24769,8 @@ declare const gameapi: {
     /** Leaderboard score */
     score: Int32,
     /**
-     @defaultValue `False`
+     * Whether to accumulate scores
+     * @defaultValue `false`
      */
     accumulate: boolean | null,
   ) => void;
@@ -25387,13 +25404,15 @@ declare const gameapi: {
     /** Player */
     role: Role,
     /**
-     @defaultValue `0.0`
+     * Duration
+     * @defaultValue `0.0`
      */
     seconds: Float | null,
     /** Message */
     text: string,
     /**
-     @defaultValue `False`
+     * Multilingual conversion
+     * @defaultValue `false`
      */
     localize: boolean | null,
   ) => void;
@@ -25413,7 +25432,8 @@ declare const gameapi: {
     /** Seconds of duration */
     second: Fixed,
     /**
-     @defaultValue `False`
+     * Multilingual conversion
+     * @defaultValue `false`
      */
     localize: boolean | null,
   ) => void;
@@ -25487,7 +25507,8 @@ declare const gameapi: {
     /** Duration */
     second: Fixed,
     /**
-     @defaultValue `False`
+     * Multilingual conversion
+     * @defaultValue `false`
      */
     localize: boolean | null,
   ) => void;
@@ -25504,7 +25525,8 @@ declare const gameapi: {
     /** Information */
     text: string,
     /**
-     @defaultValue `False`
+     * Multilingual conversion
+     * @defaultValue `false`
      */
     localize: boolean | null,
   ) => void;
@@ -25938,15 +25960,18 @@ declare const gameapi: {
     /** Unit or item */
     target_unit: Unit | null,
     /**
-     @defaultValue `0`
+     * Damage type
+     * @defaultValue `0`
      */
     damage_type: Int32 | null,
     /**
-     @defaultValue `Fix32(0.0)`
+     * Damage value
+     * @defaultValue `Fix32(0.0)`
      */
     damage: Fixed | null,
     /**
-     @defaultValue `False`
+     * Whether combat text shown
+     * @defaultValue `false`
      */
     jump_word: boolean | null,
   ) => void;
@@ -26073,11 +26098,13 @@ declare const gameapi: {
     /** Speed */
     speed: Fixed,
     /**
-     @defaultValue `1`
+     * Obstacle handling type
+     * @defaultValue `1`
      */
     collision_type: MovementObstacleProcessType | null,
     /**
-     @defaultValue `Fix32(-1.0)`
+     * Time
+     * @defaultValue `Fix32(-1.0)`
      */
     time: Fixed | null,
   ) => void;
@@ -26101,11 +26128,13 @@ declare const gameapi: {
     /** Distance limit */
     dis_limit: Fixed,
     /**
-     @defaultValue `1`
+     * Obstacle handling type
+     * @defaultValue `1`
      */
     collision_type: MovementObstacleProcessType | null,
     /**
-     @defaultValue `Fix32(-1.0)`
+     * Time
+     * @defaultValue `Fix32(-1.0)`
      */
     time: Fixed | null,
   ) => void;
@@ -26138,11 +26167,13 @@ declare const gameapi: {
     /** Distance limit */
     dis_limit: Fixed,
     /**
-     @defaultValue `1`
+     * Obstacle handling type
+     * @defaultValue `1`
      */
     collision_type: MovementObstacleProcessType | null,
     /**
-     @defaultValue `Fix32(-1.0)`
+     * Time
+     * @defaultValue `Fix32(-1.0)`
      */
     time: Fixed | null,
   ) => void;
@@ -26166,11 +26197,13 @@ declare const gameapi: {
     /** Target point */
     point: FVector3,
     /**
-     @defaultValue `1`
+     * Obstacle handling type
+     * @defaultValue `1`
      */
     collision_type: MovementObstacleProcessType | null,
     /**
-     @defaultValue `Fix32(-1.0)`
+     * Time
+     * @defaultValue `Fix32(-1.0)`
      */
     time: Fixed | null,
   ) => void;
@@ -26204,15 +26237,18 @@ declare const gameapi: {
     /** Decay value of rebound speed each time */
     reduction: Fixed,
     /**
-     @defaultValue `False`
+     * Whether to prioritize the nearest point
+     * @defaultValue `false`
      */
     is_near_first: boolean | null,
     /**
-     @defaultValue `False`
+     * Whether to repeat rebounds
+     * @defaultValue `false`
      */
     can_repeat: boolean | null,
     /**
-     @defaultValue `1`
+     * Selection range of attacking target
+     * @defaultValue `1`
      */
     attack_target_hit_type: AttackTargetHitType | null,
   ) => void;
@@ -26747,7 +26783,7 @@ declare const gameapi: {
    */
   modifier_is_exist: (
     /** Modifier entity */
-    modifier: ModifierEntity | null,
+    modifier: Modifier | null,
   ) => boolean;
 
   /**
@@ -26757,7 +26793,7 @@ declare const gameapi: {
    */
   projectile_is_exist: (
     /** Projectile */
-    projectile: ProjectileEntity | null,
+    projectile: Projectile | null,
   ) => boolean;
 
   /**
@@ -26819,11 +26855,13 @@ declare const gameapi: {
     /** Player */
     role: Role | null,
     /**
-     @defaultValue `1`
+     * Display type (1: all, 2: self, 3: self and friendly, 4: friendly but not self
+     * @defaultValue `1`
      */
     visible_type: UInt32 | null,
     /**
-     @defaultValue `Fix32(0.0)`
+     * Original rotational angle
+     * @defaultValue `Fix32(0.0)`
      */
     rotation: Fixed | null,
   ) => Sfx;
@@ -27021,7 +27059,8 @@ declare const gameapi: {
     /** Whether following unit scale */
     b_follow_scale: boolean,
     /**
-     @defaultValue `1`
+     * Scale
+     * @defaultValue `1`
      */
     scale: Float | null,
     /** Duration */

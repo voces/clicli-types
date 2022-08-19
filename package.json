@@ -7,7 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "build": "deno run --allow-read --allow-write gen.ts && deno fmt types"
+    "build": "deno run --allow-read --allow-write scripts/gen.ts && deno fmt types"
   },
   "author": "verit",
   "license": "ISC",

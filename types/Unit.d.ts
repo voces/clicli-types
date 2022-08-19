@@ -558,7 +558,8 @@ declare interface Unit {
     /** 治疗的数值 */
     hp_change: Fixed,
     /**
-     @defaultValue `False`
+     * 是否跳字
+     * @defaultValue `false`
      */
     jump_word: boolean | null,
   ) => void;
@@ -697,7 +698,8 @@ declare interface Unit {
     /** 朝向 */
     face_dir: FVector3,
     /**
-     @defaultValue `False`
+     * 是否受转身速度影响
+     * @defaultValue `false`
      */
     speed_effect: boolean | null,
   ) => void;
@@ -711,7 +713,8 @@ declare interface Unit {
     /** 朝向角度 */
     face_angle: Fixed,
     /**
-     @defaultValue `-1`
+     * 转身时间毫秒
+     * @defaultValue `-1`
      */
     turn_time_ms: Int32 | null,
   ) => void;
@@ -806,23 +809,28 @@ declare interface Unit {
     /** 动画名称 */
     name: string,
     /**
-     @defaultValue `1`
+     * 播放倍率
+     * @defaultValue `1`
      */
     rate: Float | null,
     /**
-     @defaultValue `0`
+     * 开始时间(s)
+     * @defaultValue `0`
      */
     init_time: Float | null,
     /**
-     @defaultValue `-1`
+     * 结束时间(s)，正数 -1 表示不结束
+     * @defaultValue `-1`
      */
     end_time: Float | null,
     /**
-     @defaultValue `False`
+     * 是否循环
+     * @defaultValue `false`
      */
     loop: boolean | null,
     /**
-     @defaultValue `False`
+     * 播放结束后是否恢复idle
+     * @defaultValue `false`
      */
     return_idle: boolean | null,
   ) => void;
@@ -862,29 +870,35 @@ declare interface Unit {
     /** 持续时间，单位：秒 */
     keep_time: Fixed,
     /**
-     @defaultValue `1.0`
+     * 缩放比例
+     * @defaultValue `1.0`
      */
     scale: Float | null,
     /**
-     @defaultValue `True`
+     * 是否跟随单位位置
+     * @defaultValue `true`
      */
     inherit_pos: boolean | null,
     /**
-     @defaultValue `True`
+     * 是否跟随单位旋转
+     * @defaultValue `true`
      */
     inherit_rotate: boolean | null,
     /**
-     @defaultValue `True`
+     * 是否跟随缩放
+     * @defaultValue `true`
      */
     inherit_scale: boolean | null,
     /** 所属单位 */
     role: Role | null,
     /**
-     @defaultValue `1`
+     * 可见性规则
+     * @defaultValue `1`
      */
     visible_type: SfxVisibleType | null,
     /**
-     @defaultValue `0`
+     * 初始旋转 角度制
+     * @defaultValue `0`
      */
     rotation: Float | null,
   ) => void;
@@ -911,29 +925,35 @@ declare interface Unit {
     /** 持续时间，单位：秒 */
     keep_time: Fixed,
     /**
-     @defaultValue `1.0`
+     * 缩放比例
+     * @defaultValue `1.0`
      */
     scale: Float | null,
     /**
-     @defaultValue `True`
+     * 是否跟随单位位置
+     * @defaultValue `true`
      */
     inherit_pos: boolean | null,
     /**
-     @defaultValue `True`
+     * 是否跟随单位旋转
+     * @defaultValue `true`
      */
     inherit_rotate: boolean | null,
     /**
-     @defaultValue `True`
+     * 是否跟随缩放
+     * @defaultValue `true`
      */
     inherit_scale: boolean | null,
     /** 所属单位 */
     role: Role | null,
     /**
-     @defaultValue `1`
+     * 可见性规则
+     * @defaultValue `1`
      */
     visible_type: SfxVisibleType | null,
     /**
-     @defaultValue `0.0`
+     * 初始旋转 角度制
+     * @defaultValue `0.0`
      */
     rotation: Float | null,
   ) => Sfx;
@@ -965,7 +985,8 @@ declare interface Unit {
     /** 所属玩家 */
     role: Role | null,
     /**
-     @defaultValue `1`
+     * 可见性规则
+     * @defaultValue `1`
      */
     visible_type: SfxVisibleType | null,
   ) => void;
@@ -998,7 +1019,8 @@ declare interface Unit {
     /** 所属玩家 */
     role: Role | null,
     /**
-     @defaultValue `1`
+     * 可见性规则
+     * @defaultValue `1`
      */
     visible_type: SfxVisibleType | null,
   ) => Sfx;
@@ -1018,7 +1040,7 @@ declare interface Unit {
     /** 起始挂节点 */
     from_socket_name: string,
     /** 目标投射物 */
-    target_unit: ProjectileEntity,
+    target_unit: Projectile,
     /** 目标挂节点 */
     target_socket_name: string,
     /** 特效编号 */
@@ -1030,7 +1052,8 @@ declare interface Unit {
     /** 所属玩家 */
     role: Role | null,
     /**
-     @defaultValue `1`
+     * 可见性规则
+     * @defaultValue `1`
      */
     visible_type: SfxVisibleType | null,
   ) => void;
@@ -1044,7 +1067,8 @@ declare interface Unit {
     /** 音效资源编号 */
     sound_id: AudioKey,
     /**
-     @defaultValue `False`
+     * 是否仅对自己生效
+     * @defaultValue `false`
      */
     is_g_unit: boolean | null,
   ) => void;
@@ -1178,7 +1202,8 @@ declare interface Unit {
     /** 持续时间, 单位秒 */
     second: Fixed,
     /**
-     @defaultValue `0`
+     * 多语言环境
+     * @defaultValue `0`
      */
     localize: Int32 | null,
   ) => void;
@@ -1192,7 +1217,8 @@ declare interface Unit {
     /** 称号 */
     title_str: string,
     /**
-     @defaultValue `False`
+     * 多语言转化
+     * @defaultValue `false`
      */
     localize: boolean | null,
   ) => void;
@@ -1519,35 +1545,43 @@ declare interface Unit {
    */
   api_start_ghost: (
     /**
-     @defaultValue `Fix32(255.0)`
+     * r
+     * @defaultValue `Fix32(255.0)`
      */
     r: Fixed | null,
     /**
-     @defaultValue `Fix32(255.0)`
+     * g
+     * @defaultValue `Fix32(255.0)`
      */
     g: Fixed | null,
     /**
-     @defaultValue `Fix32(255.0)`
+     * b
+     * @defaultValue `Fix32(255.0)`
      */
     b: Fixed | null,
     /**
-     @defaultValue `Fix32(255.0)`
+     * a
+     * @defaultValue `Fix32(255.0)`
      */
     a: Fixed | null,
     /**
-     @defaultValue `Fix32(0.3)`
+     * interval
+     * @defaultValue `Fix32(0.3)`
      */
     interval: Fixed | null,
     /**
-     @defaultValue `Fix32(0.5)`
+     * duration
+     * @defaultValue `Fix32(0.5)`
      */
     duration: Fixed | null,
     /**
-     @defaultValue `Fix32(0.4)`
+     * start
+     * @defaultValue `Fix32(0.4)`
      */
     start: Fixed | null,
     /**
-     @defaultValue `Fix32(0.3)`
+     * end
+     * @defaultValue `Fix32(0.3)`
      */
     end: Fixed | null,
   ) => void;
@@ -1610,15 +1644,18 @@ declare interface Unit {
     /** 关联技能 */
     from_ability: Ability | null,
     /**
-     @defaultValue `Fix32(-1.0)`
+     * 持续时间
+     * @defaultValue `Fix32(-1.0)`
      */
     time: Fixed | null,
     /**
-     @defaultValue `Fix32(0.0)`
+     * 循环周期
+     * @defaultValue `Fix32(0.0)`
      */
     cycle_time: Fixed | null,
     /**
-     @defaultValue `1`
+     * 效果层数
+     * @defaultValue `1`
      */
     stack_count: Int32 | null,
   ) => void;
@@ -1680,7 +1717,7 @@ declare interface Unit {
    */
   api_remove_modifier_instance: (
     /** 效果编号 */
-    tar_modifier: ModifierEntity,
+    tar_modifier: Modifier,
   ) => void;
 
   /**
@@ -1713,9 +1750,9 @@ declare interface Unit {
 
   /**
    * 获取单位身上所有的魔法效果
-   * @returns ModifierEntity
+   * @returns Modifier
    */
-  api_get_all_modifiers: () => ModifierEntity;
+  api_get_all_modifiers: () => Modifier;
 
   /**
    * 单位添加技能
@@ -1730,7 +1767,8 @@ declare interface Unit {
     /** 技能编号 */
     ability_id: AbilityKey,
     /**
-     @defaultValue `-1`
+     * 技能槽位编号
+     * @defaultValue `-1`
      */
     ability_index: AbilityIndex | null,
   ) => Ability;
@@ -2051,7 +2089,8 @@ declare interface Unit {
     /** 物品编号 */
     item_key: ItemKey,
     /**
-     @defaultValue `1`
+     * 数量
+     * @defaultValue `1`
      */
     num: Int32 | null,
   ) => void;

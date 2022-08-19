@@ -43,7 +43,6 @@ type List = { readonly __List: unique symbol };
 type Model = { readonly __Model: unique symbol };
 type ModelKey = { readonly __ModelKey: unique symbol };
 type ModifierEffectType = { readonly __ModifierEffectType: unique symbol };
-type ModifierEntity = { readonly __ModifierEntity: unique symbol };
 type ModifierKey = { readonly __ModifierKey: unique symbol };
 type ModifierType = { readonly __ModifierType: unique symbol };
 type MouseKey = { readonly __MouseKey: unique symbol };
@@ -52,7 +51,6 @@ type MovementObstacleProcessType = {
 };
 type Point = { readonly __Point: unique symbol };
 type PolyArea = { readonly __PolyArea: unique symbol };
-type ProjectileEntity = { readonly __ProjectileEntity: unique symbol };
 type ProjectileGroup = { readonly __ProjectileGroup: unique symbol };
 type ProjectileID = { readonly __ProjectileID: unique symbol };
 type ProjectileKey = { readonly __ProjectileKey: unique symbol };
