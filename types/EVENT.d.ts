@@ -2,1636 +2,1636 @@ declare const EVENT: {
   /** LOGIC_UNIT_DESTROY */
   readonly LOGIC_UNIT_DESTROY: unique symbol;
 
-  /** 定时器超时 */
+  /** timer timeout */
   readonly TIMEOUT: unique symbol;
 
-  /** 周期性定时器超时 */
+  /** Periodic timer timeout */
   readonly REPEAT_TIMEOUT: unique symbol;
 
-  /** 游戏初始化 */
+  /** Game initialization */
   readonly GAME_INIT: unique symbol;
 
-  /** Loading结束 */
+  /** End of Loading */
   readonly LOADING_END: unique symbol;
 
   /**
-   * 接收触发事件}
+   * Receive trigger events
    *
-   * @data `__trigger_id`: `TriggerID` - 触发器id
+   * @data `__trigger_id`: `TriggerID` - trigger id
    */
   readonly RECV_TRIGGER: unique symbol;
 
-  /** 游戏结束 */
+  /** GAME OVER */
   readonly GAME_END: unique symbol;
 
-  /** 游戏暂停 */
+  /** game paused */
   readonly GAME_PAUSE: unique symbol;
 
-  /** 游戏恢复 */
+  /** GAME RESTORATION */
   readonly GAME_RESUME: unique symbol;
 
-  /** 空事件 */
+  /** empty event */
   readonly EMPTY: unique symbol;
 
   /**
-   * 全局计时器超时}
+   * global timer timeout
    *
-   * @data `__name`: `string` - 计时器名称
+   * @data `__name`: `string` - timer name
    */
   readonly ER_TIMEOUT: unique symbol;
 
   /**
-   * 昼夜发生变化}
+   * Day and night change
    *
-   * @data `__is_day_to_night`: `boolean` - 是否是白天转到黑夜
+   * @data `__is_day_to_night`: `boolean` - Is it day to night
    */
   readonly DAY_NIGHT_CHANGE: unique symbol;
 
   /**
-   * 添加容器}
+   * add container
    *
-   * @data `__name`: `string` - 容器名,
-   * @data `__container`: `ActorContainer` - 容器
+   * @data `__name`: `string` - container name,
+   * @data `__container`: `ActorContainer` - container
    */
   readonly CONTAINER_ADDED: unique symbol;
 
   /**
-   * 容器中添加actor}
+   * Add actor to container
    *
-   * @data `__owner`: `Actor` - 容器从属actor
+   * @data `__owner`: `Actor` - container slave actor
    */
   readonly CONTAINER_ACTOR_ADDED: unique symbol;
 
   /**
-   * 容器中删除actor}
+   * remove actor from container
    *
-   * @data `__owner`: `Actor` - 原容器从属actor
+   * @data `__owner`: `Actor` - original container slave actor
    */
   readonly CONTAINER_ACTOR_REMOVED: unique symbol;
 
   /**
-   * actor属性更新}
+   * actor property update
    *
-   * @data `__name`: `string` - 属性名
+   * @data `__name`: `string` - attribute name
    */
   readonly ACTOR_ATTR_UPDATED: unique symbol;
 
   /**
-   * 单位进入区域}
+   * unit entry area
    *
-   * @data `__unit_id`: `UnitID` - 单位ID,
+   * @data `__unit_id`: `UnitID` - Unit ID,
    * @data `__area_id`: `AreaID` - 区域ID,
-   * @data `__trigger_id`: `TriggerID` - 触发器ID
+   * @data `__trigger_id`: `TriggerID` - trigger ID
    */
   readonly AREA_ENTER: unique symbol;
 
   /**
-   * 单位离开区域}
+   * Unit leaves area
    *
-   * @data `__unit_id`: `UnitID` - 单位ID,
+   * @data `__unit_id`: `UnitID` - Unit ID,
    * @data `__area_id`: `AreaID` - 区域ID,
-   * @data `__trigger_id`: `TriggerID` - 触发器ID
+   * @data `__trigger_id`: `TriggerID` - trigger ID
    */
   readonly AREA_LEAVE: unique symbol;
 
   /**
-   * 玩家加入战斗}
+   * Player joins battle
    *
-   * @data `__role_id`: `RoleID` - 玩家ID
+   * @data `__role_id`: `RoleID` - Player ID
    */
   readonly ROLE_JOIN_BATTLE: unique symbol;
 
   /**
-   * 玩家主动退出游戏}
+   * Player actively quits the game
    *
-   * @data `__role_id`: `RoleID` - 玩家ID
+   * @data `__role_id`: `RoleID` - Player ID
    */
   readonly ROLE_ACTIVE_EXIT_GAME_EVENT: unique symbol;
 
   /**
-   * 玩家断开服务器连接}
+   * Player disconnected from server
    *
-   * @data `__role_id`: `RoleID` - 玩家ID
+   * @data `__role_id`: `RoleID` - Player ID
    */
   readonly ROLE_LOSE_CONNECT: unique symbol;
 
   /**
-   * AI接管玩家}
+   * AI takes over the player
    *
-   * @data `__role_id`: `RoleID` - 玩家ID
+   * @data `__role_id`: `RoleID` - Player ID
    */
   readonly AI_TAKE_CONTROL: unique symbol;
 
   /**
-   * 下载档案数据回调}
+   * Download archive data callback
    *
-   * @data `__role_id`: `RoleID` - 玩家ID
+   * @data `__role_id`: `RoleID` - Player ID
    */
   readonly DOWNLOAD_MAP_ARCHIVE_CALLBACK: unique symbol;
 
   /**
-   * 玩家成功使用收费道具}
+   * The player successfully used the paid item
    *
-   * @data `__role_id`: `RoleID` - 玩家ID,
-   * @data `__store_key`: `StoreKey` - 收费道具编号,
-   * @data `__use_cnt`: `UInt32` - 使用次数
+   * @data `__role_id`: `RoleID` - Player ID,
+   * @data `__store_key`: `StoreKey` - Charge item number,
+   * @data `__use_cnt`: `UInt32` - number of uses
    */
   readonly ROLE_USE_STORE_ITEM_END: unique symbol;
 
   /**
-   * 玩家成功使用收费道具（触发器内）}
+   * The player successfully used the paid item (in the trigger)
    *
-   * @data `__role_id`: `RoleID` - 玩家ID,
-   * @data `__store_key`: `StoreKey` - 收费道具编号
+   * @data `__role_id`: `RoleID` - Player ID,
+   * @data `__store_key`: `StoreKey` - Charge item number
    */
   readonly CONSUME_STORE_ITEM: unique symbol;
 
   /**
-   * 玩家持有收费道具}
+   * Players have paid items
    *
-   * @data `__role_id`: `RoleID` - 玩家ID,
-   * @data `__store_key`: `StoreKey` - 收费道具编号
+   * @data `__role_id`: `RoleID` - Player ID,
+   * @data `__store_key`: `StoreKey` - Charge item number
    */
   readonly ROLE_HOLD_STORE_ITEM: unique symbol;
 
   /**
-   * 玩家资源变化}
+   * Player resource changes
    *
-   * @data `__role_id`: `RoleID` - 玩家ID,
-   * @data `__res_key`: `RoleResKey` - 玩家资源类型,
-   * @data `__res_value`: `Int32` - 玩家资源值
+   * @data `__role_id`: `RoleID` - Player ID,
+   * @data `__res_key`: `RoleResKey` - Player resource type,
+   * @data `__res_value`: `Int32` - Player resource value
    */
   readonly ROLE_RESOURCE_CHANGED: unique symbol;
 
   /**
-   * 玩家输入字符串}
+   * player input string
    *
-   * @data `__role_id`: `RoleID` - 玩家ID,
-   * @data `__msg`: `string` - 字符串
+   * @data `__role_id`: `RoleID` - Player ID,
+   * @data `__msg`: `string` - string
    */
   readonly ROLE_INPUT_MSG: unique symbol;
 
   /**
-   * 玩家输入激活码}
+   * Player enters activation code
    *
-   * @data `__role_id`: `RoleID` - 玩家ID,
-   * @data `__activation_code_group`: `string` - 激活码组
+   * @data `__role_id`: `RoleID` - Player ID,
+   * @data `__activation_code_group`: `string` - activation code group
    */
   readonly ROLE_INPUT_ACTIVATION_CODE: unique symbol;
 
   /**
-   * 玩家科技升级}
+   * Player technology upgrade
    *
-   * @data `__role_id`: `RoleID` - 玩家ID,
-   * @data `__tech_no`: `TechKey` - 科技编号,
-   * @data `__curr_lv`: `Int32` - 当前科技等级
+   * @data `__role_id`: `RoleID` - Player ID,
+   * @data `__tech_no`: `TechKey` - tech number,
+   * @data `__curr_lv`: `Int32` - current tech level
    */
   readonly ROLE_TECH_UPGRADE: unique symbol;
 
   /**
-   * 玩家科技降级}
+   * Player Tech Downgrade
    *
-   * @data `__role_id`: `RoleID` - 玩家ID,
-   * @data `__tech_no`: `TechKey` - 科技编号,
-   * @data `__curr_lv`: `Int32` - 当前科技等级
+   * @data `__role_id`: `RoleID` - Player ID,
+   * @data `__tech_no`: `TechKey` - tech number,
+   * @data `__curr_lv`: `Int32` - current tech level
    */
   readonly ROLE_TECH_DOWNGRADE: unique symbol;
 
   /**
-   * 玩家科技变化}
+   * Player Tech Changes
    *
-   * @data `__role_id`: `RoleID` - 玩家ID,
-   * @data `__tech_no`: `TechKey` - 科技编号,
-   * @data `__tech_no`: `Int32` - 当前科技等级,
-   * @data `__delta_lv`: `Int32` - 科技变化等级
+   * @data `__role_id`: `RoleID` - Player ID,
+   * @data `__tech_no`: `TechKey` - tech number,
+   * @data `__tech_no`: `Int32` - current tech level,
+   * @data `__delta_lv`: `Int32` - Tech Change Level
    */
   readonly ROLE_TECH_CHANGED: unique symbol;
 
   /**
-   * 单位研发科技}
+   * Unit R&D Technology
    *
-   * @data `__unit_id`: `UnitID` - 单位ID,
-   * @data `__role_id`: `RoleID` - 单位所属玩家ID,
-   * @data `__tech_no`: `TechKey` - 科技编号
+   * @data `__unit_id`: `UnitID` - Unit ID,
+   * @data `__role_id`: `RoleID` - The ID of the player the unit belongs to,
+   * @data `__tech_no`: `TechKey` - tech number
    */
   readonly UNIT_UPGRADE_TECH: unique symbol;
 
   /**
-   * 单位添加科技}
+   * Unit Add Technology
    *
-   * @data `__unit_id`: `UnitID` - 单位ID,
-   * @data `__role_id`: `RoleID` - 单位所属玩家ID,
-   * @data `__tech_no`: `TechKey` - 科技编号
+   * @data `__unit_id`: `UnitID` - Unit ID,
+   * @data `__role_id`: `RoleID` - The ID of the player the unit belongs to,
+   * @data `__tech_no`: `TechKey` - tech number
    */
   readonly UNIT_ADD_TECH: unique symbol;
 
   /**
-   * 单位删除科技}
+   * Unit Delete Technology
    *
-   * @data `__unit_id`: `UnitID` - 单位ID,
-   * @data `__role_id`: `RoleID` - 单位所属玩家ID,
-   * @data `__tech_no`: `TechKey` - 科技编号
+   * @data `__unit_id`: `UnitID` - Unit ID,
+   * @data `__role_id`: `RoleID` - The ID of the player the unit belongs to,
+   * @data `__tech_no`: `TechKey` - tech number
    */
   readonly UNIT_REMOVE_TECH: unique symbol;
 
   /**
-   * 玩家敌对关系变化}
+   * Player hostile relationship changes
    *
-   * @data `__src_role_id`: `RoleID` - 源玩家ID,
-   * @data `__dst_role_id`: `RoleID` - 目标玩家ID,
-   * @data `__relation`: `RoleRelation` - 关系
+   * @data `__src_role_id`: `RoleID` - source player ID,
+   * @data `__dst_role_id`: `RoleID` - target player ID,
+   * @data `__relation`: `RoleRelation` - relation
    */
   readonly ROLE_CHANGE_RELATION: unique symbol;
 
   /**
-   * 建筑技能建造成功}
+   * Building Skills Build Successfully
    *
    * @data `__ability`: `Ability` - 技能,
-   * @data `__ability_type`: `AbilityType` - 技能类型,
+   * @data `__ability_type`: `AbilityType` - Ability Type,
    * @data `__ability_index`: `AbilityIndex` - 技能ID,
    * @data `__ability_seq`: `AbilitySeq` - 技能Seq,
-   * @data `__unit_id`: `UnitID` - 主人,
-   * @data `__build_unit_id`: `UnitID` - 建造出来的单位ID
+   * @data `__unit_id`: `UnitID` - Master,
+   * @data `__build_unit_id`: `UnitID` - built unit ID
    */
   readonly ABILITY_BUILD_FINISH: unique symbol;
 
   /**
-   * 普通攻击命中}
+   * Normal Attack Hit
    *
-   * @data `__ability_id`: `UInt32` - 技能id
+   * @data `__ability_id`: `UInt32` - skill id
    */
   readonly ATTACK_HIT_TARGET: unique symbol;
 
   /**
-   * 普通攻击造成伤害}
+   * Normal attack deals damage
    *
-   * @data `__ability_id`: `UInt32` - 技能id,
-   * @data `__other_unit`: `Unit` - 被伤害的单位
+   * @data `__ability_id`: `UInt32` - skill id,
+   * @data `__other_unit`: `Unit` - Damaged unit
    */
   readonly ATTACK_HURT: unique symbol;
 
   /**
-   * 技能CD变化}
+   * Skill CD Changes
    *
-   * @data `__ability_index`: `AbilityIndex` - 技能坑位,
-   * @data `__left`: `Fixed` - cd剩余时间,
-   * @data `__total`: `Fixed` - cd总时长,
+   * @data `__ability_index`: `AbilityIndex` - skill pit,
+   * @data `__left`: `Fixed` - cd remaining time,
+   * @data `__total`: `Fixed` - total cd duration,
    * @data `__ability_id`: `AbilityKey` - 技能id
    */
   readonly ABILITY_CD_CHANGE: unique symbol;
 
   /**
-   * @data `__ability_index`: `AbilityIndex` - 技能坑位
+   * @data `__ability_index`: `AbilityIndex` - skill pit
    */
   readonly ACTIVE_ABILITY_CHANGED: unique symbol;
 
   /**
-   * 技能充能层数变化}
+   * Skill Charge Changes
    *
-   * @data `__ability_index`: `AbilityIndex` - 技能坑位,
-   * @data `__stack`: `Fixed` - 技能充能层数
+   * @data `__ability_index`: `AbilityIndex` - skill pit,
+   * @data `__stack`: `Fixed` - Ability charge stacks
    */
   readonly ABILITY_STACK_CHANGE: unique symbol;
 
   /**
-   * 技能加点}
+   * Skill Points
    *
-   * @data `__ability_index`: `AbilityIndex` - 技能坑位
+   * @data `__ability_index`: `AbilityIndex` - skill pit
    */
   readonly ABILITY_PLUS_POINT: unique symbol;
 
   /**
-   * 充能CD变化}
+   * Charge CD Change
    *
-   * @data `__ability_index`: `AbilityIndex` - 技能坑位,
-   * @data `__left`: `Fixed` - 充能cd剩余时间,
-   * @data `__total`: `Fixed` - 充能cd总时长
+   * @data `__ability_index`: `AbilityIndex` - skill pit,
+   * @data `__left`: `Fixed` - Recharge cd time remaining,
+   * @data `__total`: `Fixed` - Recharge CD total duration
    */
   readonly ABILITY_STACK_CD_CHANGE: unique symbol;
 
   /**
-   * @data `__ability_index`: `AbilityIndex` - 技能坑位,
-   * @data `__is_forbidden`: `boolean` - 是否禁用
+   * @data `__ability_index`: `AbilityIndex` - skill pit,
+   * @data `__is_forbidden`: `boolean` - whether to disable
    */
   readonly ABILITY_FORBIDDEN_CHANGED: unique symbol;
 
   /**
-   * @data `__is_silent`: `boolean` - 是否禁用
+   * @data `__is_silent`: `boolean` - disabled
    */
   readonly ABILITY_SILENT_CHANGED: unique symbol;
 
-  /** 单位的名称发生变化 */
+  /** The name of the unit has changed */
   readonly UNIT_NAME_CHANGE: unique symbol;
 
   /**
-   * 阵营内单位变化}
+   * Unit Changes in Faction
    *
-   * @data `__unit_id`: `UnitID` - 单位ID
+   * @data `__unit_id`: `UnitID` - Unit ID
    */
   readonly ROLE_UNIT_CHANGE: unique symbol;
 
   /**
-   * 单位开始移动}
+   * unit starts moving
    *
-   * @data `__unit_id`: `UnitID` - 单位ID
+   * @data `__unit_id`: `UnitID` - Unit ID
    */
   readonly UNIT_START_MOVE: unique symbol;
 
   /**
-   * 单位结束移动}
+   * unit end move
    *
-   * @data `__unit_id`: `UnitID` - 单位ID
+   * @data `__unit_id`: `UnitID` - Unit ID
    */
   readonly UNIT_END_MOVE: unique symbol;
 
   /**
-   * 单位删除（ECA专用）}
+   * Unit deletion (ECA only)
    *
-   * @data `__unit_id`: `UnitID` - 单位ID
+   * @data `__unit_id`: `UnitID` - Unit ID
    */
   readonly UNIT_REMOVE: unique symbol;
 
   /**
-   * 单位删除（对象真正销毁）}
+   * unit deletion (object is actually destroyed)
    *
-   * @data `__unit_id`: `UnitID` - 单位ID
+   * @data `__unit_id`: `UnitID` - Unit ID
    */
   readonly UNIT_DELETE: unique symbol;
 
   /**
-   * 单位传送结束}
+   * UNITS TRANSFER END
    *
-   * @data `__unit_id`: `UnitID` - 单位ID
+   * @data `__unit_id`: `UnitID` - Unit ID
    */
   readonly T_END_TRANSLATE: unique symbol;
 
   /**
-   * 单位属性变化}
+   * Unit Attribute Changes
    *
-   * @data `__unit_id`: `UnitID` - 单位ID,
-   * @data `__attr`: `string` - 字符串
+   * @data `__unit_id`: `UnitID` - Unit ID,
+   * @data `__attr`: `string` - string
    */
   readonly UNIT_ATTR_CHANGE: unique symbol;
 
   /**
-   * 单位即将死亡}
+   * Unit is dying
    *
-   * @data `__damage`: `Fixed` - 受到的伤害值,
-   * @data `__source_unit`: `Unit` - 施加伤害的单位,
-   * @data `__target_unit`: `Unit` - 承受伤害的单位,
-   * @data `__ability`: `Ability` - 当前伤害所属技能,
-   * @data `__damage_type`: `Int32` - 伤害类型,
-   * @data `__unit_id`: `UnitID` - 单位ID
+   * @data `__damage`: `Fixed` - Damage taken,
+   * @data `__source_unit`: `Unit` - unit that deals damage,
+   * @data `__target_unit`: `Unit` - The unit that took damage,
+   * @data `__ability`: `Ability` - The skill of the current damage,
+   * @data `__damage_type`: `Int32` - damage type,
+   * @data `__unit_id`: `UnitID` - Unit ID
    */
   readonly BEFORE_UNIT_DIE: unique symbol;
 
   /**
-   * 单位死亡}
+   * Unit Dead
    *
-   * @data `__damage`: `Fixed` - 受到的伤害值,
-   * @data `__source_unit`: `Unit` - 施加伤害的单位,
-   * @data `__target_unit`: `Unit` - 承受伤害的单位,
-   * @data `__ability`: `Ability` - 当前伤害所属技能,
-   * @data `__damage_type`: `Int32` - 伤害类型,
-   * @data `__unit_id`: `UnitID` - 单位ID
+   * @data `__damage`: `Fixed` - Damage taken,
+   * @data `__source_unit`: `Unit` - unit that deals damage,
+   * @data `__target_unit`: `Unit` - The unit that took damage,
+   * @data `__ability`: `Ability` - The skill of the current damage,
+   * @data `__damage_type`: `Int32` - damage type,
+   * @data `__unit_id`: `UnitID` - Unit ID
    */
   readonly UNIT_DIE: unique symbol;
 
   /**
-   * 单位解绑玩家}
+   * Unit Unbinds Player
    *
-   * @data `__unit_id`: `UnitID` - 单位ID,
-   * @data `__role_id`: `RoleID` - 玩家ID
+   * @data `__unit_id`: `UnitID` - Unit ID,
+   * @data `__role_id`: `RoleID` - Player ID
    */
   readonly UNIT_ON_UNBIND_ROLE: unique symbol;
 
   /**
-   * 单位绑定玩家}
+   * unit bound player
    *
-   * @data `__unit_id`: `UnitID` - 单位ID,
-   * @data `__role_id`: `RoleID` - 玩家ID
+   * @data `__unit_id`: `UnitID` - Unit ID,
+   * @data `__role_id`: `RoleID` - Player ID
    */
   readonly UNIT_ON_BIND_ROLE: unique symbol;
 
   /**
-   * 单位受到攻击}
+   * Unit is attacked
    *
-   * @data `__damage`: `Fixed` - 受到的伤害值,
-   * @data `__source_unit`: `Unit` - 施加伤害的单位,
-   * @data `__target_unit`: `Unit` - 承受伤害的单位,
-   * @data `__ability`: `Ability` - 当前伤害所属技能,
-   * @data `__damage_type`: `Int32` - 伤害类型,
-   * @data `__unit_id`: `UnitID` - 单位ID
+   * @data `__damage`: `Fixed` - Damage taken,
+   * @data `__source_unit`: `Unit` - unit that deals damage,
+   * @data `__target_unit`: `Unit` - The unit that took damage,
+   * @data `__ability`: `Ability` - The skill of the current damage,
+   * @data `__damage_type`: `Int32` - damage type,
+   * @data `__unit_id`: `UnitID` - Unit ID
    */
   readonly UNIT_BE_HURT: unique symbol;
 
   /**
-   * 单位击中其他单位}
+   * unit hits other unit
    *
-   * @data `__damage`: `Fixed` - 受到的伤害值,
-   * @data `__source_unit`: `Unit` - 施加伤害的单位,
-   * @data `__target_unit`: `Unit` - 承受伤害的单位,
-   * @data `__ability`: `Ability` - 当前伤害所属技能,
-   * @data `__damage_type`: `Int32` - 伤害类型,
-   * @data `__unit_id`: `UnitID` - 单位ID
+   * @data `__damage`: `Fixed` - Damage taken,
+   * @data `__source_unit`: `Unit` - unit that deals damage,
+   * @data `__target_unit`: `Unit` - The unit that took damage,
+   * @data `__ability`: `Ability` - The skill of the current damage,
+   * @data `__damage_type`: `Int32` - damage type,
+   * @data `__unit_id`: `UnitID` - Unit ID
    */
   readonly UNIT_HURT_OTHER: unique symbol;
 
   /**
-   * 修改玩家属性图标}
+   * Modify player attribute icon
    *
-   * @data `__res_key`: `RoleResKey` - 资源,
+   * @data `__res_key`: `RoleResKey` - resource,
    * @data `__icon_id`: `Int32` - ICON ID
    */
   readonly RES_ICON_CHANGED: unique symbol;
 
   /**
-   * 单位施放技能事件}
+   * Unit Cast Skill Event
    *
-   * @data `__ability`: `Ability` - 施放的技能对象,
-   * @data `__unit_id`: `UnitID` - 触发事件的单位unit_id
+   * @data `__ability`: `Ability` - casted ability object,
+   * @data `__unit_id`: `UnitID` - The unit unit_id that triggered the event
    */
   readonly UNIT_RELEASE_ABILITY: unique symbol;
 
   /**
-   * 单位施放技能开始事件}
+   * Unit cast skill start event
    *
-   * @data `__ability`: `Ability` - 施放的技能对象,
-   * @data `__unit_id`: `UnitID` - 触发事件的单位unit_id
+   * @data `__ability`: `Ability` - casted ability object,
+   * @data `__unit_id`: `UnitID` - The unit unit_id that triggered the event
    */
   readonly UNIT_RELEASE_ABILITY_START: unique symbol;
 
   /**
-   * 单位施放技能结束事件}
+   * Unit casts skill end event
    *
-   * @data `__ability`: `Ability` - 施放的技能对象,
-   * @data `__unit_id`: `UnitID` - 触发事件的单位unit_id
+   * @data `__ability`: `Ability` - casted ability object,
+   * @data `__unit_id`: `UnitID` - The unit unit_id that triggered the event
    */
   readonly UNIT_RELEASE_ABILITY_END: unique symbol;
 
   /**
-   * 单位施放技能事件}
+   * Unit Cast Skill Event
    *
-   * @data `__ability`: `Ability` - 施放的技能对象,
-   * @data `__unit_id`: `UnitID` - 触发事件的单位unit_id
+   * @data `__ability`: `Ability` - casted ability object,
+   * @data `__unit_id`: `UnitID` - The unit unit_id that triggered the event
    */
   readonly UNIT_RELEASE_MAGIC_BOOK: unique symbol;
 
-  /** 单位技能变化事件 */
+  /** Unit Skill Change Event */
   readonly UNIT_LEVEL_CHANGE: unique symbol;
 
-  /** 单位经验变化事件 */
+  /** Unit XP Change Event */
   readonly UNIT_EXP_CHANGE: unique symbol;
 
   /**
-   * 单位即将获得经验}
+   * Unit is about to gain experience
    *
-   * @data `__unit_id`: `UnitID` - 获得经验的单位,
-   * @data `__add_exp`: `Float` - 增加的经验
+   * @data `__unit_id`: `UnitID` - The unit that gained experience,
+   * @data `__add_exp`: `Float` - Added experience
    */
   readonly UNIT_PRE_ADD_EXP: unique symbol;
 
   /**
-   * 单位获得经验}
+   * Units gain experience
    *
-   * @data `__unit_id`: `UnitID` - 获得经验的单位,
-   * @data `__add_exp`: `Float` - 增加的经验
+   * @data `__unit_id`: `UnitID` - The unit that gained experience,
+   * @data `__add_exp`: `Float` - Added experience
    */
   readonly UNIT_ON_ADD_EXP: unique symbol;
 
   /**
-   * 单位接收命令}
+   * Unit receives command
    *
-   * @data `__unit_id`: `UnitID` - 单位,
-   * @data `__cmd_type`: `UnitCommand` - 接收的命令,
-   * @data `__target_unit`: `Unit` - 目标单位,
-   * @data `__point`: `Point` - 目标点,
-   * @data `__destructible_id`: `DestructibleID` - 目标可破坏物ID,
-   * @data `__item_id`: `ItemID` - 目标物品ID
+   * @data `__unit_id`: `UnitID` - unit,
+   * @data `__cmd_type`: `UnitCommand` - Command received,
+   * @data `__target_unit`: `Unit` - target unit,
+   * @data `__point`: `Point` - target point,
+   * @data `__destructible_id`: `DestructibleID` - target destructible ID,
+   * @data `__item_id`: `ItemID` - target item ID
    */
   readonly UNIT_ON_COMMAND: unique symbol;
 
   /**
-   * 单位击杀其他单位}
+   * Unit kills other units
    *
-   * @data `__damage`: `Fixed` - 伤害值,
-   * @data `__source_unit`: `Unit` - 杀手单位,
-   * @data `__target_unit`: `Unit` - 死亡单位,
-   * @data `__ability`: `Ability` - 致命伤害所属技能,
-   * @data `__damage_type`: `Int32` - 致命伤害类型,
-   * @data `__unit_id`: `UnitID` - 单位ID
+   * @data `__damage`: `Fixed` - damage value,
+   * @data `__source_unit`: `Unit` - killer unit,
+   * @data `__target_unit`: `Unit` - death unit,
+   * @data `__ability`: `Ability` - Critical damage attribute,
+   * @data `__damage_type`: `Int32` - fatal damage type,
+   * @data `__unit_id`: `UnitID` - Unit ID
    */
   readonly KILL_UNIT: unique symbol;
 
   /**
-   * 单位助攻事件}
+   * Unit Assist Event
    *
-   * @data `__damage`: `Fixed` - 伤害值,
-   * @data `__source_unit`: `Unit` - 杀手单位,
-   * @data `__target_unit`: `Unit` - 死亡单位,
-   * @data `__ability`: `Ability` - 致命伤害所属技能,
-   * @data `__damage_type`: `Int32` - 致命伤害类型,
-   * @data `__unit_id`: `UnitID` - 单位ID
+   * @data `__damage`: `Fixed` - damage value,
+   * @data `__source_unit`: `Unit` - killer unit,
+   * @data `__target_unit`: `Unit` - death unit,
+   * @data `__ability`: `Ability` - Critical damage attribute,
+   * @data `__damage_type`: `Int32` - fatal damage type,
+   * @data `__unit_id`: `UnitID` - Unit ID
    */
   readonly ASSIST: unique symbol;
 
   /**
-   * 单位出生}
+   * Unit Birth
    *
-   * @data `__unit_id`: `UnitID` - 单位ID
+   * @data `__unit_id`: `UnitID` - Unit ID
    */
   readonly UNIT_BORN: unique symbol;
 
   /**
-   * 单位进入战斗状态}
+   * Unit enters combat state
    *
-   * @data `__unit_id`: `UnitID` - 单位id
+   * @data `__unit_id`: `UnitID` - unit id
    */
   readonly UNIT_ENTER_BATTLE: unique symbol;
 
   /**
-   * 单位脱离战斗状态}
+   * Unit out of combat
    *
-   * @data `__unit_id`: `UnitID` - 单位id
+   * @data `__unit_id`: `UnitID` - unit id
    */
   readonly UNIT_EXIT_BATTLE: unique symbol;
 
   /**
-   * 单位创建仆从}
+   * Unit Creation Minion
    *
-   * @data `__unit_id`: `UnitID` - 仆从id
+   * @data `__unit_id`: `UnitID` - minion id
    */
   readonly UNIT_CREATE_SLAVE: unique symbol;
 
   /**
-   * 物品附加属性变化}
+   * Item Additional Attribute Changes
    *
-   * @data `__item_id`: `ItemID` - 物品ID,
-   * @data `__attr_key`: `string` - 字符串,
-   * @data `__delta`: `Fixed` - 定点数
+   * @data `__item_id`: `ItemID` - Item ID,
+   * @data `__attr_key`: `string` - string,
+   * @data `__delta`: `Fixed` - fixed number
    */
   readonly ITEM_ATTACHED_ATTR_CHANGED: unique symbol;
 
   /**
-   * 商品购买}
+   * Product Purchase
    *
-   * @data `__unit_id`: `UnitID` - 购买物品单位id,
-   * @data `__shop_unit_id`: `UnitID` - 商店单位id,
-   * @data `__tab_idx`: `Int32` - 商店分页,
-   * @data `__cnt`: `UInt32` - 商品数量,
-   * @data `__item_stuff_id`: `ItemID` - 商品物品id
+   * @data `__unit_id`: `UnitID` - Purchase item unit id,
+   * @data `__shop_unit_id`: `UnitID` - shop unit id,
+   * @data `__tab_idx`: `Int32` - store tab,
+   * @data `__cnt`: `UInt32` - Item quantity,
+   * @data `__item_stuff_id`: `ItemID` - Item id
    */
   readonly UNIT_SHOP_BUY_ITEM: unique symbol;
 
   /**
-   * 商品购买}
+   * Product Purchase
    *
-   * @data `__unit_id`: `UnitID` - 购买物品单位id,
-   * @data `__shop_unit_id`: `UnitID` - 商店单位id,
-   * @data `__tab_idx`: `Int32` - 商店分页,
-   * @data `__cnt`: `UInt32` - 商品数量,
-   * @data `__unit_stuff_id`: `UnitID` - 商品单位id
+   * @data `__unit_id`: `UnitID` - Purchase item unit id,
+   * @data `__shop_unit_id`: `UnitID` - shop unit id,
+   * @data `__tab_idx`: `Int32` - store tab,
+   * @data `__cnt`: `UInt32` - Item quantity,
+   * @data `__unit_stuff_id`: `UnitID` - item unit id
    */
   readonly UNIT_SHOP_BUY_UNIT: unique symbol;
 
   /**
-   * 道具出售}
+   * Items for Sale
    *
-   * @data `__unit_id`: `UnitID` - 购买物品单位id,
-   * @data `__shop_unit_id`: `UnitID` - 商店单位id,
-   * @data `__item_id`: `ItemID` - 道具id
+   * @data `__unit_id`: `UnitID` - Purchase item unit id,
+   * @data `__shop_unit_id`: `UnitID` - shop unit id,
+   * @data `__item_id`: `ItemID` - tool id
    */
   readonly UNIT_ITEM_SELL: unique symbol;
 
   /**
-   * 商店商品变化}
+   * Store Item Changes
    *
-   * @data `__shop_unit_id`: `UnitID` - 商店单位id,
-   * @data `__tab_idx`: `Int32` - 商店分页,
-   * @data `__shop_key`: `string` - 商品id,
-   * @data `__curr_stock`: `Int32` - 当前库存
+   * @data `__shop_unit_id`: `UnitID` - shop unit id,
+   * @data `__tab_idx`: `Int32` - store tab,
+   * @data `__shop_key`: `string` - product id,
+   * @data `__curr_stock`: `Int32` - current stock
    */
   readonly SHOP_ITEM_CHANGED: unique symbol;
 
   /**
-   * 商品库存变化}
+   * Product Inventory Change
    *
-   * @data `__shop_unit_id`: `UnitID` - 商店单位id,
-   * @data `__tab_idx`: `Int32` - 商店分页,
-   * @data `__shop_key`: `string` - 商品id,
-   * @data `__curr_stock`: `Int32` - 当前库存
+   * @data `__shop_unit_id`: `UnitID` - shop unit id,
+   * @data `__tab_idx`: `Int32` - store tab,
+   * @data `__shop_key`: `string` - product id,
+   * @data `__curr_stock`: `Int32` - current stock
    */
   readonly SHOP_STOCK_CHANGED: unique symbol;
 
   /**
-   * 商品售价变化}
+   * Product Price Change
    *
-   * @data `__shop_unit_id`: `UnitID` - 商店单位id,
-   * @data `__tab_idx`: `Int32` - 商店分页,
-   * @data `__shop_key`: `string` - 商品id,
-   * @data `__res_type`: `RoleResKey` - 资源编号,
-   * @data `__res_cost`: `Int32` - 当前售价
+   * @data `__shop_unit_id`: `UnitID` - shop unit id,
+   * @data `__tab_idx`: `Int32` - store tab,
+   * @data `__shop_key`: `string` - product id,
+   * @data `__res_type`: `RoleResKey` - resource number,
+   * @data `__res_cost`: `Int32` - current selling price
    */
   readonly SHOP_RES_COST_CHANGED: unique symbol;
 
   /**
-   * 道具合成事件}
+   * Prop synthesis event
    *
-   * @data `__unit_id`: `UnitID` - 单位id,
-   * @data `__compose_id`: `ItemKey` - 道具编号
+   * @data `__unit_id`: `UnitID` - unit id,
+   * @data `__compose_id`: `ItemKey` - item number
    */
   readonly UNIT_ITEM_COMPOSE: unique symbol;
 
   /**
-   * 商品合成购买}
+   * Commodity synthesis purchase
    *
-   * @data `__unit_id`: `UnitID` - 购买物品单位id,
-   * @data `__shop_unit_id`: `UnitID` - 商店单位id,
-   * @data `__item_id`: `ItemID` - 物品编号
+   * @data `__unit_id`: `UnitID` - Purchase item unit id,
+   * @data `__shop_unit_id`: `UnitID` - shop unit id,
+   * @data `__item_id`: `ItemID` - item number
    */
   readonly UNIT_SHOP_BUY_WITH_COMPOSE: unique symbol;
 
   /**
-   * 单位重生}
+   * Unit Respawn
    *
-   * @data `__unit_id`: `UnitID` - 单位ID
+   * @data `__unit_id`: `UnitID` - Unit ID
    */
   readonly REVIVE_UNIT: unique symbol;
 
   /**
-   * 单位升级}
+   * UNIT UPGRADE
    *
-   * @data `__unit_id`: `UnitID` - 单位ID
+   * @data `__unit_id`: `UnitID` - Unit ID
    */
   readonly UPGRADE_UNIT: unique symbol;
 
   /**
-   * 单位运动目标达成}
+   * Unit Movement Goal Achieved
    *
-   * @data `__unit_id`: `UnitID` - 单位ID
+   * @data `__unit_id`: `UnitID` - Unit ID
    */
   readonly REACH_MOVE_TARGET_UNIT: unique symbol;
 
   /**
-   * 单位碰撞到障碍}
+   * Unit collided with obstacle
    *
-   * @data `__unit_id`: `UnitID` - 单位ID
+   * @data `__unit_id`: `UnitID` - Unit ID
    */
   readonly COLLIDE_OBSTACLE_UNIT: unique symbol;
 
   /**
-   * 单位进入草丛}
+   * Unit enters the grass
    *
-   * @data `__unit_id`: `UnitID` - 单位id
+   * @data `__unit_id`: `UnitID` - unit id
    */
   readonly UNIT_ENTER_GRASS: unique symbol;
 
   /**
-   * 单位离开草丛}
+   * Unit leaves the grass
    *
-   * @data `__unit_id`: `UnitID` - 单位id
+   * @data `__unit_id`: `UnitID` - unit id
    */
   readonly UNIT_LEAVE_GRASS: unique symbol;
 
-  /** 地图显隐因触发器发生变化 */
+  /** Map visibility changed due to trigger */
   readonly MAP_VISIBILITY_CHANGE: unique symbol;
 
   /**
-   * 单位类型的前置条件满足要求}
+   * The prerequisites for the unit type meet the requirements
    *
-   * @data `unit_key`: `UnitKey` - 单位类型,
-   * @data `__role_id`: `RoleID` - 玩家ID
+   * @data `unit_key`: `UnitKey` - unit type,
+   * @data `__role_id`: `RoleID` - Player ID
    */
   readonly UNIT_PRECONDITION_SUCCEED: unique symbol;
 
   /**
-   * 单位类型的前置条件不满足要求}
+   * Preconditions for unit type are not met
    *
-   * @data `unit_key`: `UnitKey` - 单位类型,
-   * @data `__role_id`: `RoleID` - 玩家ID
+   * @data `unit_key`: `UnitKey` - unit type,
+   * @data `__role_id`: `RoleID` - Player ID
    */
   readonly UNIT_PRECONDITION_FAILED: unique symbol;
 
   /**
-   * 物品类型的前置条件满足要求}
+   * The prerequisites for the item type meet the requirements
    *
-   * @data `__item_no`: `ItemKey` - 物品类型,
-   * @data `__role_id`: `RoleID` - 玩家ID
+   * @data `__item_no`: `ItemKey` - item type,
+   * @data `__role_id`: `RoleID` - Player ID
    */
   readonly ITEM_PRECONDITION_SUCCEED: unique symbol;
 
   /**
-   * 物品类型的前置条件不满足要求}
+   * The prerequisites for the item type do not meet the requirements
    *
-   * @data `__item_no`: `ItemKey` - 物品类型,
-   * @data `__role_id`: `RoleID` - 玩家ID
+   * @data `__item_no`: `ItemKey` - item type,
+   * @data `__role_id`: `RoleID` - Player ID
    */
   readonly ITEM_PRECONDITION_FAILED: unique symbol;
 
   /**
-   * 技能类型的前置条件满足要求}
+   * The prerequisites of the skill type meet the requirements
    *
-   * @data `__ability_id`: `AbilityKey` - 技能类型,
-   * @data `__role_id`: `RoleID` - 玩家ID
+   * @data `__ability_id`: `AbilityKey` - Ability Type,
+   * @data `__role_id`: `RoleID` - Player ID
    */
   readonly ABILITY_PRECONDITION_SUCCEED: unique symbol;
 
   /**
-   * 技能类型的前置条件不满足要求}
+   * The prerequisites for the skill type do not meet the requirements
    *
-   * @data `__ability_id`: `AbilityKey` - 技能类型,
-   * @data `__role_id`: `RoleID` - 玩家ID
+   * @data `__ability_id`: `AbilityKey` - Ability Type,
+   * @data `__role_id`: `RoleID` - Player ID
    */
   readonly ABILITY_PRECONDITION_FAILED: unique symbol;
 
   /**
-   * 科技类型的前置条件满足要求}
+   * The prerequisites of the technology type meet the requirements
    *
-   * @data `__tech_no`: `TechKey` - 科技类型,
-   * @data `__role_id`: `RoleID` - 玩家ID
+   * @data `__tech_no`: `TechKey` - tech type,
+   * @data `__role_id`: `RoleID` - Player ID
    */
   readonly TECH_PRECONDITION_SUCCEED: unique symbol;
 
   /**
-   * 科技类型的前置条件不满足要求}
+   * The prerequisites for the technology type do not meet the requirements
    *
-   * @data `__tech_no`: `TechKey` - 科技类型,
-   * @data `__role_id`: `RoleID` - 玩家ID
+   * @data `__tech_no`: `TechKey` - tech type,
+   * @data `__role_id`: `RoleID` - Player ID
    */
   readonly TECH_PRECONDITION_FAILED: unique symbol;
 
-  /** 技能升级 */
+  /** Skill Upgrade */
   readonly ABILITY_UPGRADE: unique symbol;
 
   /**
-   * 技能开始施法}
+   * skill starts casting
    *
-   * @data `__ability`: `Ability` - 技能对象
+   * @data `__ability`: `Ability` - skill object
    */
   readonly ABILITY_CS_START: unique symbol;
 
   /**
-   * 技能开始施法结束}
+   * Skill Starts Casting Ends
    *
-   * @data `__ability`: `Ability` - 技能对象
+   * @data `__ability`: `Ability` - skill object
    */
   readonly ABILITY_CS_END: unique symbol;
 
   /**
-   * 技能前摇开始}
+   * Skill front shake starts
    *
-   * @data `__ability`: `Ability` - 技能对象
+   * @data `__ability`: `Ability` - skill object
    */
   readonly ABILITY_PS_START: unique symbol;
 
   /**
-   * 技能前摇结束}
+   * Skill pre-shake ends
    *
-   * @data `__ability`: `Ability` - 技能对象
+   * @data `__ability`: `Ability` - skill object
    */
   readonly ABILITY_PS_END: unique symbol;
 
   /**
-   * 道具技能前摇结束}
+   * Item skill front shake ends
    *
-   * @data `__ability`: `Ability` - 技能对象
+   * @data `__ability`: `Ability` - skill object
    */
   readonly ITEM_ABILITY_PS_END: unique symbol;
 
   /**
-   * 技能准备结束}
+   * Skill preparation is over
    *
-   * @data `__ability`: `Ability` - 技能对象
+   * @data `__ability`: `Ability` - skill object
    */
   readonly ABILITY_SP_END: unique symbol;
 
   /**
-   * 技能持续施法结束}
+   * Skill Channeling Ends
    *
-   * @data `__ability`: `Ability` - 技能对象
+   * @data `__ability`: `Ability` - skill object
    */
   readonly ABILITY_CST_END: unique symbol;
 
   /**
-   * 技能后摇结束}
+   * Skill post-shake ends
    *
-   * @data `__ability`: `Ability` - 技能对象
+   * @data `__ability`: `Ability` - skill object
    */
   readonly ABILITY_BS_END: unique symbol;
 
   /**
-   * 技能准备阶段被打断}
+   * Skill preparation phase was interrupted
    *
-   * @data `__ability`: `Ability` - 技能对象
+   * @data `__ability`: `Ability` - skill object
    */
   readonly ABILITY_CS_INTERRUPT: unique symbol;
 
   /**
-   * 技能前摇阶段被打断}
+   * Skill forward swing phase is interrupted
    *
-   * @data `__ability`: `Ability` - 技能对象
+   * @data `__ability`: `Ability` - skill object
    */
   readonly ABILITY_PS_INTERRUPT: unique symbol;
 
   /**
-   * 技能准备阶段被打断}
+   * Skill preparation phase was interrupted
    *
-   * @data `__ability`: `Ability` - 技能对象
+   * @data `__ability`: `Ability` - skill object
    */
   readonly ABILITY_SP_INTERRUPT: unique symbol;
 
   /**
-   * 技能持续施法阶段被打断}
+   * Skill channeling phase is interrupted
    *
-   * @data `__ability`: `Ability` - 技能对象
+   * @data `__ability`: `Ability` - skill object
    */
   readonly ABILITY_CST_INTERRUPT: unique symbol;
 
   /**
-   * 技能后摇阶段被打断}
+   * Skill post-shake phase is interrupted
    *
-   * @data `__ability`: `Ability` - 技能对象
+   * @data `__ability`: `Ability` - skill object
    */
   readonly ABILITY_BS_INTERRUPT: unique symbol;
 
   /**
-   * 技能结束（无论何种方式）}
+   * END OF SKILL (WHATEVER)
    *
-   * @data `__ability`: `Ability` - 技能对象
+   * @data `__ability`: `Ability` - skill object
    */
   readonly ABILITY_END: unique symbol;
 
   /**
-   * 获得技能}
+   * GET SKILLS
    *
-   * @data `__ability`: `Ability` - 技能对象
+   * @data `__ability`: `Ability` - skill object
    */
   readonly ABILITY_OBTAIN: unique symbol;
 
   /**
-   * 失去技能}
+   * Lost Skill
    *
-   * @data `__ability`: `Ability` - 技能对象
+   * @data `__ability`: `Ability` - skill object
    */
   readonly ABILITY_LOSE: unique symbol;
 
   /**
-   * 交换技能}
+   * Swap Skills
    *
-   * @data `__ability`: `Ability` - 技能对象
+   * @data `__ability`: `Ability` - skill object
    */
   readonly ABILITY_SWITCH: unique symbol;
 
   /**
-   * 技能禁用}
+   * Skill Disabled
    *
-   * @data `__ability`: `Ability` - 技能对象
+   * @data `__ability`: `Ability` - skill object
    */
   readonly ABILITY_DISABLE: unique symbol;
 
   /**
-   * 技能启用}
+   * Skill Enable
    *
-   * @data `__ability`: `Ability` - 技能对象
+   * @data `__ability`: `Ability` - skill object
    */
   readonly ABILITY_ENABLE: unique symbol;
 
   /**
-   * 技能属性变化}
+   * Skill attribute changes
    *
-   * @data `__ability`: `Ability` - 技能对象
+   * @data `__ability`: `Ability` - skill object
    */
   readonly ABILITY_ATTR_CHANGED: unique symbol;
 
-  /** 技能冷却事件 */
+  /** Skill Cooldown Event */
   readonly ABILITY_CD_END: unique symbol;
 
   /**
-   * 获得效果}
+   * get effect
    *
-   * @data `__modifier`: `Modifier` - 触发的魔法效果,
-   * @data `__owner_unit`: `Unit` - 效果携带者,
-   * @data `__from_unit_id`: `Unit` - 效果施加者
+   * @data `__modifier`: `Modifier` - Triggered magic effect,
+   * @data `__owner_unit`: `Unit` - effect carrier,
+   * @data `__from_unit_id`: `Unit` - effect applied by
    */
   readonly OBTAIN_MODIFIER: unique symbol;
 
   /**
-   * 失去效果}
+   * Lost effect
    *
-   * @data `__modifier`: `Modifier` - 触发的魔法效果,
-   * @data `__owner_unit`: `Unit` - 效果携带者,
-   * @data `__from_unit_id`: `Unit` - 效果施加者
+   * @data `__modifier`: `Modifier` - Triggered magic effect,
+   * @data `__owner_unit`: `Unit` - effect carrier,
+   * @data `__from_unit_id`: `Unit` - effect applied by
    */
   readonly LOSS_MODIFIER: unique symbol;
 
   /**
-   * 循环触发事件}
+   * Loop trigger event
    *
-   * @data `__modifier`: `Modifier` - 触发的魔法效果,
-   * @data `__owner_unit`: `Unit` - 效果携带者,
-   * @data `__from_unit_id`: `Unit` - 效果施加者
+   * @data `__modifier`: `Modifier` - Triggered magic effect,
+   * @data `__owner_unit`: `Unit` - effect carrier,
+   * @data `__from_unit_id`: `Unit` - effect applied by
    */
   readonly MODIFIER_CYCLE_TRIGGER: unique symbol;
 
-  /** BUFF更新事件 */
+  /** BUFF UPDATE EVENT */
   readonly MODIFIER_UPDATE_TIMER: unique symbol;
 
   /**
-   * 效果层数变化事件}
+   * Effect layer change event
    *
-   * @data `__modifier`: `Modifier` - 触发的魔法效果,
-   * @data `__owner_unit`: `Unit` - 效果携带者,
-   * @data `__layer_change_values`: `Int32` - 层数变化值,
-   * @data `__from_unit_id`: `Unit` - 效果施加者
+   * @data `__modifier`: `Modifier` - Triggered magic effect,
+   * @data `__owner_unit`: `Unit` - effect carrier,
+   * @data `__layer_change_values`: `Int32` - Layer change values ​​,
+   * @data `__from_unit_id`: `Unit` - effect applied by
    */
   readonly MODIFIER_LAYER_CHANGE: unique symbol;
 
   /**
-   * 魔法效果即将获得事件}
+   * Magic effect is about to get event
    *
-   * @data `__modifier`: `Modifier` - 触发的魔法效果,
-   * @data `__owner_unit`: `Unit` - 效果携带者,
-   * @data `__from_unit_id`: `Unit` - 效果施加者
+   * @data `__modifier`: `Modifier` - Triggered magic effect,
+   * @data `__owner_unit`: `Unit` - effect carrier,
+   * @data `__from_unit_id`: `Unit` - effect applied by
    */
   readonly MODIFIER_GET_BEFORE_CREATE: unique symbol;
 
   /**
-   * 魔法效果被覆盖事件}
+   * Magic effect is overridden event
    *
-   * @data `__owner_unit`: `Unit` - 效果携带者,
-   * @data `__old_modifier`: `Modifier` - 已有的魔法效果,
-   * @data `__new_modifier`: `Modifier` - 新增的魔法效果
+   * @data `__owner_unit`: `Unit` - effect carrier,
+   * @data `__old_modifier`: `Modifier` - Existing magic effect,
+   * @data `__new_modifier`: `Modifier` - New magic effect
    */
   readonly MODIFIER_BE_COVERED: unique symbol;
 
   /**
-   * 魔法效果属性变化事件}
+   * Magic effect attribute change event
    *
-   * @data `__modifier`: `Modifier` - 魔法效果
+   * @data `__modifier`: `Modifier` - magic effect
    */
   readonly MODIFIER_ATTR_CHANGE: unique symbol;
 
-  /** 可破坏物资源个数发生变化 */
+  /** The number of destructible resources has changed */
   readonly SOURCE_NUMS_CHANGE: unique symbol;
 
-  /** 可破坏物的名称发生变化 */
+  /** The name of the destructible has changed */
   readonly NAME_CHANGE: unique symbol;
 
-  /** 可破坏物资源名称发生变化 */
+  /** Destructible resource name changed */
   readonly SOURCE_NAME_CHANGE: unique symbol;
 
   /**
-   * 可破坏物死亡}
+   * Destructible dies
    *
-   * @data `__destructible_id`: `DestructibleID` - 死亡的可破坏物,
-   * @data `__unit_for_dest`: `Unit` - 凶手单位
+   * @data `__destructible_id`: `DestructibleID` - dead destructible,
+   * @data `__unit_for_dest`: `Unit` - killer unit
    */
   readonly DEST_DIE: unique symbol;
 
   /**
-   * 可破坏物被采集枯竭}
+   * Destructibles are collected and depleted
    *
-   * @data `__destructible_id`: `DestructibleID` - 资源枯竭的可破坏物,
-   * @data `__unit_for_dest`: `Unit` - 采集的单位
+   * @data `__destructible_id`: `DestructibleID` - Destructibles that are exhausted,
+   * @data `__unit_for_dest`: `Unit` - collected units
    */
   readonly DEST_SOURCE_DRY: unique symbol;
 
   /**
-   * 可破坏物被攻击}
+   * Destructibles are attacked
    *
-   * @data `__destructible_id`: `DestructibleID` - 被攻击的可破坏物,
-   * @data `__unit_for_dest`: `Unit` - 攻击的单位
+   * @data `__destructible_id`: `DestructibleID` - Destructible attacked,
+   * @data `__unit_for_dest`: `Unit` - attacking unit
    */
   readonly DEST_ATTACKED: unique symbol;
 
   /**
-   * 可破坏物被采集}
+   * Destructibles are collected
    *
-   * @data `__destructible_id`: `DestructibleID` - 被采集的可破坏物,
-   * @data `__unit_for_dest`: `Unit` - 采集的单位
+   * @data `__destructible_id`: `DestructibleID` - Destructibles collected,
+   * @data `__unit_for_dest`: `Unit` - collected units
    */
   readonly DEST_COLLECTED: unique symbol;
 
   /**
-   * 区域内的可破坏物死亡}
+   * Destructibles in the area die
    *
-   * @data `__area`: `Area` - 可破坏物死亡的区域,
-   * @data `__destructible_id`: `DestructibleID` - 死亡的可破坏物,
-   * @data `__unit_for_dest`: `Unit` - 杀手单位
+   * @data `__area`: `Area` - The area where destructibles die,
+   * @data `__destructible_id`: `DestructibleID` - dead destructible,
+   * @data `__unit_for_dest`: `Unit` - killer unit
    */
   readonly DEST_AREA_DIE: unique symbol;
 
   /**
-   * 区域内的可破坏物被采集枯竭}
+   * Destructibles in the area are collected and exhausted
    *
-   * @data `__area`: `Area` - 可破坏物被采集枯竭的区域,
-   * @data `__destructible_id`: `DestructibleID` - 资源枯竭的可破坏物,
-   * @data `__unit_for_dest`: `Unit` - 采集单位
+   * @data `__area`: `Area` - The area where destructibles are collected and depleted,
+   * @data `__destructible_id`: `DestructibleID` - Destructibles that are exhausted,
+   * @data `__unit_for_dest`: `Unit` - collection unit
    */
   readonly DEST_AREA_DRY: unique symbol;
 
   /**
-   * 区域内的可破坏物被攻击}
+   * Destructibles in the area are attacked
    *
-   * @data `__area`: `Area` - 可破坏物被攻击的区域,
-   * @data `__destructible_id`: `DestructibleID` - 被攻击的可破坏物,
-   * @data `__unit_for_dest`: `Unit` - 攻击单位
+   * @data `__area`: `Area` - The area where the destructible is attacked,
+   * @data `__destructible_id`: `DestructibleID` - Destructible attacked,
+   * @data `__unit_for_dest`: `Unit` - Attack unit
    */
   readonly DEST_AREA_ATTACKED: unique symbol;
 
   /**
-   * 区域内的可破坏物被采集}
+   * Destructibles in the area are collected
    *
-   * @data `__area`: `Area` - 可破坏物被采集的区域,
-   * @data `__destructible_id`: `DestructibleID` - 被采集的可破坏物,
-   * @data `__unit_for_dest`: `Unit` - 采集单位
+   * @data `__area`: `Area` - The area where destructibles are collected,
+   * @data `__destructible_id`: `DestructibleID` - Destructibles collected,
+   * @data `__unit_for_dest`: `Unit` - collection unit
    */
   readonly DEST_AREA_COLLECTED: unique symbol;
 
-  /** 投射物产生 */
+  /** projectile spawn */
   readonly PRODUCE_PROJECTILE: unique symbol;
 
-  /** 投射物死亡 */
+  /** Projectile Death */
   readonly DEATH_PROJECTILE: unique symbol;
 
-  /** 投射物运动开始 */
+  /** Projectile movement started */
   readonly START_MOVE_PROJECTILE: unique symbol;
 
-  /** 投射物运动目标达成 */
+  /** Projectile Movement Target Achieved */
   readonly REACH_MOVE_TARGET_PROJECTILE: unique symbol;
 
   /**
-   * 投射物碰撞到障碍}
+   * Projectile collided with barrier
    *
-   * @data `__unit_id`: `UnitID` - 单位ID
+   * @data `__unit_id`: `UnitID` - Unit ID
    */
   readonly COLLIDE_OBSTACLE_PROJECTILE: unique symbol;
 
-  /** 给单位创建投射物 */
+  /** Create projectiles for units */
   readonly UNIT_PRODUCE_PROJECTILE: unique symbol;
 
   /**
-   * ui编辑器事件}
+   * ui editor event
    *
-   * @data `__role_id`: `RoleID` - 玩家ID,
-   * @data `__ui_event_name`: `string` - ui事件变量名,
-   * @data `__comp_name`: `string` - 触发事件控件名称,
-   * @data `__pos`: `Vector2` - 触碰坐标,
-   * @data `__touch_id`: `Int32` - 触碰ID
+   * @data `__role_id`: `RoleID` - Player ID,
+   * @data `__ui_event_name`: `string` - ui event variable name,
+   * @data `__comp_name`: `string` - trigger event control name,
+   * @data `__pos`: `Vector2` - Touch coordinates,
+   * @data `__touch_id`: `Int32` - Touch ID
    */
   readonly TRIGGER_COMPONENT_EVENT: unique symbol;
 
   /**
-   * 全局触发器发送ui事件}
+   * global trigger to send ui event
    *
-   * @data `__event_name`: `string` - ui事件名,
-   * @data `__args`: `Dict` - 参数
+   * @data `__event_name`: `string` - ui event name,
+   * @data `__args`: `Dict` - arguments
    */
   readonly GLOBAL_EVENT_TO_UI_WITH_DICT: unique symbol;
 
   /**
-   * 键盘按键按下}
+   * Keyboard key pressed
    *
-   * @data `__role_id`: `RoleID` - 触发按键的玩家ID,
-   * @data `__current_key`: `KeyboardKey` - 当前键盘按键
+   * @data `__role_id`: `RoleID` - ID of the player that triggered the button,
+   * @data `__current_key`: `KeyboardKey` - current keyboard key
    */
   readonly KEYBOARD_KEY_DOWN_EVENT: unique symbol;
 
   /**
-   * 键盘按键抬起}
+   * Keyboard key up
    *
-   * @data `__role_id`: `RoleID` - 触发按键的玩家ID,
-   * @data `__current_key`: `KeyboardKey` - 当前键盘按键
+   * @data `__role_id`: `RoleID` - ID of the player that triggered the button,
+   * @data `__current_key`: `KeyboardKey` - current keyboard key
    */
   readonly KEYBOARD_KEY_UP_EVENT: unique symbol;
 
   /**
-   * 鼠标按键按下}
+   * mouse button pressed
    *
-   * @data `__role_id`: `RoleID` - 触发按键的玩家ID,
-   * @data `__current_key`: `MouseKey` - 当前鼠标按键,
-   * @data `__pointing_world_pos`: `Point` - 鼠标指向的世界坐标
+   * @data `__role_id`: `RoleID` - ID of the player that triggered the button,
+   * @data `__current_key`: `MouseKey` - current mouse button,
+   * @data `__pointing_world_pos`: `Point` - world coordinates where the mouse is pointing
    */
   readonly MOUSE_KEY_DOWN_EVENT: unique symbol;
 
   /**
-   * 鼠标按键抬起}
+   * Mouse Button Up
    *
-   * @data `__role_id`: `RoleID` - 触发按键的玩家ID,
-   * @data `__current_key`: `MouseKey` - 当前鼠标按键,
-   * @data `__pointing_world_pos`: `Point` - 鼠标指向的世界坐标
+   * @data `__role_id`: `RoleID` - ID of the player that triggered the button,
+   * @data `__current_key`: `MouseKey` - current mouse button,
+   * @data `__pointing_world_pos`: `Point` - world coordinates where the mouse is pointing
    */
   readonly MOUSE_KEY_UP_EVENT: unique symbol;
 
   /**
-   * 鼠标按键双击}
+   * Mouse Button Double Click
    *
-   * @data `__role_id`: `RoleID` - 触发按键的玩家ID,
-   * @data `__current_key`: `MouseKey` - 当前鼠标按键,
-   * @data `__pointing_world_pos`: `Point` - 鼠标指向的世界坐标
+   * @data `__role_id`: `RoleID` - ID of the player that triggered the button,
+   * @data `__current_key`: `MouseKey` - current mouse button,
+   * @data `__pointing_world_pos`: `Point` - world coordinates where the mouse is pointing
    */
   readonly SE_KEY_DB_CLICK_EVENT: unique symbol;
 
   /**
-   * 鼠标按键按下单位}
+   * mouse button press unit
    *
-   * @data `__role_id`: `RoleID` - 触发按键的玩家ID,
-   * @data `__current_key`: `MouseKey` - 当前鼠标按键,
-   * @data `__unit_id`: `UnitID` - 当前操作的单位ID
+   * @data `__role_id`: `RoleID` - ID of the player that triggered the button,
+   * @data `__current_key`: `MouseKey` - current mouse button,
+   * @data `__unit_id`: `UnitID` - Unit ID of the current operation
    */
   readonly SE_KEY_DOWN_UNIT_EVENT: unique symbol;
 
   /**
-   * 鼠标按键抬起单位}
+   * mouse button up unit
    *
-   * @data `__role_id`: `RoleID` - 触发按键的玩家ID,
-   * @data `__current_key`: `MouseKey` - 当前鼠标按键,
-   * @data `__unit_id`: `UnitID` - 当前操作的单位ID
+   * @data `__role_id`: `RoleID` - ID of the player that triggered the button,
+   * @data `__current_key`: `MouseKey` - current mouse button,
+   * @data `__unit_id`: `UnitID` - Unit ID of the current operation
    */
   readonly SE_KEY_UP_UNIT_EVENT: unique symbol;
 
   /**
-   * 鼠标按键双击单位}
+   * Mouse Button Double Click Unit
    *
-   * @data `__role_id`: `RoleID` - 触发按键的玩家ID,
-   * @data `__current_key`: `MouseKey` - 当前鼠标按键,
-   * @data `__unit_id`: `UnitID` - 当前操作的单位ID
+   * @data `__role_id`: `RoleID` - ID of the player that triggered the button,
+   * @data `__current_key`: `MouseKey` - current mouse button,
+   * @data `__unit_id`: `UnitID` - Unit ID of the current operation
    */
   readonly SE_KEY_DB_CLICK_UNIT_EVENT: unique symbol;
 
   /**
-   * 鼠标移动事件}
+   * Mouse move event
    *
-   * @data `__role_id`: `RoleID` - 触发按键的玩家ID,
-   * @data `__pointing_world_pos`: `Point` - 鼠标指向的世界坐标,
-   * @data `__tar_x`: `Int32` - 鼠标指向的屏幕坐标X,
-   * @data `__tar_y`: `Int32` - 鼠标指向的屏幕坐标Y
+   * @data `__role_id`: `RoleID` - ID of the player that triggered the button,
+   * @data `__pointing_world_pos`: `Point` - world coordinates where the mouse is pointing,
+   * @data `__tar_x`: `Int32` - screen coordinate X where the mouse is pointing,
+   * @data `__tar_y`: `Int32` - screen coordinate Y where the mouse is pointing
    */
   readonly SE_MOVE_EVENT: unique symbol;
 
   /**
-   * 单位触发器向全局触发器发送事件}
+   * Unit trigger sends event to global trigger
    *
-   * @data `__event_name`: `string` - 事件名,
+   * @data `__event_name`: `string` - event name,
    * @data `__point`: `Point` - 点,
-   * @data `__int1`: `Int32` - 整数1,
-   * @data `__float1`: `Fixed` - 实数1,
-   * @data `__bool1`: `boolean` - 布尔1,
-   * @data `__str1`: `string` - 字符串1,
-   * @data `__unit_id`: `UnitID` - 单位id
+   * @data `__int1`: `Int32` - integer 1,
+   * @data `__float1`: `Fixed` - real 1,
+   * @data `__bool1`: `boolean` - boolean1,
+   * @data `__str1`: `string` - String1,
+   * @data `__unit_id`: `UnitID` - unit id
    */
   readonly UNIT_EVENT_TO_GLOBAL: unique symbol;
 
   /**
-   * 技能触发器向全局触发器发送事件}
+   * Skill trigger sends event to global trigger
    *
-   * @data `__event_name`: `string` - 事件名,
+   * @data `__event_name`: `string` - event name,
    * @data `__point`: `Point` - 点,
-   * @data `__int1`: `Int32` - 整数1,
-   * @data `__float1`: `Fixed` - 实数1,
-   * @data `__bool1`: `boolean` - 布尔1,
-   * @data `__str1`: `string` - 字符串1,
-   * @data `__unit_id`: `UnitID` - 单位id
+   * @data `__int1`: `Int32` - integer 1,
+   * @data `__float1`: `Fixed` - real 1,
+   * @data `__bool1`: `boolean` - boolean1,
+   * @data `__str1`: `string` - String1,
+   * @data `__unit_id`: `UnitID` - unit id
    */
   readonly ABILITY_EVENT_TO_GLOBAL: unique symbol;
 
   /**
-   * 效果触发器向全局触发器发送事件}
+   * Effect trigger sends event to global trigger
    *
-   * @data `__event_name`: `string` - 事件名,
+   * @data `__event_name`: `string` - event name,
    * @data `__point`: `Point` - 点,
-   * @data `__int1`: `Int32` - 整数1,
-   * @data `__float1`: `Fixed` - 实数1,
-   * @data `__bool1`: `boolean` - 布尔1,
-   * @data `__str1`: `string` - 字符串1,
-   * @data `__unit_id`: `UnitID` - 单位id
+   * @data `__int1`: `Int32` - integer 1,
+   * @data `__float1`: `Fixed` - real 1,
+   * @data `__bool1`: `boolean` - boolean1,
+   * @data `__str1`: `string` - String1,
+   * @data `__unit_id`: `UnitID` - unit id
    */
   readonly MODIFIER_EVENT_TO_GLOBAL: unique symbol;
 
   /**
-   * 投射物触发器向全局触发器发送事件}
+   * projectile trigger sends event to global trigger
    *
-   * @data `__event_name`: `string` - 事件名,
+   * @data `__event_name`: `string` - event name,
    * @data `__point`: `Point` - 点,
-   * @data `__int1`: `Int32` - 整数1,
-   * @data `__float1`: `Fixed` - 实数1,
-   * @data `__bool1`: `boolean` - 布尔1,
-   * @data `__str1`: `string` - 字符串1,
-   * @data `__unit_id`: `UnitID` - 单位id
+   * @data `__int1`: `Int32` - integer 1,
+   * @data `__float1`: `Fixed` - real 1,
+   * @data `__bool1`: `boolean` - boolean1,
+   * @data `__str1`: `string` - String1,
+   * @data `__unit_id`: `UnitID` - unit id
    */
   readonly PROJECTILE_EVENT_TO_GLOBAL: unique symbol;
 
   /**
-   * 物品触发器向全局触发器发送事件}
+   * Item trigger sends event to global trigger
    *
-   * @data `__event_name`: `string` - 事件名,
+   * @data `__event_name`: `string` - event name,
    * @data `__point`: `Point` - 点,
-   * @data `__int1`: `Int32` - 整数1,
-   * @data `__float1`: `Fixed` - 实数1,
-   * @data `__bool1`: `boolean` - 布尔1,
-   * @data `__str1`: `string` - 字符串1,
-   * @data `__unit_id`: `UnitID` - 单位id
+   * @data `__int1`: `Int32` - integer 1,
+   * @data `__float1`: `Fixed` - real 1,
+   * @data `__bool1`: `boolean` - boolean1,
+   * @data `__str1`: `string` - String1,
+   * @data `__unit_id`: `UnitID` - unit id
    */
   readonly ITEM_EVENT_TO_GLOBAL: unique symbol;
 
   /**
-   * 玩家选中单位}
+   * Player selected unit
    *
-   * @data `__role_id`: `RoleID` - 玩家ID,
-   * @data `__unit_id`: `UnitID` - 点击到单位id
+   * @data `__role_id`: `RoleID` - Player ID,
+   * @data `__unit_id`: `UnitID` - click to unit id
    */
   readonly SELECT_UNIT: unique symbol;
 
   /**
-   * 玩家控制的高亮单位}
+   * the highlighted unit controlled by the player
    *
-   * @data `__role_id`: `RoleID` - 玩家ID,
-   * @data `__high_light_unit_id`: `HighLightUnitID` - 高亮单位id
+   * @data `__role_id`: `RoleID` - Player ID,
+   * @data `__high_light_unit_id`: `HighLightUnitID` - Highlight unit id
    */
   readonly HIGH_LIGHT_UNIT_CHANGE: unique symbol;
 
   /**
-   * 玩家选中物品}
+   * Player selected item
    *
-   * @data `__role_id`: `RoleID` - 玩家ID,
-   * @data `__item_id`: `ItemID` - 点击到物品id
+   * @data `__role_id`: `RoleID` - Player ID,
+   * @data `__item_id`: `ItemID` - Click to item id
    */
   readonly SELECT_ITEM: unique symbol;
 
   /**
-   * 玩家双击选中物品}
+   * Player double clicks to select item
    *
-   * @data `__role_id`: `RoleID` - 玩家ID,
-   * @data `__item_id`: `ItemID` - 双击到物品id
+   * @data `__role_id`: `RoleID` - Player ID,
+   * @data `__item_id`: `ItemID` - double click to item id
    */
   readonly DOUBLE_CLICK_ITEM: unique symbol;
 
   /**
-   * 玩家选中可破坏物}
+   * Player selected destructible
    *
-   * @data `__role_id`: `RoleID` - 玩家ID,
-   * @data `__destructible_id`: `DestructibleID` - 点击到可破坏物id
+   * @data `__role_id`: `RoleID` - Player ID,
+   * @data `__destructible_id`: `DestructibleID` - Click to destructible id
    */
   readonly SELECT_DEST: unique symbol;
 
   /**
-   * 打开商店界面}
+   * Open the store interface
    *
-   * @data `__role_id`: `RoleID` - 玩家ID,
-   * @data `__unit_id`: `UnitID` - 商店单位ID
+   * @data `__role_id`: `RoleID` - Player ID,
+   * @data `__unit_id`: `UnitID` - Store unit ID
    */
   readonly OPEN_SHOP_PANEL: unique symbol;
 
   /**
-   * 玩家双击选中可破坏物}
+   * The player double-clicks to select the destructible object
    *
-   * @data `__role_id`: `RoleID` - 玩家ID,
-   * @data `__destructible_id`: `DestructibleID` - 双击到可破坏物id
+   * @data `__role_id`: `RoleID` - Player ID,
+   * @data `__destructible_id`: `DestructibleID` - double click to destructible id
    */
   readonly DOUBLE_CLICK_DEST: unique symbol;
 
   /**
-   * 玩家选中单位组}
+   * Player selected unit group
    *
-   * @data `__role_id`: `RoleID` - 玩家ID,
-   * @data `__unit_group_id_list`: `UnitGroup` - 框选到单位组id列表,
-   * @data `__team_id`: `Int32` - 队伍编号
+   * @data `__role_id`: `RoleID` - Player ID,
+   * @data `__unit_group_id_list`: `UnitGroup` - Box select to unit group id list,
+   * @data `__team_id`: `Int32` - Team ID
    */
   readonly SELECT_UNIT_GROUP: unique symbol;
 
   /**
-   * 打开技能指示器}
+   * Open skill indicator
    *
-   * @data `__role_id`: `RoleID` - 玩家ID,
-   * @data `__unit_id`: `UnitID` - 释放单位id,
-   * @data `__ability_type`: `AbilityType` - 技能类型,
+   * @data `__role_id`: `RoleID` - Player ID,
+   * @data `__unit_id`: `UnitID` - release unit id,
+   * @data `__ability_type`: `AbilityType` - Ability Type,
    * @data `__ability_index`: `AbilityIndex` - 技能Index,
    * @data `__ability_seq`: `AbilitySeq` - 技能Seq
    */
   readonly START_SKILL_POINTER: unique symbol;
 
   /**
-   * 关闭技能指示器}
+   * Turn off skill indicator
    *
-   * @data `__role_id`: `RoleID` - 玩家ID,
-   * @data `__unit_id`: `UnitID` - 释放单位id,
-   * @data `__ability_type`: `AbilityType` - 技能类型,
+   * @data `__role_id`: `RoleID` - Player ID,
+   * @data `__unit_id`: `UnitID` - release unit id,
+   * @data `__ability_type`: `AbilityType` - Ability Type,
    * @data `__ability_index`: `AbilityIndex` - 技能Index,
    * @data `__ability_seq`: `AbilitySeq` - 技能Seq
    */
   readonly STOP_SKILL_POINTER: unique symbol;
 
   /**
-   * 触碰（鼠标）开始事件}
+   * touch (mouse) start event
    *
-   * @data `__touch_id`: `Int32` - 触碰(鼠标)id,
-   * @data `__pos`: `Vector2` - 触碰(鼠标)坐标
+   * @data `__touch_id`: `Int32` - touch (mouse) id,
+   * @data `__pos`: `Vector2` - touch (mouse) coordinates
    */
   readonly TOUCH_BEGIN: unique symbol;
 
   /**
-   * 触碰（鼠标）移动事件}
+   * touch (mouse) move event
    *
-   * @data `__touch_id`: `Int32` - 触碰(鼠标)id,
-   * @data `__pos`: `Vector2` - 触碰(鼠标)坐标
+   * @data `__touch_id`: `Int32` - touch (mouse) id,
+   * @data `__pos`: `Vector2` - touch (mouse) coordinates
    */
   readonly TOUCH_MOVE: unique symbol;
 
   /**
-   * 触碰（鼠标）结束事件}
+   * touch (mouse) end event
    *
-   * @data `__touch_id`: `Int32` - 触碰(鼠标)id,
-   * @data `__pos`: `Vector2` - 触碰(鼠标)坐标
+   * @data `__touch_id`: `Int32` - touch (mouse) id,
+   * @data `__pos`: `Vector2` - touch (mouse) coordinates
    */
   readonly TOUCH_END: unique symbol;
 
-  /** 最底层的触摸结束事件 */
+  /** Bottom touch end event */
   readonly TOP_TOUCH_END: unique symbol;
 
-  /** 排位变更事件 */
+  /** Rank Change Event */
   readonly K_LIST_INFO_CHANGE: unique symbol;
 
   /**
-   * 单位获得物品}
+   * Unit gets item
    *
-   * @data `__unit_id`: `UnitID` - 获得该物品的单位id,
-   * @data `__item_id`: `ItemID` - 物品id,
-   * @data `__item_no`: `ItemKey` - 物品编号
+   * @data `__unit_id`: `UnitID` - Get the unit id of the item,
+   * @data `__item_id`: `ItemID` - item id,
+   * @data `__item_no`: `ItemKey` - item number
    */
   readonly UNIT_ADD_ITEM: unique symbol;
 
   /**
-   * 单位添加物品用于物品合成事件的判断}
+   * Unit adds items for the judgment of item synthesis events
    *
-   * @data `__unit_id`: `UnitID` - 获得该物品的单位id,
-   * @data `__item_id`: `ItemID` - 物品id,
-   * @data `__item_no`: `ItemKey` - 物品编号
+   * @data `__unit_id`: `UnitID` - Get the unit id of the item,
+   * @data `__item_id`: `ItemID` - item id,
+   * @data `__item_no`: `ItemKey` - item number
    */
   readonly UNIT_ADD_ITEM_FOR_COMPOSE: unique symbol;
 
   /**
-   * 单位获得物品到物品栏}
+   * Unit gets item to inventory
    *
-   * @data `__unit_id`: `UnitID` - 获得该物品的单位id,
-   * @data `__item_id`: `ItemID` - 物品id,
-   * @data `__item_no`: `ItemKey` - 物品编号
+   * @data `__unit_id`: `UnitID` - Get the unit id of the item,
+   * @data `__item_id`: `ItemID` - item id,
+   * @data `__item_no`: `ItemKey` - item number
    */
   readonly UNIT_ADD_ITEM_TO_BAR: unique symbol;
 
   /**
-   * 单位获得物品到背包栏}
+   * Unit gets item to inventory slot
    *
-   * @data `__unit_id`: `UnitID` - 获得该物品的单位id,
-   * @data `__item_id`: `ItemID` - 物品id,
-   * @data `__item_no`: `ItemKey` - 物品编号
+   * @data `__unit_id`: `UnitID` - Get the unit id of the item,
+   * @data `__item_id`: `ItemID` - item id,
+   * @data `__item_no`: `ItemKey` - item number
    */
   readonly UNIT_ADD_ITEM_TO_PKG: unique symbol;
 
   /**
-   * 单位失去物品}
+   * unit lost item
    *
-   * @data `__unit_id`: `UnitID` - 失去该物品的单位id,
-   * @data `__item_id`: `ItemID` - 物品id,
-   * @data `__item_no`: `ItemKey` - 物品编号
+   * @data `__unit_id`: `UnitID` - The unit id that lost the item,
+   * @data `__item_id`: `ItemID` - item id,
+   * @data `__item_no`: `ItemKey` - item number
    */
   readonly UNIT_REMOVE_ITEM: unique symbol;
 
   /**
-   * 单位物品从物品栏离开}
+   * Unit item left from inventory
    *
-   * @data `__unit_id`: `UnitID` - 失去该物品的单位id,
-   * @data `__item_id`: `ItemID` - 物品id,
-   * @data `__item_no`: `ItemKey` - 物品编号
+   * @data `__unit_id`: `UnitID` - The unit id that lost the item,
+   * @data `__item_id`: `ItemID` - item id,
+   * @data `__item_no`: `ItemKey` - item number
    */
   readonly UNIT_REMOVE_ITEM_FROM_BAR: unique symbol;
 
   /**
-   * 单位物品从背包栏离开}
+   * Unit items leave the inventory slot
    *
-   * @data `__unit_id`: `UnitID` - 失去该物品的单位id,
-   * @data `__item_id`: `ItemID` - 物品id,
-   * @data `__item_no`: `ItemKey` - 物品编号
+   * @data `__unit_id`: `UnitID` - The unit id that lost the item,
+   * @data `__item_id`: `ItemID` - item id,
+   * @data `__item_no`: `ItemKey` - item number
    */
   readonly UNIT_REMOVE_ITEM_FROM_PKG: unique symbol;
 
   /**
-   * 单位使用物品}
+   * Units use items
    *
-   * @data `__unit_id`: `UnitID` - 使用该物品的单位id,
-   * @data `__item_id`: `ItemID` - 物品id,
-   * @data `__item_no`: `ItemKey` - 物品编号
+   * @data `__unit_id`: `UnitID` - Use the unit id of this item,
+   * @data `__item_id`: `ItemID` - item id,
+   * @data `__item_no`: `ItemKey` - item number
    */
   readonly UNIT_USE_ITEM: unique symbol;
 
   /**
-   * 单位使用物品后}
+   * After the unit uses the item
    *
-   * @data `__item_no`: `ItemKey` - 物品编号
+   * @data `__item_no`: `ItemKey` - item number
    */
   readonly UNIT_USE_ITEM_END: unique symbol;
 
   /**
-   * 单位开始寻路时}
+   * when the unit starts pathfinding
    *
-   * @data `__unit_id`: `UnitID` - 单位id
+   * @data `__unit_id`: `UnitID` - unit id
    */
   readonly UNIT_START_NAV_EVENT: unique symbol;
 
   /**
-   * 单位结束寻路时}
+   * when the unit finishes pathfinding
    *
-   * @data `__unit_id`: `UnitID` - 单位id
+   * @data `__unit_id`: `UnitID` - unit id
    */
   readonly UNIT_END_NAV_EVENT: unique symbol;
 
-  /** 背包刷新 */
+  /** Backpack Refresh */
   readonly UNIT_BAG_REFRESH: unique symbol;
 
   /**
-   * 物品层数变化}
+   * Item Layer Change
    *
-   * @data `__unit_id`: `ItemID` - 单位id,
-   * @data `__item_id`: `ItemID` - 物品id,
-   * @data `__item_no`: `ItemKey` - 物品编号,
-   * @data `__delta_cnt`: `Int32` - 变化值
+   * @data `__unit_id`: `ItemID` - unit id,
+   * @data `__item_id`: `ItemID` - item id,
+   * @data `__item_no`: `ItemKey` - item number,
+   * @data `__delta_cnt`: `Int32` - delta value
    */
   readonly ITEM_STACK_CHANGED: unique symbol;
 
   /**
-   * 物品充能变化}
+   * Item Charge Changes
    *
-   * @data `__unit_id`: `ItemID` - 单位id,
-   * @data `__item_id`: `ItemID` - 物品id,
-   * @data `__item_no`: `ItemKey` - 物品编号,
-   * @data `__delta_cnt`: `Int32` - 变化值
+   * @data `__unit_id`: `ItemID` - unit id,
+   * @data `__item_id`: `ItemID` - item id,
+   * @data `__item_no`: `ItemKey` - item number,
+   * @data `__delta_cnt`: `Int32` - delta value
    */
   readonly ITEM_CHARGE_CHANGED: unique symbol;
 
   /**
-   * 物品创建}
+   * Item Creation
    *
-   * @data `__item`: `Item` - 被创建的物品
+   * @data `__item`: `Item` - item created
    */
   readonly ITEM_ON_CREATE: unique symbol;
 
   /**
-   * 物品实体销毁}
+   * Item Entity Destroyed
    *
-   * @data `__item_unit_id`: `ItemID` - 物品实体id,
-   * @data `__item_id`: `ItemID` - 物品id
+   * @data `__item_unit_id`: `ItemID` - item entity id,
+   * @data `__item_id`: `ItemID` - item id
    */
   readonly ITEM_ENTITY_ON_DESTROY: unique symbol;
 
   /**
-   * 出售物品}
+   * Items for sale
    *
-   * @data `__unit`: `Unit` - 购买者,
-   * @data `__unit2`: `Unit` - 贩卖者,
-   * @data `__item`: `Item` - 被售出的物品
+   * @data `__unit`: `Unit` - purchaser,
+   * @data `__unit2`: `Unit` - Vendor,
+   * @data `__item`: `Item` - item sold
    */
   readonly ITEM_SOLD: unique symbol;
 
   /**
-   * 破坏物品}
+   * Destruction Item
    *
-   * @data `__item`: `Item` - 被破坏的物品,
-   * @data `__unit`: `Unit` - 破坏物品的单位
+   * @data `__item`: `Item` - Destroyed item,
+   * @data `__unit`: `Unit` - The unit that destroys the item
    */
   readonly ITEM_BROKEN: unique symbol;
 
   /**
-   * 物品名称改变}
+   * Item name changed
    *
-   * @data `__item`: `Item` - 改变名称的物体,
-   * @data `__name`: `string` - 改变后的名称
+   * @data `__item`: `Item` - rename object,
+   * @data `__name`: `string` - changed name
    */
   readonly ITEM_NAME_CHANGED: unique symbol;
 
   /**
-   * 破坏物品}
+   * Destruction Item
    *
-   * @data `__item`: `Item` - 改变描述的物体,
-   * @data `__name`: `string` - 改变后的描述
+   * @data `__item`: `Item` - Change the description of the object,
+   * @data `__name`: `string` - Changed description
    */
   readonly ITEM_DESC_CHANGED: unique symbol;
 
   /**
-   * 左键A地板}
+   * Left click A floor
    *
-   * @data `__unit`: `Unit` - 指定单位,
-   * @data `__tar_x`: `Fixed` - 点击位置X坐标,
-   * @data `__tar_y`: `Fixed` - 点击位置Y坐标
+   * @data `__unit`: `Unit` - Specify unit,
+   * @data `__tar_x`: `Fixed` - Click position X coordinate,
+   * @data `__tar_y`: `Fixed` - Click position Y coordinate
    */
   readonly ATTACK_MOVE_CMD: unique symbol;
 
   /**
-   * 出售物品}
+   * Items for sale
    *
-   * @data `__shop_unit_id`: `UnitID` - 商店单位ID,
-   * @data `__item_id`: `ItemID` - 商品
+   * @data `__shop_unit_id`: `UnitID` - Shop unit ID,
+   * @data `__item_id`: `ItemID` - Product
    */
   readonly SELL_ITEM_CMD: unique symbol;
 
   /**
-   * 释放技能}
+   * Release Skill
    *
-   * @data `__unit`: `Unit` - 指定单位,
-   * @data `__ability_type`: `AbilityType` - 技能类型,
+   * @data `__unit`: `Unit` - Specify unit,
+   * @data `__ability_type`: `AbilityType` - Ability Type,
    * @data `__ability_index`: `AbilityIndex` - 技能Index,
    * @data `__ability_seq`: `AbilitySeq` - 技能SEQ,
-   * @data `__target_item`: `Dict` - 释放技能参数
+   * @data `__target_item`: `Dict` - release skill parameter
    */
   readonly AI_RELEASE_SKILL_CMD: unique symbol;
 
   /**
-   * 巡逻}
+   * Patrol
    *
-   * @data `__unit`: `Unit` - 指定单位,
-   * @data `__tar_x`: `Fixed` - 点击位置X坐标,
-   * @data `__tar_y`: `Fixed` - 点击位置Y坐标
+   * @data `__unit`: `Unit` - Specify unit,
+   * @data `__tar_x`: `Fixed` - Click position X coordinate,
+   * @data `__tar_y`: `Fixed` - Click position Y coordinate
    */
   readonly PATROL_CMD: unique symbol;
 
   /**
-   * 寻路到位置}
+   * Pathfinding to location
    *
-   * @data `__unit`: `Unit` - 指定单位,
-   * @data `__tar_x`: `Fixed` - 点击位置X坐标,
-   * @data `__tar_y`: `Fixed` - 点击位置Y坐标
+   * @data `__unit`: `Unit` - Specify unit,
+   * @data `__tar_x`: `Fixed` - Click position X coordinate,
+   * @data `__tar_y`: `Fixed` - Click position Y coordinate
    */
   readonly MOVE_UNIT_TO_TARGET_CMD: unique symbol;
 
-  /** 追帧结束事件 */
+  /** Chase frame end event */
   readonly CATCH_FRAME_FINISHED: unique symbol;
 
   /**
-   * 运动器结束}
+   * End of Exerciser
    *
-   * @data `__mover_unit_id`: `UnitID` - 运动器所属单位ID
+   * @data `__mover_unit_id`: `UnitID` - Unit ID of the mover
    */
   readonly MOVER_FINISH: unique symbol;
 
   /**
-   * 运动器打断}
+   * Exerciser Interrupt
    *
-   * @data `__mover_unit_id`: `UnitID` - 运动器所属单位ID
+   * @data `__mover_unit_id`: `UnitID` - Unit ID of the mover
    */
   readonly MOVER_INTERRUPT: unique symbol;
 
   /**
-   * 运动器移除}
+   * Exerciser Removal
    *
-   * @data `__mover_unit_id`: `UnitID` - 运动器所属单位ID
+   * @data `__mover_unit_id`: `UnitID` - Unit ID of the mover
    */
   readonly MOVER_REMOVED: unique symbol;
 
   /**
-   * 运动器单位碰撞}
+   * Kinematic Unit Collision
    *
-   * @data `__mover_unit_id`: `UnitID` - 运动器所属单位ID,
-   * @data `__collide_unit_id`: `UnitID` - 碰撞单位ID
+   * @data `__mover_unit_id`: `UnitID` - Unit ID of the mover,
+   * @data `__collide_unit_id`: `UnitID` - collision unit ID
    */
   readonly MOVER_UNIT_COLLISION: unique symbol;
 
   /**
-   * 运动器单位碰撞}
+   * Kinematic Unit Collision
    *
-   * @data `__mover_unit_id`: `UnitID` - 运动器所属单位ID,
-   * @data `__collide_unit_id`: `UnitID` - 碰撞单位ID
+   * @data `__mover_unit_id`: `UnitID` - Unit ID of the mover,
+   * @data `__collide_unit_id`: `UnitID` - collision unit ID
    */
   readonly MOVER_UNIT_COLLISION_ENTER: unique symbol;
 
   /**
-   * 运动器单位碰撞结束}
+   * End of Kinematic Unit Collision
    *
-   * @data `__mover_unit_id`: `UnitID` - 运动器所属单位ID,
-   * @data `__collide_unit_id`: `UnitID` - 碰撞单位ID
+   * @data `__mover_unit_id`: `UnitID` - Unit ID of the mover,
+   * @data `__collide_unit_id`: `UnitID` - collision unit ID
    */
   readonly MOVER_UNIT_COLLISION_LEAVE: unique symbol;
 
   /**
-   * 运动器地形碰撞}
+   * Kinematic Terrain Collision
    *
-   * @data `__mover_unit_id`: `UnitID` - 运动器所属单位ID
+   * @data `__mover_unit_id`: `UnitID` - Unit ID of the mover
    */
   readonly MOVER_TERRAIN_COLLISION: unique symbol;
 
   /**
-   * 聊天中发送指令}
+   * Send command in chat
    *
-   * @data `__str1`: `string` - 指令字符串,
-   * @data `__role_id`: `RoleID` - 玩家id
+   * @data `__str1`: `string` - instruction string,
+   * @data `__role_id`: `RoleID` - player id
    */
   readonly CHAT_SEND_GM: unique symbol;
 
   /**
-   * 触发器自定义事件}
+   * trigger custom event
    *
-   * @data `__c_param_1`: `Int32` - 自定义参数1,
-   * @data `__c_param_2`: `Int32` - 自定义参数2,
-   * @data `__c_param_3`: `Int32` - 自定义参数3,
-   * @data `__c_param_4`: `Int32` - 自定义参数4,
-   * @data `__c_param_5`: `Int32` - 自定义参数5
+   * @data `__c_param_1`: `Int32` - custom parameter 1,
+   * @data `__c_param_2`: `Int32` - custom parameter 2,
+   * @data `__c_param_3`: `Int32` - custom parameter 3,
+   * @data `__c_param_4`: `Int32` - custom parameter 4,
+   * @data `__c_param_5`: `Int32` - custom parameter 5
    */
   readonly CUSTOM_EVENT: unique symbol;
 };

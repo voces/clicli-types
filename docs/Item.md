@@ -1,580 +1,580 @@
 # Item
-## 描述
-物品
+## describe
+thing
 
 -----
-## 方法列表
-方法名  | 简述  |
+## method list
+Method name | Brief description |
 :----- | :--- |
-[`api_get_key`](#api_get_key) | 获取物品编号 |
-[`set_name`](#set_name) | 设置物品名称 |
-[`get_name`](#get_name) | 获取物品名称 |
-[`api_get_conf_name`](#api_get_conf_name) | 获取物品配置名称 |
-[`api_set_desc`](#api_set_desc) | 设置物品描述 |
-[`api_get_desc`](#api_get_desc) | 获取物品描述 |
-[`api_get_conf_desc`](#api_get_conf_desc) | 获取物品配置描述 |
-[`api_get_type`](#api_get_type) | 获取物品类型 |
-[`api_get_level`](#api_get_level) | 获取物品等级 |
-[`api_set_level`](#api_set_level) | 设置物品等级 |
-[`api_drop_self`](#api_drop_self) | 丢弃物品 |
-[`api_remove`](#api_remove) | 从单位身上移除物品 |
-[`api_set_sale_state`](#api_set_sale_state) | 设置物品出售 |
-[`api_set_stack_cnt`](#api_set_stack_cnt) | 设置物品堆叠数 |
-[`api_set_charge_cnt`](#api_set_charge_cnt) | 设置物品充能数 |
-[`api_set_max_charge`](#api_set_max_charge) | 设置物品最大充能数 |
-[`api_get_position`](#api_get_position) | 获取物品位置 |
-[`api_is_in_scene`](#api_is_in_scene) | 物品是否在场景中 |
-[`api_get_stack_cnt`](#api_get_stack_cnt) | 获取物品堆叠数 |
-[`api_get_stack_type`](#api_get_stack_type) | 获取物品堆叠类型 |
-[`api_get_charge_cnt`](#api_get_charge_cnt) | 获取物品充能数 |
-[`api_get_max_charge`](#api_get_max_charge) | 获取物品充能数 |
-[`api_set_droppable`](#api_set_droppable) | 设置物品丢弃 |
-[`api_set_sellable`](#api_set_sellable) | 设置物品出售 |
-[`api_set_hp`](#api_set_hp) | 设置物品生命值 |
-[`api_get_droppable`](#api_get_droppable) | 获取物品丢弃 |
-[`api_get_sellable`](#api_get_sellable) | 获取物品出售 |
-[`api_get_hp`](#api_get_hp) | 获取物品生命值 |
-[`api_set_attr`](#api_set_attr) | 设置物品附加属性 |
-[`api_change_attr`](#api_change_attr) | 增加物品附加属性 |
-[`api_get_attr`](#api_get_attr) | 获取物品附加属性 |
-[`api_set_creator`](#api_set_creator) | 设置物品所有者 |
-[`api_get_creator`](#api_get_creator) | 获得物品所有者 |
-[`api_get_owner`](#api_get_owner) | 获得物品拥有者 |
-[`api_add_stack`](#api_add_stack) | 添加物品堆叠数 |
-[`api_add_charge`](#api_add_charge) | 添加物品充能数 |
-[`api_get_scale`](#api_get_scale) | 获取物品缩放 |
-[`api_get_face_angle`](#api_get_face_angle) | 获取物品朝向 |
-[`api_set_scale`](#api_set_scale) | 设置物品缩放 |
-[`api_set_position`](#api_set_position) | 设置物品位置 |
-[`api_set_face_angle`](#api_set_face_angle) | 设置物品朝向 |
-[`api_is_in_area`](#api_is_in_area) | 是否在区域内 |
-[`api_transmit`](#api_transmit) | 移动物品到点 |
-[`api_add_tag`](#api_add_tag) | 物品添加标签 |
-[`api_remove_tag`](#api_remove_tag) | 物品删除标签 |
-[`api_has_tag`](#api_has_tag) | 物品是否拥有标签 |
-[`api_remove_kv`](#api_remove_kv) | 物品移除键值对 |
-[`api_get_item_unit`](#api_get_item_unit) | 获取物品在场景中的对应实体 |
-[`api_get_id`](#api_get_id) | 获取物品id |
-[`api_is_in_bar`](#api_is_in_bar) | 物品是否在物品栏 |
-[`api_is_in_pkg`](#api_is_in_pkg) | 物品是否在背包栏中 |
+[`api_get_key`](#api_get_key) | Get item number |
+[`set_name`](#set_name) | Set item name |
+[`get_name`](#get_name) | Get item name |
+[`api_get_conf_name`](#api_get_conf_name) | Get item configuration name |
+[`api_set_desc`](#api_set_desc) | Set item description |
+[`api_get_desc`](#api_get_desc) | Get item description |
+[`api_get_conf_desc`](#api_get_conf_desc) | Get item configuration description |
+[`api_get_type`](#api_get_type) | Get item type |
+[`api_get_level`](#api_get_level) | Get item level |
+[`api_set_level`](#api_set_level) | Set item level |
+[`api_drop_self`](#api_drop_self) | drop items |
+[`api_remove`](#api_remove) | Remove items from units |
+[`api_set_sale_state`](#api_set_sale_state) | Set item sale |
+[`api_set_stack_cnt`](#api_set_stack_cnt) | Set item stack count |
+[`api_set_charge_cnt`](#api_set_charge_cnt) | Set item charge count |
+[`api_set_max_charge`](#api_set_max_charge) | Set the maximum charge of the item |
+[`api_get_position`](#api_get_position) | Get item position |
+[`api_is_in_scene`](#api_is_in_scene) | Whether the item is in the scene |
+[`api_get_stack_cnt`](#api_get_stack_cnt) | Get item stack count |
+[`api_get_stack_type`](#api_get_stack_type) | Get item stack type |
+[`api_get_charge_cnt`](#api_get_charge_cnt) | Get item charge number |
+[`api_get_max_charge`](#api_get_max_charge) | Get the number of item charges |
+[`api_set_droppable`](#api_set_droppable) | Set item drop |
+[`api_set_sellable`](#api_set_sellable) | Set items to sell |
+[`api_set_hp`](#api_set_hp) | Set item health |
+[`api_get_droppable`](#api_get_droppable) | Get item drop |
+[`api_get_sellable`](#api_get_sellable) | Get items for sale |
+[`api_get_hp`](#api_get_hp) | Get item health |
+[`api_set_attr`](#api_set_attr) | Set item additional attributes |
+[`api_change_attr`](#api_change_attr) | Add additional attributes to items |
+[`api_get_attr`](#api_get_attr) | Get additional attributes of items |
+[`api_set_creator`](#api_set_creator) | Set item owner |
+[`api_get_creator`](#api_get_creator) | Get item owner |
+[`api_get_owner`](#api_get_owner) | Get item owner |
+[`api_add_stack`](#api_add_stack) | Add item stacks |
+[`api_add_charge`](#api_add_charge) | Add item charge |
+[`api_get_scale`](#api_get_scale) | Get item scale |
+[`api_get_face_angle`](#api_get_face_angle) | Get the object orientation |
+[`api_set_scale`](#api_set_scale) | Set item scale |
+[`api_set_position`](#api_set_position) | Set item position |
+[`api_set_face_angle`](#api_set_face_angle) | Set the object orientation |
+[`api_is_in_area`](#api_is_in_area) | Is it in the area |
+[`api_transmit`](#api_transmit) | Move item to point |
+[`api_add_tag`](#api_add_tag) | item add tag |
+[`api_remove_tag`](#api_remove_tag) | item removal tag |
+[`api_has_tag`](#api_has_tag) | Whether the item has a tag |
+[`api_remove_kv`](#api_remove_kv) | item removal key-value pair |
+[`api_get_item_unit`](#api_get_item_unit) | Get the corresponding entity of the item in the scene |
+[`api_get_id`](#api_get_id) | Get item id |
+[`api_is_in_bar`](#api_is_in_bar) | Whether the item is in the inventory |
+[`api_is_in_pkg`](#api_is_in_pkg) | Whether the item is in the inventory |
 
 
 -----
-## 方法
+## method
 
 ### `api_get_key` <span id="api_get_key"></span>
-##### **描述**
-获取物品编号
-##### **参数**
-无
+##### **describe**
+Get item number
+##### **parameters**
+none
 
-##### **返回值**
-`ItemKey` : 物品编号
+##### **return value**
+`ItemKey` : item number
 
 ### `set_name` <span id="set_name"></span>
-##### **描述**
-设置物品名称
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`name` | 物品名称  | [`Str`](../etype#Str) | 
+##### **describe**
+set item name
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`name` | item name | [`Str`](../etype#Str) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `get_name` <span id="get_name"></span>
-##### **描述**
-获取物品名称
-##### **参数**
-无
+##### **describe**
+get item name
+##### **parameters**
+none
 
-##### **返回值**
-`Str` : 物品名称
+##### **return value**
+`Str` : item name
 
 ### `api_get_conf_name` <span id="api_get_conf_name"></span>
-##### **描述**
-获取物品配置名称
-##### **参数**
-无
+##### **describe**
+Get item configuration name
+##### **parameters**
+none
 
-##### **返回值**
-`Str` : 物品名称
+##### **return value**
+`Str` : item name
 
 ### `api_set_desc` <span id="api_set_desc"></span>
-##### **描述**
-设置物品描述
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`desc` | 物品描述  | [`Str`](../etype#Str) | 
+##### **describe**
+set item description
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`desc` | item description | [`Str`](../etype#Str) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_get_desc` <span id="api_get_desc"></span>
-##### **描述**
-获取物品描述
-##### **参数**
-无
+##### **describe**
+Get item description
+##### **parameters**
+none
 
-##### **返回值**
-`Str` : 物品描述
+##### **return value**
+`Str` : item description
 
 ### `api_get_conf_desc` <span id="api_get_conf_desc"></span>
-##### **描述**
-获取物品配置描述
-##### **参数**
-无
+##### **describe**
+Get item configuration description
+##### **parameters**
+none
 
-##### **返回值**
-`Str` : 物品描述
+##### **return value**
+`Str` : item description
 
 ### `api_get_type` <span id="api_get_type"></span>
-##### **描述**
-获取物品类型
-##### **参数**
-无
+##### **describe**
+Get item type
+##### **parameters**
+none
 
-##### **返回值**
-`UInt32` : 物品类型
+##### **return value**
+`UInt32` : item type
 
 ### `api_get_level` <span id="api_get_level"></span>
-##### **描述**
-获取物品等级
-##### **参数**
-无
+##### **describe**
+Get item level
+##### **parameters**
+none
 
-##### **返回值**
-`UInt32` : 物品等级
+##### **return value**
+`UInt32` : item level
 
 ### `api_set_level` <span id="api_set_level"></span>
-##### **描述**
-设置物品等级
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`level` | 等级  | [`UInt32`](../etype#UInt32) | 
+##### **describe**
+Set item level
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`level` | level | [`UInt32`](../etype#UInt32) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_drop_self` <span id="api_drop_self"></span>
-##### **描述**
-丢弃物品
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`pos` | 点  | [`FPoint`](../etype#FPoint) | 
-`stack_cnt` | 数量  | [`Actor`](../etype#Actor) | None
+##### **describe**
+discarded items
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`pos` | point | [`FPoint`](../etype#FPoint) |
+`stack_cnt` | number | [`Actor`](../etype#Actor) | None
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_remove` <span id="api_remove"></span>
-##### **描述**
-从单位身上移除物品
-##### **参数**
-无
+##### **describe**
+Remove items from units
+##### **parameters**
+none
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_set_sale_state` <span id="api_set_sale_state"></span>
-##### **描述**
-设置物品出售
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`sale_state` | 可否出售  | [`Bool`](../etype#Bool) | 
+##### **describe**
+Set up items for sale
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`sale_state` | Available for sale | [`Bool`](../etype#Bool) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_set_stack_cnt` <span id="api_set_stack_cnt"></span>
-##### **描述**
-设置物品堆叠数
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`stack_cnt` | 堆叠数  | [`Int32`](../etype#Int32) | 
+##### **describe**
+Set the number of item stacks
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`stack_cnt` | number of stacks | [`Int32`](../etype#Int32) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_set_charge_cnt` <span id="api_set_charge_cnt"></span>
-##### **描述**
-设置物品充能数
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`charge_cnt` | 充能数  | [`Int32`](../etype#Int32) | 
+##### **describe**
+Set item charge count
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`charge_cnt` | number of charges | [`Int32`](../etype#Int32) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_set_max_charge` <span id="api_set_max_charge"></span>
-##### **描述**
-设置物品最大充能数
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`max_charge` | 最大充能数  | [`Int32`](../etype#Int32) | 
+##### **describe**
+Set the maximum number of charges for an item
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`max_charge` | maximum number of charges | [`Int32`](../etype#Int32) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_get_position` <span id="api_get_position"></span>
-##### **描述**
-获取物品位置
-##### **参数**
-无
+##### **describe**
+Get item location
+##### **parameters**
+none
 
-##### **返回值**
-`Point` : 位置
+##### **return value**
+`Point` : position
 
 ### `api_is_in_scene` <span id="api_is_in_scene"></span>
-##### **描述**
-物品是否在场景中
-##### **参数**
-无
+##### **describe**
+Whether the item is in the scene
+##### **parameters**
+none
 
-##### **返回值**
-`Bool` : 是否在场景中
+##### **return value**
+`Bool` : is it in the scene
 
 ### `api_get_stack_cnt` <span id="api_get_stack_cnt"></span>
-##### **描述**
-获取物品堆叠数
-##### **参数**
-无
+##### **describe**
+Get item stack count
+##### **parameters**
+none
 
-##### **返回值**
-`UInt32` : 堆叠数
+##### **return value**
+`UInt32` : number of stacks
 
 ### `api_get_stack_type` <span id="api_get_stack_type"></span>
-##### **描述**
-获取物品堆叠类型
-##### **参数**
-无
+##### **describe**
+Get item stack type
+##### **parameters**
+none
 
-##### **返回值**
-`UInt32` : 堆叠类型
+##### **return value**
+`UInt32` : stack type
 
 ### `api_get_charge_cnt` <span id="api_get_charge_cnt"></span>
-##### **描述**
-获取物品充能数
-##### **参数**
-无
+##### **describe**
+Get item charge
+##### **parameters**
+none
 
-##### **返回值**
-`UInt32` : 充能数
+##### **return value**
+`UInt32` : number of charges
 
 ### `api_get_max_charge` <span id="api_get_max_charge"></span>
-##### **描述**
-获取物品充能数
-##### **参数**
-无
+##### **describe**
+Get item charge
+##### **parameters**
+none
 
-##### **返回值**
-`UInt32` : 最大充能数
+##### **return value**
+`UInt32` : maximum number of charges
 
 ### `api_set_droppable` <span id="api_set_droppable"></span>
-##### **描述**
-设置物品丢弃
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`can_drop` | 可否丢弃  | [`Bool`](../etype#Bool) | 
+##### **describe**
+set item drop
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`can_drop` | Can drop | [`Bool`](../etype#Bool) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_set_sellable` <span id="api_set_sellable"></span>
-##### **描述**
-设置物品出售
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`can_sell` | 可否丢弃  | [`Bool`](../etype#Bool) | 
+##### **describe**
+Set up items for sale
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`can_sell` | Can discard | [`Bool`](../etype#Bool) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_set_hp` <span id="api_set_hp"></span>
-##### **描述**
-设置物品生命值
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`hp` | 生命值  | [`Float`](../etype#Float) | 
+##### **describe**
+Set item health
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`hp` | health | [`Float`](../etype#Float) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_get_droppable` <span id="api_get_droppable"></span>
-##### **描述**
-获取物品丢弃
-##### **参数**
-无
+##### **describe**
+get item discard
+##### **parameters**
+none
 
-##### **返回值**
-`Bool` : 可否丢弃
+##### **return value**
+`Bool` : whether to discard
 
 ### `api_get_sellable` <span id="api_get_sellable"></span>
-##### **描述**
-获取物品出售
-##### **参数**
-无
+##### **describe**
+Get items for sale
+##### **parameters**
+none
 
-##### **返回值**
-`Bool` : 可否出售
+##### **return value**
+`Bool` : available for sale
 
 ### `api_get_hp` <span id="api_get_hp"></span>
-##### **描述**
-获取物品生命值
-##### **参数**
-无
+##### **describe**
+Get item health
+##### **parameters**
+none
 
-##### **返回值**
-`Fixed` : 生命值
+##### **return value**
+`Fixed` : health
 
 ### `api_set_attr` <span id="api_set_attr"></span>
-##### **描述**
-设置物品附加属性
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`attr_element_field` | 属性名  | [`Str`](../etype#Str) | 
-`attr_key` | 属性成分名  | [`Str`](../etype#Str) | 
-`val` | 属性值  | [`Float`](../etype#Float) | 
+##### **describe**
+Set additional properties of items
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`attr_element_field` | attribute name | [`Str`](../etype#Str) |
+`attr_key` | attribute component name | [`Str`](../etype#Str) |
+`val` | property value | [`Float`](../etype#Float) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_change_attr` <span id="api_change_attr"></span>
-##### **描述**
-增加物品附加属性
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`attr_element_field` | 属性名  | [`Str`](../etype#Str) | 
-`attr_key` | 属性成分名  | [`Str`](../etype#Str) | 
-`delta` | 属性值  | [`Float`](../etype#Float) | 
+##### **describe**
+Add additional attributes to items
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`attr_element_field` | attribute name | [`Str`](../etype#Str) |
+`attr_key` | attribute component name | [`Str`](../etype#Str) |
+`delta` | attribute value | [`Float`](../etype#Float) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_get_attr` <span id="api_get_attr"></span>
-##### **描述**
-获取物品附加属性
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`attr_element_field` | 属性成分名  | [`Str`](../etype#Str) | 
-`attr_key` | 属性名  | [`Str`](../etype#Str) | 
+##### **describe**
+Get additional attributes of items
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`attr_element_field` | attribute element name | [`Str`](../etype#Str) |
+`attr_key` | attribute name | [`Str`](../etype#Str) |
 
-##### **返回值**
-`Float` : 属性值
+##### **return value**
+`Float` : property value
 
 ### `api_set_creator` <span id="api_set_creator"></span>
-##### **描述**
-设置物品所有者
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`creator` | 所有者  | [`Role`](../etype#Role) | 
+##### **describe**
+set item owner
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`creator` | owner | [`Role`](../etype#Role) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_get_creator` <span id="api_get_creator"></span>
-##### **描述**
-获得物品所有者
-##### **参数**
-无
+##### **describe**
+get item owner
+##### **parameters**
+none
 
-##### **返回值**
-`Role` : 所有者
+##### **return value**
+`Role` : the owner
 
 ### `api_get_owner` <span id="api_get_owner"></span>
-##### **描述**
-获得物品拥有者
-##### **参数**
-无
+##### **describe**
+get item owner
+##### **parameters**
+none
 
-##### **返回值**
-`Unit` : 拥有者
+##### **return value**
+`Unit` : the owner
 
 ### `api_add_stack` <span id="api_add_stack"></span>
-##### **描述**
-添加物品堆叠数
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`cnt` | 堆叠数  | [`Int32`](../etype#Int32) | 
+##### **describe**
+Add item stack count
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`cnt` | number of stacks | [`Int32`](../etype#Int32) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_add_charge` <span id="api_add_charge"></span>
-##### **描述**
-添加物品充能数
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`cnt` | 充能数  | [`Int32`](../etype#Int32) | 
+##### **describe**
+Added item charge
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`cnt` | number of charges | [`Int32`](../etype#Int32) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_get_scale` <span id="api_get_scale"></span>
-##### **描述**
-获取物品缩放
-##### **参数**
-无
+##### **describe**
+Get item zoom
+##### **parameters**
+none
 
-##### **返回值**
-`Fixed` : 缩放
+##### **return value**
+`Fixed` : zoom
 
 ### `api_get_face_angle` <span id="api_get_face_angle"></span>
-##### **描述**
-获取物品朝向
-##### **参数**
-无
+##### **describe**
+Get item orientation
+##### **parameters**
+none
 
-##### **返回值**
-`Fixed` : 朝向角度
+##### **return value**
+`Fixed` : facing angle
 
 ### `api_set_scale` <span id="api_set_scale"></span>
-##### **描述**
-设置物品缩放
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`scale` | 缩放  | [`Float`](../etype#Float) | 
+##### **describe**
+Set item scaling
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`scale` | scale | [`Float`](../etype#Float) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_set_position` <span id="api_set_position"></span>
-##### **描述**
-设置物品位置
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`point` | 物品位置  | [`Point`](../etype#Point) | 
+##### **describe**
+Set item location
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`point` | item position | [`Point`](../etype#Point) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_set_face_angle` <span id="api_set_face_angle"></span>
-##### **描述**
-设置物品朝向
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`face_angle` | 物品朝向  | [`Float`](../etype#Float) | 
+##### **describe**
+set item orientation
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`face_angle` | item facing | [`Float`](../etype#Float) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_is_in_area` <span id="api_is_in_area"></span>
-##### **描述**
-是否在区域内
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`area` | 区域  | [`Area`](../etype#Area) | 
+##### **describe**
+Is it in the area
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`area` | area | [`Area`](../etype#Area) |
 
-##### **返回值**
-`Bool` : 是否在区域
+##### **return value**
+`Bool` : is in the region
 
 ### `api_transmit` <span id="api_transmit"></span>
-##### **描述**
-移动物品到点
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`point` | 点  | [`Point`](../etype#Point) | 
+##### **describe**
+move item to point
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`point` | point | [`Point`](../etype#Point) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_add_tag` <span id="api_add_tag"></span>
-##### **描述**
-物品添加标签
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`tag` | 标签  | [`Str`](../etype#Str) | 
+##### **describe**
+add tags to items
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`tag` | tag | [`Str`](../etype#Str) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_remove_tag` <span id="api_remove_tag"></span>
-##### **描述**
-物品删除标签
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`tag` | 标签  | [`Str`](../etype#Str) | 
+##### **describe**
+item removal tag
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`tag` | tag | [`Str`](../etype#Str) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_has_tag` <span id="api_has_tag"></span>
-##### **描述**
-物品是否拥有标签
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`tag` | 标签  | [`Str`](../etype#Str) | 
+##### **describe**
+Whether the item has a tag
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`tag` | tag | [`Str`](../etype#Str) |
 
-##### **返回值**
-`Bool` : 物品是否拥有标签
+##### **return value**
+`Bool` : whether the item has a tag
 
 ### `api_remove_kv` <span id="api_remove_kv"></span>
-##### **描述**
-物品移除键值对
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`k` | 要移除的键  | [`Str`](../etype#Str) | 
+##### **describe**
+item removal key-value pair
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`k` | key to remove | [`Str`](../etype#Str) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_get_item_unit` <span id="api_get_item_unit"></span>
-##### **描述**
-获取物品在场景中的对应实体
-##### **参数**
-无
+##### **describe**
+Get the corresponding entity of the item in the scene
+##### **parameters**
+none
 
-##### **返回值**
-`Unit` : 场景中的实体
+##### **return value**
+`Unit` : the entity in the scene
 
 ### `api_get_id` <span id="api_get_id"></span>
-##### **描述**
-获取物品id
-##### **参数**
-无
+##### **describe**
+get item id
+##### **parameters**
+none
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_is_in_bar` <span id="api_is_in_bar"></span>
-##### **描述**
-物品是否在物品栏
-##### **参数**
-无
+##### **describe**
+Whether the item is in the inventory
+##### **parameters**
+none
 
-##### **返回值**
-`Bool` : 是否在物品栏中
+##### **return value**
+`Bool` : is it in the inventory
 
 ### `api_is_in_pkg` <span id="api_is_in_pkg"></span>
-##### **描述**
-物品是否在背包栏中
-##### **参数**
-无
+##### **describe**
+Whether the item is in the inventory slot
+##### **parameters**
+none
 
-##### **返回值**
-`Bool` : 是否在背包栏中
+##### **return value**
+`Bool` : is it in the inventory bar

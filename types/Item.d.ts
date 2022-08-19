@@ -1,403 +1,403 @@
 declare interface Item {
   /**
-   * 获取物品编号
+   * Get item number
    * @returns ItemKey
    */
   api_get_key: () => ItemKey;
 
   /**
-   * 设置物品名称
-   * @param name 物品名称
+   * set item name
+   * @param name item name
    */
   set_name: (
-    /** 物品名称 */
+    /** item name */
     name: string,
   ) => void;
 
   /**
-   * 获取物品名称
+   * get item name
    * @returns string
    */
   get_name: () => string;
 
   /**
-   * 获取物品配置名称
+   * Get item configuration name
    * @returns string
    */
   api_get_conf_name: () => string;
 
   /**
-   * 设置物品描述
-   * @param desc 物品描述
+   * set item description
+   * @param desc item description
    */
   api_set_desc: (
-    /** 物品描述 */
+    /** item description */
     desc: string,
   ) => void;
 
   /**
-   * 获取物品描述
+   * Get item description
    * @returns string
    */
   api_get_desc: () => string;
 
   /**
-   * 获取物品配置描述
+   * Get item configuration description
    * @returns string
    */
   api_get_conf_desc: () => string;
 
   /**
-   * 获取物品类型
+   * Get item type
    * @returns UInt32
    */
   api_get_type: () => UInt32;
 
   /**
-   * 获取物品等级
+   * Get item level
    * @returns UInt32
    */
   api_get_level: () => UInt32;
 
   /**
-   * 设置物品等级
-   * @param level 等级
+   * Set item level
+   * @param level level
    */
   api_set_level: (
-    /** 等级 */
+    /** level */
     level: UInt32,
   ) => void;
 
   /**
-   * 丢弃物品
-   * @param pos 点
-   * @param stack_cnt 数量
+   * discarded items
+   * @param pos point
+   * @param stack_cnt number
    */
   api_drop_self: (
-    /** 点 */
+    /** point */
     pos: FPoint,
-    /** 数量 */
+    /** number */
     stack_cnt: Actor | null,
   ) => void;
 
   /**
-   * 从单位身上移除物品
+   * Remove items from units
    */
   api_remove: () => void;
 
   /**
-   * 设置物品出售
-   * @param sale_state 可否出售
+   * Set up items for sale
+   * @param sale_state Available for sale
    */
   api_set_sale_state: (
-    /** 可否出售 */
+    /** Available for sale */
     sale_state: boolean,
   ) => void;
 
   /**
-   * 设置物品堆叠数
-   * @param stack_cnt 堆叠数
+   * Set the number of item stacks
+   * @param stack_cnt number of stacks
    */
   api_set_stack_cnt: (
-    /** 堆叠数 */
+    /** number of stacks */
     stack_cnt: Int32,
   ) => void;
 
   /**
-   * 设置物品充能数
-   * @param charge_cnt 充能数
+   * Set item charge count
+   * @param charge_cnt number of charges
    */
   api_set_charge_cnt: (
-    /** 充能数 */
+    /** number of charges */
     charge_cnt: Int32,
   ) => void;
 
   /**
-   * 设置物品最大充能数
-   * @param max_charge 最大充能数
+   * Set the maximum number of charges for an item
+   * @param max_charge maximum number of charges
    */
   api_set_max_charge: (
-    /** 最大充能数 */
+    /** maximum number of charges */
     max_charge: Int32,
   ) => void;
 
   /**
-   * 获取物品位置
+   * Get item location
    * @returns Point
    */
   api_get_position: () => Point;
 
   /**
-   * 物品是否在场景中
+   * Whether the item is in the scene
    * @returns boolean
    */
   api_is_in_scene: () => boolean;
 
   /**
-   * 获取物品堆叠数
+   * Get item stack count
    * @returns UInt32
    */
   api_get_stack_cnt: () => UInt32;
 
   /**
-   * 获取物品堆叠类型
+   * Get item stack type
    * @returns UInt32
    */
   api_get_stack_type: () => UInt32;
 
   /**
-   * 获取物品充能数
+   * Get item charge
    * @returns UInt32
    */
   api_get_charge_cnt: () => UInt32;
 
   /**
-   * 获取物品充能数
+   * Get item charge
    * @returns UInt32
    */
   api_get_max_charge: () => UInt32;
 
   /**
-   * 设置物品丢弃
-   * @param can_drop 可否丢弃
+   * set item drop
+   * @param can_drop Can drop
    */
   api_set_droppable: (
-    /** 可否丢弃 */
+    /** Can drop */
     can_drop: boolean,
   ) => void;
 
   /**
-   * 设置物品出售
-   * @param can_sell 可否丢弃
+   * Set up items for sale
+   * @param can_sell Can discard
    */
   api_set_sellable: (
-    /** 可否丢弃 */
+    /** Can discard */
     can_sell: boolean,
   ) => void;
 
   /**
-   * 设置物品生命值
-   * @param hp 生命值
+   * Set item health
+   * @param hp health
    */
   api_set_hp: (
-    /** 生命值 */
+    /** health */
     hp: Float,
   ) => void;
 
   /**
-   * 获取物品丢弃
+   * get item discard
    * @returns boolean
    */
   api_get_droppable: () => boolean;
 
   /**
-   * 获取物品出售
+   * Get items for sale
    * @returns boolean
    */
   api_get_sellable: () => boolean;
 
   /**
-   * 获取物品生命值
+   * Get item health
    * @returns Fixed
    */
   api_get_hp: () => Fixed;
 
   /**
-   * 设置物品附加属性
-   * @param attr_element_field 属性名
-   * @param attr_key 属性成分名
-   * @param val 属性值
+   * Set additional properties of items
+   * @param attr_element_field attribute name
+   * @param attr_key attribute component name
+   * @param val property value
    */
   api_set_attr: (
-    /** 属性名 */
+    /** attribute name */
     attr_element_field: string,
-    /** 属性成分名 */
+    /** attribute component name */
     attr_key: string,
-    /** 属性值 */
+    /** property value */
     val: Float,
   ) => void;
 
   /**
-   * 增加物品附加属性
-   * @param attr_element_field 属性名
-   * @param attr_key 属性成分名
-   * @param delta 属性值
+   * Add additional attributes to items
+   * @param attr_element_field attribute name
+   * @param attr_key attribute component name
+   * @param delta attribute value
    */
   api_change_attr: (
-    /** 属性名 */
+    /** attribute name */
     attr_element_field: string,
-    /** 属性成分名 */
+    /** attribute component name */
     attr_key: string,
-    /** 属性值 */
+    /** attribute value */
     delta: Float,
   ) => void;
 
   /**
-   * 获取物品附加属性
-   * @param attr_element_field 属性成分名
-   * @param attr_key 属性名
+   * Get additional attributes of items
+   * @param attr_element_field attribute element name
+   * @param attr_key attribute name
    * @returns Float
    */
   api_get_attr: (
-    /** 属性成分名 */
+    /** attribute element name */
     attr_element_field: string,
-    /** 属性名 */
+    /** attribute name */
     attr_key: string,
   ) => Float;
 
   /**
-   * 设置物品所有者
-   * @param creator 所有者
+   * set item owner
+   * @param creator owner
    */
   api_set_creator: (
-    /** 所有者 */
+    /** owner */
     creator: Role,
   ) => void;
 
   /**
-   * 获得物品所有者
+   * get item owner
    * @returns Role
    */
   api_get_creator: () => Role;
 
   /**
-   * 获得物品拥有者
+   * get item owner
    * @returns Unit
    */
   api_get_owner: () => Unit;
 
   /**
-   * 添加物品堆叠数
-   * @param cnt 堆叠数
+   * Add item stack count
+   * @param cnt number of stacks
    */
   api_add_stack: (
-    /** 堆叠数 */
+    /** number of stacks */
     cnt: Int32,
   ) => void;
 
   /**
-   * 添加物品充能数
-   * @param cnt 充能数
+   * Added item charge
+   * @param cnt number of charges
    */
   api_add_charge: (
-    /** 充能数 */
+    /** number of charges */
     cnt: Int32,
   ) => void;
 
   /**
-   * 获取物品缩放
+   * Get item zoom
    * @returns Fixed
    */
   api_get_scale: () => Fixed;
 
   /**
-   * 获取物品朝向
+   * Get item orientation
    * @returns Fixed
    */
   api_get_face_angle: () => Fixed;
 
   /**
-   * 设置物品缩放
-   * @param scale 缩放
+   * Set item scaling
+   * @param scale scale
    */
   api_set_scale: (
-    /** 缩放 */
+    /** scale */
     scale: Float,
   ) => void;
 
   /**
-   * 设置物品位置
-   * @param point 物品位置
+   * Set item location
+   * @param point item position
    */
   api_set_position: (
-    /** 物品位置 */
+    /** item position */
     point: Point,
   ) => void;
 
   /**
-   * 设置物品朝向
-   * @param face_angle 物品朝向
+   * set item orientation
+   * @param face_angle item facing
    */
   api_set_face_angle: (
-    /** 物品朝向 */
+    /** item facing */
     face_angle: Float,
   ) => void;
 
   /**
-   * 是否在区域内
-   * @param area 区域
+   * Is it in the area
+   * @param area area
    * @returns boolean
    */
   api_is_in_area: (
-    /** 区域 */
+    /** area */
     area: Area,
   ) => boolean;
 
   /**
-   * 移动物品到点
-   * @param point 点
+   * move item to point
+   * @param point point
    */
   api_transmit: (
-    /** 点 */
+    /** point */
     point: Point,
   ) => void;
 
   /**
-   * 物品添加标签
-   * @param tag 标签
+   * add tags to items
+   * @param tag tag
    */
   api_add_tag: (
-    /** 标签 */
+    /** tag */
     tag: string,
   ) => void;
 
   /**
-   * 物品删除标签
-   * @param tag 标签
+   * item removal tag
+   * @param tag tag
    */
   api_remove_tag: (
-    /** 标签 */
+    /** tag */
     tag: string,
   ) => void;
 
   /**
-   * 物品是否拥有标签
-   * @param tag 标签
+   * Whether the item has a tag
+   * @param tag tag
    * @returns boolean
    */
   api_has_tag: (
-    /** 标签 */
+    /** tag */
     tag: string,
   ) => boolean;
 
   /**
-   * 物品移除键值对
-   * @param k 要移除的键
+   * item removal key-value pair
+   * @param k key to remove
    */
   api_remove_kv: (
-    /** 要移除的键 */
+    /** key to remove */
     k: string,
   ) => void;
 
   /**
-   * 获取物品在场景中的对应实体
+   * Get the corresponding entity of the item in the scene
    * @returns Unit
    */
   api_get_item_unit: () => Unit;
 
   /**
-   * 获取物品id
+   * get item id
    */
   api_get_id: () => void;
 
   /**
-   * 物品是否在物品栏
+   * Whether the item is in the inventory
    * @returns boolean
    */
   api_is_in_bar: () => boolean;
 
   /**
-   * 物品是否在背包栏中
+   * Whether the item is in the inventory slot
    * @returns boolean
    */
   api_is_in_pkg: () => boolean;

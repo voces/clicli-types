@@ -1,281 +1,281 @@
 declare interface Projectile {
   /**
-   * 投射物本身对象
+   * Projectile itself object
    * @returns Unit
    */
   api_get_self: () => Unit;
 
   /**
-   * 投射物编号
+   * projectile number
    * @returns ProjectileKey
    */
   api_get_key: () => ProjectileKey;
 
   /**
-   * 投射物产生者
+   * projectile generator
    * @returns Unit
    */
   api_get_owner: () => Unit;
 
   /**
-   * 投掷物目标对象
+   * projectile target object
    * @returns Unit
    */
   api_get_target: () => Unit;
 
   /**
-   * 销毁投射物对象
-   * @param unit 销毁的投射物对象
+   * destroy projectile object
+   * @param unit Destroyed projectile object
    */
   api_delete: (
-    /** 销毁的投射物对象 */
+    /** Destroyed projectile object */
     unit: Unit | null,
   ) => void;
 
   /**
-   * 设置投射物位置
-   * @param point 投射物位置
+   * Set projectile position
+   * @param point Projectile position
    */
   api_set_position: (
-    /** 投射物位置 */
+    /** Projectile position */
     point: Point,
   ) => void;
 
   /**
-   * 设置投射物朝向
-   * @param face_angle 投射物朝向
+   * Set projectile orientation
+   * @param face_angle Projectile facing
    */
   api_set_face_angle: (
-    /** 投射物朝向 */
+    /** Projectile facing */
     face_angle: Float,
   ) => void;
 
   /**
-   * 设置投射物旋转
-   * @param x x轴旋转
-   * @param y y轴旋转
-   * @param z z轴旋转
+   * Set projectile rotation
+   * @param x x-axis rotation
+   * @param y y-axis rotation
+   * @param z z-axis rotation
    */
   api_set_rotation: (
-    /** x轴旋转 */
+    /** x-axis rotation */
     x: Float,
-    /** y轴旋转 */
+    /** y-axis rotation */
     y: Float,
-    /** z轴旋转 */
+    /** z-axis rotation */
     z: Float,
   ) => void;
 
   /**
-   * 设置投射物缩放
-   * @param x x轴缩放
-   * @param y y轴缩放
-   * @param z z轴缩放
+   * Set projectile scaling
+   * @param x x-axis scaling
+   * @param y y-axis scaling
+   * @param z z-axis scaling
    */
   api_set_scale: (
-    /** x轴缩放 */
+    /** x-axis scaling */
     x: Float,
-    /** y轴缩放 */
+    /** y-axis scaling */
     y: Float,
-    /** z轴缩放 */
+    /** z-axis scaling */
     z: Float,
   ) => void;
 
   /**
-   * 设置投射物特效播放速度
-   * @param rate 播放速度
+   * Set projectile effect playback speed
+   * @param rate playback speed
    */
   api_set_animation_speed: (
-    /** 播放速度 */
+    /** playback speed */
     rate: Float,
   ) => void;
 
   /**
-   * 设置投射物持续时间
-   * @param duration 持续时间
+   * Set projectile duration
+   * @param duration duration
    */
   api_set_duration: (
-    /** 持续时间 */
+    /** duration */
     duration: Float,
   ) => void;
 
   /**
-   * 增加投射物持续时间
-   * @param extra_time 持续时间变化值
+   * Increased projectile duration
+   * @param extra_time duration change value
    */
   api_add_duration: (
-    /** 持续时间变化值 */
+    /** duration change value */
     extra_time: Float,
   ) => void;
 
   /**
-   * 获取投射物剩余持续时间
+   * Get the remaining duration of the projectile
    * @returns Float
    */
   api_get_left_time: () => Float;
 
   /**
-   * 获取投射物高度
+   * Get projectile height
    * @returns Float
    */
   api_get_height: () => Float;
 
   /**
-   * 获取投射物角度
+   * get projectile angle
    * @returns Float
    */
   api_get_face_angle: () => Float;
 
   /**
-   * 获取投射物位置
+   * Get projectile position
    * @returns FVector3
    */
   api_get_position: () => FVector3;
 
   /**
-   * 获取投射物朝向
+   * Get projectile orientation
    * @returns FVector3
    */
   api_get_face_dir: () => FVector3;
 
   /**
-   * 投射物碰撞到的障碍的法线方向
+   * The normal direction of the obstacle the projectile hits
    * @returns FVector3
    */
   api_collide_obstacle_normal: () => FVector3;
 
   /**
-   * 投射物抬高
-   * @param y 定点数
+   * projectile raised
+   * @param y fixed number
    */
   api_raise_height: (
-    /** 定点数 */
+    /** fixed number */
     y: Fixed,
   ) => void;
 
   /**
-   * 在投射物和单位之间挂链接特效
-   * @param from_socket_name 起始挂节点
-   * @param target_unit 目标单位
-   * @param target_socket_name 目标挂节点
-   * @param sfx_res_id 特效编号
-   * @param scale 缩放比例
-   * @param keep_time 最多持续时间
-   * @param role 所属玩家
-   * @param visible_type 可见性规则
+   * Attach link effect between projectile and unit
+   * @param from_socket_name starting node
+   * @param target_unit target unit
+   * @param target_socket_name target socket
+   * @param sfx_res_id Effect ID
+   * @param scale scale
+   * @param keep_time maximum duration
+   * @param role owning player
+   * @param visible_type visibility rules
    */
   api_play_link_sfx: (
-    /** 起始挂节点 */
+    /** starting node */
     from_socket_name: string,
-    /** 目标单位 */
+    /** target unit */
     target_unit: Unit,
-    /** 目标挂节点 */
+    /** target socket */
     target_socket_name: string,
-    /** 特效编号 */
+    /** Effect ID */
     sfx_res_id: SfxKey,
-    /** 缩放比例 */
+    /** scale */
     scale: Float,
-    /** 最多持续时间 */
+    /** maximum duration */
     keep_time: Float,
-    /** 所属玩家 */
+    /** owning player */
     role: Role | null,
     /**
-     * 可见性规则
+     * visibility rules
      * @defaultValue `1`
      */
     visible_type: UInt32 | null,
   ) => void;
 
   /**
-   * 在投射物和单位之间挂链接特效并返回特效实体
-   * @param from_socket_name 起始挂节点
-   * @param target_unit 目标单位
-   * @param target_socket_name 目标挂节点
-   * @param sfx_res_id 特效编号
-   * @param scale 缩放比例
-   * @param keep_time 最多持续时间
-   * @param role 所属玩家
-   * @param visible_type 可见性规则
+   * Attach a link effect between the projectile and the unit and return the effect entity
+   * @param from_socket_name starting node
+   * @param target_unit target unit
+   * @param target_socket_name target socket
+   * @param sfx_res_id Effect ID
+   * @param scale scale
+   * @param keep_time maximum duration
+   * @param role owning player
+   * @param visible_type visibility rules
    * @returns Sfx
    */
   api_play_link_sfx_with_return: (
-    /** 起始挂节点 */
+    /** starting node */
     from_socket_name: string,
-    /** 目标单位 */
+    /** target unit */
     target_unit: Unit,
-    /** 目标挂节点 */
+    /** target socket */
     target_socket_name: string,
-    /** 特效编号 */
+    /** Effect ID */
     sfx_res_id: SfxKey,
-    /** 缩放比例 */
+    /** scale */
     scale: Float,
-    /** 最多持续时间 */
+    /** maximum duration */
     keep_time: Float,
-    /** 所属玩家 */
+    /** owning player */
     role: Role | null,
     /**
-     * 可见性规则
+     * visibility rules
      * @defaultValue `1`
      */
     visible_type: UInt32 | null,
   ) => Sfx;
 
   /**
-   * 在投射物之间挂链接特效
-   * @param from_socket_name 起始挂节点
-   * @param target_unit 目标投射物
-   * @param target_socket_name 目标挂节点
-   * @param sfx_res_id 特效编号
-   * @param scale 缩放比例
-   * @param keep_time 最多持续时间
-   * @param role 所属玩家
-   * @param visible_type 可见性规则
+   * Hang link effects between projectiles
+   * @param from_socket_name starting node
+   * @param target_unit target projectile
+   * @param target_socket_name target socket
+   * @param sfx_res_id Effect ID
+   * @param scale scale
+   * @param keep_time maximum duration
+   * @param role owning player
+   * @param visible_type visibility rules
    */
   api_play_link_sfx_to_projectile: (
-    /** 起始挂节点 */
+    /** starting node */
     from_socket_name: string,
-    /** 目标投射物 */
+    /** target projectile */
     target_unit: Projectile,
-    /** 目标挂节点 */
+    /** target socket */
     target_socket_name: string,
-    /** 特效编号 */
+    /** Effect ID */
     sfx_res_id: SfxKey,
-    /** 缩放比例 */
+    /** scale */
     scale: Float,
-    /** 最多持续时间 */
+    /** maximum duration */
     keep_time: Float,
-    /** 所属玩家 */
+    /** owning player */
     role: Role | null,
     /**
-     * 可见性规则
+     * visibility rules
      * @defaultValue `1`
      */
     visible_type: UInt32 | null,
   ) => void;
 
   /**
-   * 获取投射物的字符串属性
-   * @param attr_name 属性名称
+   * Get the string property of the projectile
+   * @param attr_name attribute name
    * @returns string
    */
   api_get_str_attr: (
-    /** 属性名称 */
+    /** attribute name */
     attr_name: string,
   ) => string;
 
   /**
-   * 设置投射物的字符串属性
-   * @param attr_name 属性名称
-   * @param value 属性取值
+   * Set the projectile's string property
+   * @param attr_name attribute name
+   * @param value attribute value
    */
   api_set_str_attr: (
-    /** 属性名称 */
+    /** attribute name */
     attr_name: string,
-    /** 属性取值 */
+    /** attribute value */
     value: string,
   ) => void;
 
   /**
-   * 投射物添加键值对
+   * Projectiles add key-value pairs
    * @param tag TAG
    */
   api_add_tag: (
@@ -284,7 +284,7 @@ declare interface Projectile {
   ) => void;
 
   /**
-   * 投射物移除键值对
+   * Projectile removal key-value pair
    * @param tag TAG
    */
   api_remove_tag: (

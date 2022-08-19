@@ -3,10 +3,10 @@ import { cleanType } from "./util.ts";
 
 const types = ["gameapi", "globalapi"];
 
-const validDescriptionHeadings = ["**Description**", "**描述**"];
-const validParamHeadings = ["**Parameters**", "**参数**"];
-const validNoParamText = ["No parameter.", "No return value.", "无"];
-const validReturnHeadings = ["**Return Value**", "**返回值**"];
+const validDescriptionHeadings = ["**Description**", "**describe**", "**描述**"];
+const validParamHeadings = ["**Parameters**", "**parameters**", "**参数**"];
+const validNoParamText = ["No parameter.", "No return value.", "none", "无"];
+const validReturnHeadings = ["**Return Value**", "**return value**", "**返回值**"];
 
 export const genClass = (
   name: string,
@@ -64,7 +64,6 @@ export const genClass = (
         paramTable.type !== "paragraph" ||
         !validNoParamText.includes(paramTable.text)
       ) {
-        console.log(ast.slice(index - 5, index + 3));
         throw new Error(`expect param table: ${Deno.inspect(paramTable)}`);
       }
     }

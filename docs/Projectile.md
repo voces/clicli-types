@@ -1,330 +1,330 @@
 # Projectile
-## 描述
-投射物
+## describe
+projectile
 
 -----
-## 方法列表
-方法名  | 简述  |
+## method list
+Method name | Brief description |
 :----- | :--- |
-[`api_get_self`](#api_get_self) | 投射物本身对象 |
-[`api_get_key`](#api_get_key) | 投射物编号 |
-[`api_get_owner`](#api_get_owner) | 投射物产生者 |
-[`api_get_target`](#api_get_target) | 投掷物目标对象 |
-[`api_delete`](#api_delete) | 销毁投射物对象 |
-[`api_set_position`](#api_set_position) | 设置投射物位置 |
-[`api_set_face_angle`](#api_set_face_angle) | 设置投射物朝向 |
-[`api_set_rotation`](#api_set_rotation) | 设置投射物旋转 |
-[`api_set_scale`](#api_set_scale) | 设置投射物缩放 |
-[`api_set_animation_speed`](#api_set_animation_speed) | 设置投射物特效播放速度 |
-[`api_set_duration`](#api_set_duration) | 设置投射物持续时间 |
-[`api_add_duration`](#api_add_duration) | 增加投射物持续时间 |
-[`api_get_left_time`](#api_get_left_time) | 获取投射物剩余持续时间 |
-[`api_get_height`](#api_get_height) | 获取投射物高度 |
-[`api_get_face_angle`](#api_get_face_angle) | 获取投射物角度 |
-[`api_get_position`](#api_get_position) | 获取投射物位置 |
-[`api_get_face_dir`](#api_get_face_dir) | 获取投射物朝向 |
-[`api_collide_obstacle_normal`](#api_collide_obstacle_normal) | 投射物碰撞到的障碍的法线方向 |
-[`api_raise_height`](#api_raise_height) | 投射物抬高 |
-[`api_play_link_sfx`](#api_play_link_sfx) | 在投射物和单位之间挂链接特效 |
-[`api_play_link_sfx_with_return`](#api_play_link_sfx_with_return) | 在投射物和单位之间挂链接特效并返回特效实体 |
-[`api_play_link_sfx_to_projectile`](#api_play_link_sfx_to_projectile) | 在投射物之间挂链接特效 |
-[`api_get_str_attr`](#api_get_str_attr) | 获取投射物的字符串属性 |
-[`api_set_str_attr`](#api_set_str_attr) | 设置投射物的字符串属性 |
-[`api_add_tag`](#api_add_tag) | 投射物添加键值对 |
-[`api_remove_tag`](#api_remove_tag) | 投射物移除键值对 |
+[`api_get_self`](#api_get_self) | Projectile itself object |
+[`api_get_key`](#api_get_key) | projectile number |
+[`api_get_owner`](#api_get_owner) | projectile generator |
+[`api_get_target`](#api_get_target) | Projectile target object |
+[`api_delete`](#api_delete) | Destroy projectile object |
+[`api_set_position`](#api_set_position) | Set projectile position |
+[`api_set_face_angle`](#api_set_face_angle) | Set projectile orientation |
+[`api_set_rotation`](#api_set_rotation) | Set projectile rotation |
+[`api_set_scale`](#api_set_scale) | Set projectile scale |
+[`api_set_animation_speed`](#api_set_animation_speed) | Set projectile effect playback speed |
+[`api_set_duration`](#api_set_duration) | Set projectile duration |
+[`api_add_duration`](#api_add_duration) | Increase projectile duration |
+[`api_get_left_time`](#api_get_left_time) | Get the remaining duration of the projectile |
+[`api_get_height`](#api_get_height) | Get projectile height |
+[`api_get_face_angle`](#api_get_face_angle) | Get the projectile angle |
+[`api_get_position`](#api_get_position) | Get projectile position |
+[`api_get_face_dir`](#api_get_face_dir) | Get projectile orientation |
+[`api_collide_obstacle_normal`](#api_collide_obstacle_normal) | The normal direction of the obstacle the projectile collides with |
+[`api_raise_height`](#api_raise_height) | Projectile Raise |
+[`api_play_link_sfx`](#api_play_link_sfx) | Link effects between projectiles and units |
+[`api_play_link_sfx_with_return`](#api_play_link_sfx_with_return) | Link effect between projectile and unit and return effect entity |
+[`api_play_link_sfx_to_projectile`](#api_play_link_sfx_to_projectile) | Link effects between projectiles |
+[`api_get_str_attr`](#api_get_str_attr) | Get the string attribute of the projectile |
+[`api_set_str_attr`](#api_set_str_attr) | Set the string attribute of the projectile |
+[`api_add_tag`](#api_add_tag) | Projectile add key-value pair |
+[`api_remove_tag`](#api_remove_tag) | Projectile removal key-value pair |
 
 
 -----
-## 方法
+## method
 
 ### `api_get_self` <span id="api_get_self"></span>
-##### **描述**
-投射物本身对象
-##### **参数**
-无
+##### **describe**
+Projectile itself object
+##### **parameters**
+none
 
-##### **返回值**
-`Unit` : 投射物本身对象
+##### **return value**
+`Unit` : the projectile itself object
 
 ### `api_get_key` <span id="api_get_key"></span>
-##### **描述**
-投射物编号
-##### **参数**
-无
+##### **describe**
+projectile number
+##### **parameters**
+none
 
-##### **返回值**
-`ProjectileKey` : 投射物的key
+##### **return value**
+`ProjectileKey` : the key of the projectile
 
 ### `api_get_owner` <span id="api_get_owner"></span>
-##### **描述**
-投射物产生者
-##### **参数**
-无
+##### **describe**
+projectile generator
+##### **parameters**
+none
 
-##### **返回值**
-`Unit` : 投射物产生者
+##### **return value**
+`Unit` : projectile generator
 
 ### `api_get_target` <span id="api_get_target"></span>
-##### **描述**
-投掷物目标对象
-##### **参数**
-无
+##### **describe**
+projectile target object
+##### **parameters**
+none
 
-##### **返回值**
-`Unit` : 投掷物目标对象
+##### **return value**
+`Unit` : projectile target object
 
 ### `api_delete` <span id="api_delete"></span>
-##### **描述**
-销毁投射物对象
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
+##### **describe**
+destroy projectile object
+##### **parameters**
+parameter name | description | type | default value
 :----------- | :----------- | :----------- | :----
-`unit` | 销毁的投射物对象  | [`Unit`](../etype#Unit) | None
+`unit` | Destroyed projectile object | [`Unit`](../etype#Unit) | None
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_set_position` <span id="api_set_position"></span>
-##### **描述**
-设置投射物位置
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
+##### **describe**
+Set projectile position
+##### **parameters**
+parameter name | description | type | default value
 :----------- | :----------- | :----------- | :----
-`point` | 投射物位置  | [`Point`](../etype#Point) | 
+`point` | Projectile position | [`Point`](../etype#Point) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_set_face_angle` <span id="api_set_face_angle"></span>
-##### **描述**
-设置投射物朝向
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
+##### **describe**
+Set projectile orientation
+##### **parameters**
+parameter name | description | type | default value
 :----------- | :----------- | :----------- | :----
-`face_angle` | 投射物朝向  | [`Float`](../etype#Float) | 
+`face_angle` | Projectile facing | [`Float`](../etype#Float) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_set_rotation` <span id="api_set_rotation"></span>
-##### **描述**
-设置投射物旋转
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
+##### **describe**
+Set projectile rotation
+##### **parameters**
+parameter name | description | type | default value
 :----------- | :----------- | :----------- | :----
-`x` | x轴旋转  | [`Float`](../etype#Float) | 
-`y` | y轴旋转  | [`Float`](../etype#Float) | 
-`z` | z轴旋转  | [`Float`](../etype#Float) | 
+`x` | x-axis rotation | [`Float`](../etype#Float) |
+`y` | y-axis rotation | [`Float`](../etype#Float) |
+`z` | z-axis rotation | [`Float`](../etype#Float) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_set_scale` <span id="api_set_scale"></span>
-##### **描述**
-设置投射物缩放
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
+##### **describe**
+Set projectile scaling
+##### **parameters**
+parameter name | description | type | default value
 :----------- | :----------- | :----------- | :----
-`x` | x轴缩放  | [`Float`](../etype#Float) | 
-`y` | y轴缩放  | [`Float`](../etype#Float) | 
-`z` | z轴缩放  | [`Float`](../etype#Float) | 
+`x` | x-axis scaling | [`Float`](../etype#Float) |
+`y` | y-axis scaling | [`Float`](../etype#Float) |
+`z` | z-axis scaling | [`Float`](../etype#Float) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_set_animation_speed` <span id="api_set_animation_speed"></span>
-##### **描述**
-设置投射物特效播放速度
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
+##### **describe**
+Set projectile effect playback speed
+##### **parameters**
+parameter name | description | type | default value
 :----------- | :----------- | :----------- | :----
-`rate` | 播放速度  | [`Float`](../etype#Float) | 
+`rate` | playback speed | [`Float`](../etype#Float) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_set_duration` <span id="api_set_duration"></span>
-##### **描述**
-设置投射物持续时间
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
+##### **describe**
+Set projectile duration
+##### **parameters**
+parameter name | description | type | default value
 :----------- | :----------- | :----------- | :----
-`duration` | 持续时间  | [`Float`](../etype#Float) | 
+`duration` | duration | [`Float`](../etype#Float) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_add_duration` <span id="api_add_duration"></span>
-##### **描述**
-增加投射物持续时间
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
+##### **describe**
+Increased projectile duration
+##### **parameters**
+parameter name | description | type | default value
 :----------- | :----------- | :----------- | :----
-`extra_time` | 持续时间变化值  | [`Float`](../etype#Float) | 
+`extra_time` | duration change value | [`Float`](../etype#Float) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_get_left_time` <span id="api_get_left_time"></span>
-##### **描述**
-获取投射物剩余持续时间
-##### **参数**
-无
+##### **describe**
+Get the remaining duration of the projectile
+##### **parameters**
+none
 
-##### **返回值**
-`Float` : 投射物剩余持续时间
+##### **return value**
+`Float` : the remaining duration of the projectile
 
 ### `api_get_height` <span id="api_get_height"></span>
-##### **描述**
-获取投射物高度
-##### **参数**
-无
+##### **describe**
+Get projectile height
+##### **parameters**
+none
 
-##### **返回值**
-`Float` : 投射物高度
+##### **return value**
+`Float` : Projectile height
 
 ### `api_get_face_angle` <span id="api_get_face_angle"></span>
-##### **描述**
-获取投射物角度
-##### **参数**
-无
+##### **describe**
+get projectile angle
+##### **parameters**
+none
 
-##### **返回值**
-`Float` : 投射物的角度
+##### **return value**
+`Float` : the angle of the projectile
 
 ### `api_get_position` <span id="api_get_position"></span>
-##### **描述**
-获取投射物位置
-##### **参数**
-无
+##### **describe**
+Get projectile position
+##### **parameters**
+none
 
-##### **返回值**
-`FVector3` : 投射物位置
+##### **return value**
+`FVector3` : Projectile position
 
 ### `api_get_face_dir` <span id="api_get_face_dir"></span>
-##### **描述**
-获取投射物朝向
-##### **参数**
-无
+##### **describe**
+Get projectile orientation
+##### **parameters**
+none
 
-##### **返回值**
-`FVector3` : 投射物朝向
+##### **return value**
+`FVector3` : Projectile direction
 
 ### `api_collide_obstacle_normal` <span id="api_collide_obstacle_normal"></span>
-##### **描述**
-投射物碰撞到的障碍的法线方向
-##### **参数**
-无
+##### **describe**
+The normal direction of the obstacle the projectile hits
+##### **parameters**
+none
 
-##### **返回值**
-`FVector3` : 法线方向
+##### **return value**
+`FVector3` : normal direction
 
 ### `api_raise_height` <span id="api_raise_height"></span>
-##### **描述**
-投射物抬高
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
+##### **describe**
+projectile raised
+##### **parameters**
+parameter name | description | type | default value
 :----------- | :----------- | :----------- | :----
-`y` | 定点数  | [`Fixed`](../etype#Fixed) | 
+`y` | fixed number | [`Fixed`](../etype#Fixed) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_play_link_sfx` <span id="api_play_link_sfx"></span>
-##### **描述**
-在投射物和单位之间挂链接特效
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
+##### **describe**
+Attach link effect between projectile and unit
+##### **parameters**
+parameter name | description | type | default value
 :----------- | :----------- | :----------- | :----
-`from_socket_name` | 起始挂节点  | [`Str`](../etype#Str) | 
-`target_unit` | 目标单位  | [`Unit`](../etype#Unit) | 
-`target_socket_name` | 目标挂节点  | [`Str`](../etype#Str) | 
-`sfx_res_id` | 特效编号  | [`SfxKey`](../etype#SfxKey) | 
-`scale` | 缩放比例  | [`Float`](../etype#Float) | 
-`keep_time` | 最多持续时间  | [`Float`](../etype#Float) | 
-`role` | 所属玩家  | [`Role`](../etype#Role) | None
-`visible_type` | 可见性规则  | [`UInt32`](../etype#UInt32) | 1
+`from_socket_name` | starting node | [`Str`](../etype#Str) |
+`target_unit` | target unit | [`Unit`](../etype#Unit) |
+`target_socket_name` | target socket | [`Str`](../etype#Str) |
+`sfx_res_id` | Effect ID | [`SfxKey`](../etype#SfxKey) |
+`scale` | scale | [`Float`](../etype#Float) |
+`keep_time` | maximum duration | [`Float`](../etype#Float) |
+`role` | owning player | [`Role`](../etype#Role) | None
+`visible_type` | visibility rules | [`UInt32`](../etype#UInt32) | 1
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_play_link_sfx_with_return` <span id="api_play_link_sfx_with_return"></span>
-##### **描述**
-在投射物和单位之间挂链接特效并返回特效实体
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
+##### **describe**
+Attach a link effect between the projectile and the unit and return the effect entity
+##### **parameters**
+parameter name | description | type | default value
 :----------- | :----------- | :----------- | :----
-`from_socket_name` | 起始挂节点  | [`Str`](../etype#Str) | 
-`target_unit` | 目标单位  | [`Unit`](../etype#Unit) | 
-`target_socket_name` | 目标挂节点  | [`Str`](../etype#Str) | 
-`sfx_res_id` | 特效编号  | [`SfxKey`](../etype#SfxKey) | 
-`scale` | 缩放比例  | [`Float`](../etype#Float) | 
-`keep_time` | 最多持续时间  | [`Float`](../etype#Float) | 
-`role` | 所属玩家  | [`Role`](../etype#Role) | None
-`visible_type` | 可见性规则  | [`UInt32`](../etype#UInt32) | 1
+`from_socket_name` | starting node | [`Str`](../etype#Str) |
+`target_unit` | target unit | [`Unit`](../etype#Unit) |
+`target_socket_name` | target socket | [`Str`](../etype#Str) |
+`sfx_res_id` | Effect ID | [`SfxKey`](../etype#SfxKey) |
+`scale` | scale | [`Float`](../etype#Float) |
+`keep_time` | maximum duration | [`Float`](../etype#Float) |
+`role` | owning player | [`Role`](../etype#Role) | None
+`visible_type` | visibility rules | [`UInt32`](../etype#UInt32) | 1
 
-##### **返回值**
-`Sfx` : 特效
+##### **return value**
+`Sfx` : Effects
 
 ### `api_play_link_sfx_to_projectile` <span id="api_play_link_sfx_to_projectile"></span>
-##### **描述**
-在投射物之间挂链接特效
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
+##### **describe**
+Hang link effects between projectiles
+##### **parameters**
+parameter name | description | type | default value
 :----------- | :----------- | :----------- | :----
-`from_socket_name` | 起始挂节点  | [`Str`](../etype#Str) | 
-`target_unit` | 目标投射物  | [`ProjectileEntity`](../etype#ProjectileEntity) | 
-`target_socket_name` | 目标挂节点  | [`Str`](../etype#Str) | 
-`sfx_res_id` | 特效编号  | [`SfxKey`](../etype#SfxKey) | 
-`scale` | 缩放比例  | [`Float`](../etype#Float) | 
-`keep_time` | 最多持续时间  | [`Float`](../etype#Float) | 
-`role` | 所属玩家  | [`Role`](../etype#Role) | None
-`visible_type` | 可见性规则  | [`UInt32`](../etype#UInt32) | 1
+`from_socket_name` | starting node | [`Str`](../etype#Str) |
+`target_unit` | target projectile | [`ProjectileEntity`](../etype#ProjectileEntity) |
+`target_socket_name` | target socket | [`Str`](../etype#Str) |
+`sfx_res_id` | Effect ID | [`SfxKey`](../etype#SfxKey) |
+`scale` | scale | [`Float`](../etype#Float) |
+`keep_time` | maximum duration | [`Float`](../etype#Float) |
+`role` | owning player | [`Role`](../etype#Role) | None
+`visible_type` | visibility rules | [`UInt32`](../etype#UInt32) | 1
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_get_str_attr` <span id="api_get_str_attr"></span>
-##### **描述**
-获取投射物的字符串属性
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
+##### **describe**
+Get the string property of the projectile
+##### **parameters**
+parameter name | description | type | default value
 :----------- | :----------- | :----------- | :----
-`attr_name` | 属性名称  | [`Str`](../etype#Str) | 
+`attr_name` | attribute name | [`Str`](../etype#Str) |
 
-##### **返回值**
-`Str` : 字符串类型返回值
+##### **return value**
+`Str` : String type return value
 
 ### `api_set_str_attr` <span id="api_set_str_attr"></span>
-##### **描述**
-设置投射物的字符串属性
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
+##### **describe**
+Set the projectile's string property
+##### **parameters**
+parameter name | description | type | default value
 :----------- | :----------- | :----------- | :----
-`attr_name` | 属性名称  | [`Str`](../etype#Str) | 
-`value` | 属性取值  | [`Str`](../etype#Str) | 
+`attr_name` | attribute name | [`Str`](../etype#Str) |
+`value` | attribute value | [`Str`](../etype#Str) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_add_tag` <span id="api_add_tag"></span>
-##### **描述**
-投射物添加键值对
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
+##### **describe**
+Projectiles add key-value pairs
+##### **parameters**
+parameter name | description | type | default value
 :----------- | :----------- | :----------- | :----
 `tag` | TAG  | [`Str`](../etype#Str) | 
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_remove_tag` <span id="api_remove_tag"></span>
-##### **描述**
-投射物移除键值对
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
+##### **describe**
+Projectile removal key-value pair
+##### **parameters**
+parameter name | description | type | default value
 :----------- | :----------- | :----------- | :----
-`tag` | TAG  | [`Str`](../etype#Str) | 
+`tag` | TAG  | [`Str`](../etype#Str) |
 
-##### **返回值**
-无
+##### **return value**
+none

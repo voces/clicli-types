@@ -1,541 +1,541 @@
 # Ability
-## 描述
-技能
+## describe
+Skill
 
 -----
-## 方法列表
-方法名  | 简述  |
+## method list
+Method name | Brief description |
 :----- | :--- |
-[`api_get_str_attr`](#api_get_str_attr) | 获取技能字符串属性 |
-[`api_set_str_attr`](#api_set_str_attr) | 设置技能字符串属性 |
-[`api_set_name`](#api_set_name) | 设置技能名字 |
-[`api_get_owner`](#api_get_owner) | 获取技能拥有者 |
-[`api_get_type`](#api_get_type) | 获取技能类型 |
-[`api_get_ability_index`](#api_get_ability_index) | 获取技能类型 |
-[`api_get_ability_seq`](#api_get_ability_seq) | 获取技能拥有者 |
-[`api_get_ability_cast_type`](#api_get_ability_cast_type) | 获取技能释放类型 |
-[`api_remove`](#api_remove) | 移除技能 |
-[`api_get_level`](#api_get_level) | 获取技能的等级 |
-[`has_tag`](#has_tag) | 是否拥有标记 |
-[`api_remove_kv`](#api_remove_kv) | 移除键值对 |
-[`api_calc_ability_formula_kv`](#api_calc_ability_formula_kv) | 计算公式类型KV |
-[`add_timer`](#add_timer) | 添加定时器 |
-[`api_has_target`](#api_has_target) | 技能对象是否拥有目标 |
-[`api_get_release_position`](#api_get_release_position) | 获取技能释放的位置 |
-[`api_get_release_direction`](#api_get_release_direction) | 获取技能释放的方向 |
-[`api_get_float_attr`](#api_get_float_attr) | 获取技能实数属性值 |
-[`api_get_int_attr`](#api_get_int_attr) | 获取技能整数属性值 |
-[`api_get_bool_attr`](#api_get_bool_attr) | 获取技能布尔属性值 |
-[`api_set_level`](#api_set_level) | 设置技能等级 |
-[`api_learn_ability`](#api_learn_ability) | 学习技能 |
-[`api_add_level`](#api_add_level) | 增加技能等级 |
-[`api_add_float_attr`](#api_add_float_attr) | 增量修改技能实数属性值 |
-[`api_set_float_attr`](#api_set_float_attr) | 设置技能实数属性值 |
-[`api_add_int_attr`](#api_add_int_attr) | 增量修改技能整数属性值 |
-[`api_set_int_attr`](#api_set_int_attr) | 设置技能整数属性值 |
-[`api_set_bool_attr`](#api_set_bool_attr) | 设置技能布尔属性值 |
-[`api_break_ability_in_cs`](#api_break_ability_in_cs) | 阻止当前技能施法 |
-[`api_get_ability_id`](#api_get_ability_id) | 获取技能编号 |
-[`api_is_melee_ability`](#api_is_melee_ability) | 是否是近战技能 |
-[`api_is_common_atk`](#api_is_common_atk) | 是否是普攻 |
-[`is_passive_ability`](#is_passive_ability) | 是否是被动 |
-[`api_get_name`](#api_get_name) | 获取技能名称 |
-[`api_get_ability_stack`](#api_get_ability_stack) | 获取技能的充能层数 |
-[`api_add_ability_stack_count`](#api_add_ability_stack_count) | 增加技能充能层数 |
-[`api_set_ability_stack_count`](#api_set_ability_stack_count) | 设置技能充能层数 |
-[`api_get_cd_left_time`](#api_get_cd_left_time) | 获取当前技能剩余冷却时间 |
-[`api_immediately_clear_cd`](#api_immediately_clear_cd) | 技能立即冷却 |
-[`api_change_ability_cd_cold_down`](#api_change_ability_cd_cold_down) | 改变技能冷却时间 |
-[`api_set_ability_cd`](#api_set_ability_cd) | 设置技能冷却时间 |
-[`api_add_ability_cd`](#api_add_ability_cd) | 增加技能冷却时间 |
-[`api_restart_cd`](#api_restart_cd) | 从头开始冷却 |
-[`api_set_ability_cur_stack_cd`](#api_set_ability_cur_stack_cd) | 改变当次充能时间 |
-[`api_get_stack_cd_left_time`](#api_get_stack_cd_left_time) | 获取技能当前剩余充能时间 |
-[`api_enable`](#api_enable) | 启用技能 |
-[`api_disable`](#api_disable) | 禁用技能 |
+[`api_get_str_attr`](#api_get_str_attr) | Get skill string attribute |
+[`api_set_str_attr`](#api_set_str_attr) | Set skill string attributes |
+[`api_set_name`](#api_set_name) | Set skill name |
+[`api_get_owner`](#api_get_owner) | Get the skill owner |
+[`api_get_type`](#api_get_type) | Get the skill type |
+[`api_get_ability_index`](#api_get_ability_index) | Get skill type |
+[`api_get_ability_seq`](#api_get_ability_seq) | Get the skill owner |
+[`api_get_ability_cast_type`](#api_get_ability_cast_type) | Get skill cast type |
+[`api_remove`](#api_remove) | remove skill |
+[`api_get_level`](#api_get_level) | Get skill level |
+[`has_tag`](#has_tag) | Has a tag |
+[`api_remove_kv`](#api_remove_kv) | remove key-value pair |
+[`api_calc_ability_formula_kv`](#api_calc_ability_formula_kv) | Calculation formula type KV |
+[`add_timer`](#add_timer) | Add timer |
+[`api_has_target`](#api_has_target) | Whether the skill object has a target |
+[`api_get_release_position`](#api_get_release_position) | Get the position of the skill release |
+[`api_get_release_direction`](#api_get_release_direction) | Get the direction of skill release |
+[`api_get_float_attr`](#api_get_float_attr) | Get the real attribute value of the skill |
+[`api_get_int_attr`](#api_get_int_attr) | Get skill integer attribute value |
+[`api_get_bool_attr`](#api_get_bool_attr) | Get skill boolean attribute value |
+[`api_set_level`](#api_set_level) | Set skill level |
+[`api_learn_ability`](#api_learn_ability) | Learning Skills |
+[`api_add_level`](#api_add_level) | Add skill level |
+[`api_add_float_attr`](#api_add_float_attr) | Incrementally modify skill real attribute value |
+[`api_set_float_attr`](#api_set_float_attr) | Set skill real attribute value |
+[`api_add_int_attr`](#api_add_int_attr) | Incremental modification skill integer attribute value |
+[`api_set_int_attr`](#api_set_int_attr) | Set skill integer attribute value |
+[`api_set_bool_attr`](#api_set_bool_attr) | Set skill boolean attribute value |
+[`api_break_ability_in_cs`](#api_break_ability_in_cs) | Prevent current ability from casting |
+[`api_get_ability_id`](#api_get_ability_id) | Get skill ID |
+[`api_is_melee_ability`](#api_is_melee_ability) | Is it a melee skill |
+[`api_is_common_atk`](#api_is_common_atk) | Whether it is a normal attack |
+[`is_passive_ability`](#is_passive_ability) | Is it passive |
+[`api_get_name`](#api_get_name) | Get the skill name |
+[`api_get_ability_stack`](#api_get_ability_stack) | Get the charge stacks of skills |
+[`api_add_ability_stack_count`](#api_add_ability_stack_count) | Increase skill charge stacks |
+[`api_set_ability_stack_count`](#api_set_ability_stack_count) | Set skill charge stacks |
+[`api_get_cd_left_time`](#api_get_cd_left_time) | Get the remaining cooldown time of the current skill |
+[`api_immediately_clear_cd`](#api_immediately_clear_cd) | Immediate skill cooldown |
+[`api_change_ability_cd_cold_down`](#api_change_ability_cd_cold_down) | Change Skill Cooldown |
+[`api_set_ability_cd`](#api_set_ability_cd) | Set skill cooldown |
+[`api_add_ability_cd`](#api_add_ability_cd) | Increase skill cooldown |
+[`api_restart_cd`](#api_restart_cd) | Cool down from scratch |
+[`api_set_ability_cur_stack_cd`](#api_set_ability_cur_stack_cd) | Change current charge time |
+[`api_get_stack_cd_left_time`](#api_get_stack_cd_left_time) | Get the current remaining charging time of the skill |
+[`api_enable`](#api_enable) | Enable skill |
+[`api_disable`](#api_disable) | Disable skill |
 
 
 -----
-## 方法
+## method
 
 ### `api_get_str_attr` <span id="api_get_str_attr"></span>
-##### **描述**
-获取技能字符串属性
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`attr` | 标记名  | [`AbilityStrAttr`](../etype#AbilityStrAttr) | 
+##### **describe**
+Get skill string attribute
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`attr` | tagname | [`AbilityStrAttr`](../etype#AbilityStrAttr) |
 
-##### **返回值**
-`Str` : 字符串属性
+##### **return value**
+`Str` : String property
 
 ### `api_set_str_attr` <span id="api_set_str_attr"></span>
-##### **描述**
-设置技能字符串属性
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`attr` | 标记名  | [`AbilityStrAttr`](../etype#AbilityStrAttr) | 
-`value` | 字符串值  | [`Str`](../etype#Str) | 
+##### **describe**
+Set skill string properties
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`attr` | tagname | [`AbilityStrAttr`](../etype#AbilityStrAttr) |
+`value` | String value | [`Str`](../etype#Str) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_set_name` <span id="api_set_name"></span>
-##### **描述**
-设置技能名字
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`value` | 字符串值  | [`Str`](../etype#Str) | 
+##### **describe**
+set skill name
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`value` | String value | [`Str`](../etype#Str) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_get_owner` <span id="api_get_owner"></span>
-##### **描述**
-获取技能拥有者
-##### **参数**
-无
+##### **describe**
+Get the skill owner
+##### **parameters**
+none
 
-##### **返回值**
-`Unit` : 技能拥有者
+##### **return value**
+`Unit` : the skill owner
 
 ### `api_get_type` <span id="api_get_type"></span>
-##### **描述**
-获取技能类型
-##### **参数**
-无
+##### **describe**
+Get skill type
+##### **parameters**
+none
 
-##### **返回值**
-`AbilityType` : 技能类型
+##### **return value**
+`AbilityType` : the skill type
 
 ### `api_get_ability_index` <span id="api_get_ability_index"></span>
-##### **描述**
-获取技能类型
-##### **参数**
-无
+##### **describe**
+Get skill type
+##### **parameters**
+none
 
-##### **返回值**
-`AbilityIndex` : 技能序号
+##### **return value**
+`AbilityIndex` : skill number
 
 ### `api_get_ability_seq` <span id="api_get_ability_seq"></span>
-##### **描述**
-获取技能拥有者
-##### **参数**
-无
+##### **describe**
+Get the skill owner
+##### **parameters**
+none
 
-##### **返回值**
-`AbilitySeq` : 技能Seq
+##### **return value**
+`AbilitySeq` : Ability Seq
 
 ### `api_get_ability_cast_type` <span id="api_get_ability_cast_type"></span>
-##### **描述**
-获取技能释放类型
-##### **参数**
-无
+##### **describe**
+Get skill release type
+##### **parameters**
+none
 
-##### **返回值**
-`AbilityCastType` : 技能释放类型
+##### **return value**
+`AbilityCastType` : skill cast type
 
 ### `api_remove` <span id="api_remove"></span>
-##### **描述**
-移除技能
-##### **参数**
-无
+##### **describe**
+remove skill
+##### **parameters**
+none
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_get_level` <span id="api_get_level"></span>
-##### **描述**
-获取技能的等级
-##### **参数**
-无
+##### **describe**
+Acquire skill level
+##### **parameters**
+none
 
-##### **返回值**
-`Int32` : 技能等级
+##### **return value**
+`Int32` : skill level
 
 ### `has_tag` <span id="has_tag"></span>
-##### **描述**
-是否拥有标记
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`tag` | 标记名  | [`Str`](../etype#Str) | 
+##### **describe**
+Has a marker
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`tag` | tag name | [`Str`](../etype#Str) |
 
-##### **返回值**
-`Bool` : 是否有标记
+##### **return value**
+`Bool` : whether there is a flag
 
 ### `api_remove_kv` <span id="api_remove_kv"></span>
-##### **描述**
-移除键值对
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`k` | 键  | [`Str`](../etype#Str) | 
+##### **describe**
+remove key-value pairs
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`k` | key | [`Str`](../etype#Str) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_calc_ability_formula_kv` <span id="api_calc_ability_formula_kv"></span>
-##### **描述**
-计算公式类型KV
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`k` | 键  | [`Str`](../etype#Str) | 
+##### **describe**
+Calculation formula type KV
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`k` | key | [`Str`](../etype#Str) |
 
-##### **返回值**
-`Fixed` : 值
+##### **return value**
+`Fixed` : value
 
 ### `add_timer` <span id="add_timer"></span>
-##### **描述**
-添加定时器
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`time` | 定时时长  | [`Fixed`](../etype#Fixed) | 
-`callback` | 超时函数  | [`Function`](../etype#Function) | 
+##### **describe**
+Add timer
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`time` | timer duration | [`Fixed`](../etype#Fixed) |
+`callback` | timeout function | [`Function`](../etype#Function) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_has_target` <span id="api_has_target"></span>
-##### **描述**
-技能对象是否拥有目标
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`runtime_id` | runtime_id  | [`Int32`](../etype#Int32) | 
+##### **describe**
+Whether the skill object has a target
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`runtime_id` | runtime_id | [`Int32`](../etype#Int32) |
 
-##### **返回值**
-`Bool` : 技能对象是否拥有目标
+##### **return value**
+`Bool` : Whether the skill object has a target
 
 ### `api_get_release_position` <span id="api_get_release_position"></span>
-##### **描述**
-获取技能释放的位置
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`runtime_id` | runtime_id  | [`Int32`](../etype#Int32) | 
+##### **describe**
+Get the location of the skill release
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`runtime_id` | runtime_id | [`Int32`](../etype#Int32) |
 
-##### **返回值**
-`FPoint` : 技能释放的位置
+##### **return value**
+`FPoint` : The position where the skill is released
 
 ### `api_get_release_direction` <span id="api_get_release_direction"></span>
-##### **描述**
-获取技能释放的方向
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`runtime_id` | runtime_id  | [`Int32`](../etype#Int32) | 
+##### **describe**
+Get the direction of skill release
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`runtime_id` | runtime_id | [`Int32`](../etype#Int32) |
 
-##### **返回值**
-`Fixed` : 技能释放的方向
+##### **return value**
+`Fixed` : the direction in which the skill is released
 
 ### `api_get_float_attr` <span id="api_get_float_attr"></span>
-##### **描述**
-获取技能实数属性值
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`attr` | 属性名  | [`Str`](../etype#Str) | 
+##### **describe**
+Get the real attribute value of the skill
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`attr` | attribute name | [`Str`](../etype#Str) |
 
-##### **返回值**
-`Fixed` : 实数属性值
+##### **return value**
+`Fixed` : Real property value
 
 ### `api_get_int_attr` <span id="api_get_int_attr"></span>
-##### **描述**
-获取技能整数属性值
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`attr` | 属性名  | [`Str`](../etype#Str) | 
+##### **describe**
+Get skill integer attribute value
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`attr` | attribute name | [`Str`](../etype#Str) |
 
-##### **返回值**
-`Int32` : 整数属性值
+##### **return value**
+`Int32` : integer property value
 
 ### `api_get_bool_attr` <span id="api_get_bool_attr"></span>
-##### **描述**
-获取技能布尔属性值
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`attr` | 属性名  | [`Str`](../etype#Str) | 
+##### **describe**
+Get skill boolean attribute value
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`attr` | attribute name | [`Str`](../etype#Str) |
 
-##### **返回值**
-`Bool` : 布尔属性值
+##### **return value**
+`Bool` : Boolean property value
 
 ### `api_set_level` <span id="api_set_level"></span>
-##### **描述**
-设置技能等级
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`level` | 技能等级  | [`Int32`](../etype#Int32) | 
+##### **describe**
+Set skill level
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`level` | skill level | [`Int32`](../etype#Int32) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_learn_ability` <span id="api_learn_ability"></span>
-##### **描述**
-学习技能
-##### **参数**
-无
+##### **describe**
+learning skills
+##### **parameters**
+none
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_add_level` <span id="api_add_level"></span>
-##### **描述**
-增加技能等级
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`level` | 技能等级  | [`Int32`](../etype#Int32) | 
+##### **describe**
+Increase skill level
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`level` | skill level | [`Int32`](../etype#Int32) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_add_float_attr` <span id="api_add_float_attr"></span>
-##### **描述**
-增量修改技能实数属性值
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`attr` | 属性名  | [`Str`](../etype#Str) | 
-`value` | 实数属性值  | [`Fixed`](../etype#Fixed) | 
+##### **describe**
+Incrementally modify the real attribute value of the skill
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`attr` | attribute name | [`Str`](../etype#Str) |
+`value` | real property value | [`Fixed`](../etype#Fixed) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_set_float_attr` <span id="api_set_float_attr"></span>
-##### **描述**
-设置技能实数属性值
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`attr` | 属性名  | [`Str`](../etype#Str) | 
-`value` | 实数属性值  | [`Fixed`](../etype#Fixed) | 
+##### **describe**
+Set skill real number attribute value
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`attr` | attribute name | [`Str`](../etype#Str) |
+`value` | real property value | [`Fixed`](../etype#Fixed) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_add_int_attr` <span id="api_add_int_attr"></span>
-##### **描述**
-增量修改技能整数属性值
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`attr` | 属性名  | [`Str`](../etype#Str) | 
-`value` | 整数属性值  | [`Int32`](../etype#Int32) | 
+##### **describe**
+Incremental modification skill integer attribute value
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`attr` | attribute name | [`Str`](../etype#Str) |
+`value` | integer property value | [`Int32`](../etype#Int32) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_set_int_attr` <span id="api_set_int_attr"></span>
-##### **描述**
-设置技能整数属性值
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`attr` | 属性名  | [`Str`](../etype#Str) | 
-`value` | 整数属性值  | [`Int32`](../etype#Int32) | 
+##### **describe**
+Set skill integer attribute value
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`attr` | attribute name | [`Str`](../etype#Str) |
+`value` | integer property value | [`Int32`](../etype#Int32) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_set_bool_attr` <span id="api_set_bool_attr"></span>
-##### **描述**
-设置技能布尔属性值
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`attr` | 属性名  | [`Str`](../etype#Str) | 
-`value` | 布尔属性值  | [`Bool`](../etype#Bool) | 
+##### **describe**
+Set skill boolean attribute value
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`attr` | attribute name | [`Str`](../etype#Str) |
+`value` | boolean property value | [`Bool`](../etype#Bool) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_break_ability_in_cs` <span id="api_break_ability_in_cs"></span>
-##### **描述**
-阻止当前技能施法
-##### **参数**
-无
+##### **describe**
+Prevents the current skill from casting
+##### **parameters**
+none
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_get_ability_id` <span id="api_get_ability_id"></span>
-##### **描述**
-获取技能编号
-##### **参数**
-无
+##### **describe**
+Get skill number
+##### **parameters**
+none
 
-##### **返回值**
-`AbilityKey` : 技能编号
+##### **return value**
+`AbilityKey` : skill number
 
 ### `api_is_melee_ability` <span id="api_is_melee_ability"></span>
-##### **描述**
-是否是近战技能
-##### **参数**
-无
+##### **describe**
+Is it a melee skill?
+##### **parameters**
+none
 
-##### **返回值**
-`Bool` : 布尔值
+##### **return value**
+`Bool` : boolean value
 
 ### `api_is_common_atk` <span id="api_is_common_atk"></span>
-##### **描述**
-是否是普攻
-##### **参数**
-无
+##### **describe**
+Is it a general attack
+##### **parameters**
+none
 
-##### **返回值**
-`Bool` : 布尔值
+##### **return value**
+`Bool` : boolean value
 
 ### `is_passive_ability` <span id="is_passive_ability"></span>
-##### **描述**
-是否是被动
-##### **参数**
-无
+##### **describe**
+Is it passive
+##### **parameters**
+none
 
-##### **返回值**
-`Bool` : 布尔值
+##### **return value**
+`Bool` : boolean value
 
 ### `api_get_name` <span id="api_get_name"></span>
-##### **描述**
-获取技能名称
-##### **参数**
-无
+##### **describe**
+Get skill name
+##### **parameters**
+none
 
-##### **返回值**
-`Str` : 技能名称
+##### **return value**
+`Str` : skill name
 
 ### `api_get_ability_stack` <span id="api_get_ability_stack"></span>
-##### **描述**
-获取技能的充能层数
-##### **参数**
-无
+##### **describe**
+Acquires the charge stacks of the skill
+##### **parameters**
+none
 
-##### **返回值**
-`Int32` : 技能层数
+##### **return value**
+`Int32` : skill stacks
 
 ### `api_add_ability_stack_count` <span id="api_add_ability_stack_count"></span>
-##### **描述**
-增加技能充能层数
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`value` | 充能层数  | [`Int32`](../etype#Int32) | 
+##### **describe**
+Increase skill charge stacks
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`value` | Charge stacks | [`Int32`](../etype#Int32) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_set_ability_stack_count` <span id="api_set_ability_stack_count"></span>
-##### **描述**
-设置技能充能层数
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`value` | 充能层数  | [`Int32`](../etype#Int32) | 
+##### **describe**
+Set skill charge levels
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`value` | Charge stacks | [`Int32`](../etype#Int32) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_get_cd_left_time` <span id="api_get_cd_left_time"></span>
-##### **描述**
-获取当前技能剩余冷却时间
-##### **参数**
-无
+##### **describe**
+Get the remaining cooldown of the current skill
+##### **parameters**
+none
 
-##### **返回值**
-`Fixed` : 剩余冷却时间
+##### **return value**
+`Fixed` : remaining cooldown
 
 ### `api_immediately_clear_cd` <span id="api_immediately_clear_cd"></span>
-##### **描述**
-技能立即冷却
-##### **参数**
-无
+##### **describe**
+Skill cools down immediately
+##### **parameters**
+none
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_change_ability_cd_cold_down` <span id="api_change_ability_cd_cold_down"></span>
-##### **描述**
-改变技能冷却时间
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`value` | 冷却时间  | [`Fixed`](../etype#Fixed) | 
+##### **describe**
+Change skill cooldown
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`value` | cooldown | [`Fixed`](../etype#Fixed) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_set_ability_cd` <span id="api_set_ability_cd"></span>
-##### **描述**
-设置技能冷却时间
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`value` | 冷却时间  | [`Fixed`](../etype#Fixed) | 
+##### **describe**
+Set skill cooldown
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`value` | cooldown | [`Fixed`](../etype#Fixed) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_add_ability_cd` <span id="api_add_ability_cd"></span>
-##### **描述**
-增加技能冷却时间
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`value` | 冷却时间  | [`Fixed`](../etype#Fixed) | 
+##### **describe**
+Increase skill cooldown
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`value` | cooldown | [`Fixed`](../etype#Fixed) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_restart_cd` <span id="api_restart_cd"></span>
-##### **描述**
-从头开始冷却
-##### **参数**
-无
+##### **describe**
+Cool from scratch
+##### **parameters**
+none
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_set_ability_cur_stack_cd` <span id="api_set_ability_cur_stack_cd"></span>
-##### **描述**
-改变当次充能时间
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
-:----------- | :----------- | :----------- | :----
-`value` | 冷却时间  | [`Fixed`](../etype#Fixed) | 
+##### **describe**
+Change the current charging time
+##### **parameters**
+parameter name | description | type | default value
+:------------ | :------------ | :------------ | :----
+`value` | cooldown | [`Fixed`](../etype#Fixed) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_get_stack_cd_left_time` <span id="api_get_stack_cd_left_time"></span>
-##### **描述**
-获取技能当前剩余充能时间
-##### **参数**
-无
+##### **describe**
+Get the current remaining charge time of the skill
+##### **parameters**
+none
 
-##### **返回值**
-`Fixed` : 剩余充能时间
+##### **return value**
+`Fixed` : remaining charge time
 
 ### `api_enable` <span id="api_enable"></span>
-##### **描述**
-启用技能
-##### **参数**
-无
+##### **describe**
+enable skills
+##### **parameters**
+none
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_disable` <span id="api_disable"></span>
-##### **描述**
-禁用技能
-##### **参数**
-无
+##### **describe**
+Disable skills
+##### **parameters**
+none
 
-##### **返回值**
-无
+##### **return value**
+none

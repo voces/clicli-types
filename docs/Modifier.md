@@ -1,349 +1,349 @@
 # Modifier
-## 描述
-效果触发器
+## describe
+effect trigger
 
 -----
-## 方法列表
-方法名  | 简述  |
+## method list
+Method name | Brief description |
 :----- | :--- |
-[`api_add_buff_max_layer`](#api_add_buff_max_layer) | 增加buff最大层数 |
-[`api_add_buff_layer`](#api_add_buff_layer) | 增加buff实例层数 |
-[`api_add_buff_residue_time`](#api_add_buff_residue_time) | 增加buff的剩余持续时间 |
-[`api_add_float_shield`](#api_add_float_shield) | 增加buff浮点属性效果 |
-[`api_add_cycle_time`](#api_add_cycle_time) | 增加循环周期事件的循环时间 |
-[`api_prevent_will_modifier`](#api_prevent_will_modifier) | 阻止即将获得的魔法效果 |
-[`api_remove`](#api_remove) | 删除魔法效果 |
-[`api_get_owner`](#api_get_owner) | 获取效果携带者 |
-[`api_get_releaser`](#api_get_releaser) | 获取效果释放者 |
-[`api_get_residue_time`](#api_get_residue_time) | 获取剩余持续时间 |
-[`api_get_passed_time`](#api_get_passed_time) | 获取已经持续时间 |
-[`api_get_int_attr`](#api_get_int_attr) | 获取buff整数属性效果 |
-[`api_get_modifier_type`](#api_get_modifier_type) | 获取buff类别 |
-[`api_get_modifier_effect_type`](#api_get_modifier_effect_type) | 获取buff影响类型 |
-[`api_get_float_attr`](#api_get_float_attr) | 获取buff浮点属性效果 |
-[`api_get_sub_halo_modifier_key`](#api_get_sub_halo_modifier_key) | 获取光环魔法效果的子光环类型 |
-[`api_get_halo_modifier_instance`](#api_get_halo_modifier_instance) | 获取子光环的光环实体 |
-[`api_get_halo_inf_rng`](#api_get_halo_inf_rng) | 获取光环的范围 |
-[`api_get_will_modifier_unit`](#api_get_will_modifier_unit) | 获取即将获得魔法效果的单位 |
-[`api_get_will_modifier_key`](#api_get_will_modifier_key) | 获取即将获得魔法效果类型 |
-[`api_get_modifier_unique_id`](#api_get_modifier_unique_id) | 获取buff的唯一id |
-[`api_get_modifier_key`](#api_get_modifier_key) | 获取buff的类型key |
-[`api_get_str_attr`](#api_get_str_attr) | 获取buff字符属性效果 |
-[`api_set_buff_max_layer`](#api_set_buff_max_layer) | 设置buff整数属性效果 |
-[`api_set_buff_layer`](#api_set_buff_layer) | 设置buff实例层数 |
-[`api_set_buff_residue_time`](#api_set_buff_residue_time) | 设置buff的剩余持续时间 |
-[`api_set_float_shield`](#api_set_float_shield) | 设置buff浮点属性效果 |
-[`api_set_cycle_time`](#api_set_cycle_time) | 设置循环周期事件 |
-[`api_set_duration`](#api_set_duration) | 设置魔法效果的持续时间 |
-[`api_set_buff_str_attr`](#api_set_buff_str_attr) | 设置buff的字符串属性 |
+[`api_add_buff_max_layer`](#api_add_buff_max_layer) | Increase the maximum number of buff layers |
+[`api_add_buff_layer`](#api_add_buff_layer) | Increase the number of buff instance layers |
+[`api_add_buff_residue_time`](#api_add_buff_residue_time) | Increase the remaining duration of the buff |
+[`api_add_float_shield`](#api_add_float_shield) | Increase the effect of buff floating point attribute |
+[`api_add_cycle_time`](#api_add_cycle_time) | Increase the cycle time of cycle events |
+[`api_prevent_will_modifier`](#api_prevent_will_modifier) ​​| Prevents incoming magic effects |
+[`api_remove`](#api_remove) | remove magic effect |
+[`api_get_owner`](#api_get_owner) | Get the effect carrier |
+[`api_get_releaser`](#api_get_releaser) | Get the effect releaser |
+[`api_get_residue_time`](#api_get_residue_time) | Get remaining duration |
+[`api_get_passed_time`](#api_get_passed_time) | Get the elapsed time |
+[`api_get_int_attr`](#api_get_int_attr) | Get the effect of buff integer attribute |
+[`api_get_modifier_type`](#api_get_modifier_type) | Get buff type |
+[`api_get_modifier_effect_type`](#api_get_modifier_effect_type) | Get the buff effect type |
+[`api_get_float_attr`](#api_get_float_attr) | Get the effect of buff floating point attribute |
+[`api_get_sub_halo_modifier_key`](#api_get_sub_halo_modifier_key) | Get the sub-halo type of the halo magic effect |
+[`api_get_halo_modifier_instance`](#api_get_halo_modifier_instance) | Get the halo entity of the sub halo |
+[`api_get_halo_inf_rng`](#api_get_halo_inf_rng) | Get the range of the halo |
+[`api_get_will_modifier_unit`](#api_get_will_modifier_unit) | Get the unit that will receive the magic effect |
+[`api_get_will_modifier_key`](#api_get_will_modifier_key) | Get the type of magic effect to be obtained |
+[`api_get_modifier_unique_id`](#api_get_modifier_unique_id) | Get the unique id of the buff |
+[`api_get_modifier_key`](#api_get_modifier_key) | Get the type key of buff |
+[`api_get_str_attr`](#api_get_str_attr) | Get buff character attribute effect |
+[`api_set_buff_max_layer`](#api_set_buff_max_layer) | Set buff integer attribute effect |
+[`api_set_buff_layer`](#api_set_buff_layer) | Set the number of buff instance layers |
+[`api_set_buff_residue_time`](#api_set_buff_residue_time) | Set the remaining duration of the buff |
+[`api_set_float_shield`](#api_set_float_shield) | Set the effect of buff floating point properties |
+[`api_set_cycle_time`](#api_set_cycle_time) | Set cycle event |
+[`api_set_duration`](#api_set_duration) | Set the duration of the magic effect |
+[`api_set_buff_str_attr`](#api_set_buff_str_attr) | Set the string attribute of buff |
 
 
 -----
-## 方法
+## method
 
 ### `api_add_buff_max_layer` <span id="api_add_buff_max_layer"></span>
-##### **描述**
-增加buff最大层数
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
+##### **describe**
+Increase the maximum number of buff stacks
+##### **parameters**
+parameter name | description | type | default value
 :----------- | :----------- | :----------- | :----
-`attr_num` | 整数属性值  | [`UInt32`](../etype#UInt32) | 
+`attr_num` | integer attribute value | [`UInt32`](../etype#UInt32) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_add_buff_layer` <span id="api_add_buff_layer"></span>
-##### **描述**
-增加buff实例层数
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
+##### **describe**
+Increase the number of layers of buff instances
+##### **parameters**
+parameter name | description | type | default value
 :----------- | :----------- | :----------- | :----
-`plus_layer` | 整数属性值  | [`Int64`](../etype#Int64) | 
+`plus_layer` | integer attribute value | [`Int64`](../etype#Int64) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_add_buff_residue_time` <span id="api_add_buff_residue_time"></span>
-##### **描述**
-增加buff的剩余持续时间
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
+##### **describe**
+Increases the remaining duration of the buff
+##### **parameters**
+parameter name | description | type | default value
 :----------- | :----------- | :----------- | :----
-`residue_time` | 浮点数剩余时间  | [`Fixed`](../etype#Fixed) | 
+`residue_time` | float remaining time | [`Fixed`](../etype#Fixed) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_add_float_shield` <span id="api_add_float_shield"></span>
-##### **描述**
-增加buff浮点属性效果
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
+##### **describe**
+Increase the effect of buff floating point attribute
+##### **parameters**
+parameter name | description | type | default value
 :----------- | :----------- | :----------- | :----
-`attr_name` | 属性名称  | [`Str`](../etype#Str) | 
-`attr_num` | 浮点数属性值  | [`Fixed`](../etype#Fixed) | 
+`attr_name` | attribute name | [`Str`](../etype#Str) |
+`attr_num` | float attribute value | [`Fixed`](../etype#Fixed) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_add_cycle_time` <span id="api_add_cycle_time"></span>
-##### **描述**
-增加循环周期事件的循环时间
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
+##### **describe**
+Increase the cycle time of recurring periodic events
+##### **parameters**
+parameter name | description | type | default value
 :----------- | :----------- | :----------- | :----
-`new_cycle_time` | 浮点数属性值  | [`Fixed`](../etype#Fixed) | 
+`new_cycle_time` | float property value | [`Fixed`](../etype#Fixed) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_prevent_will_modifier` <span id="api_prevent_will_modifier"></span>
-##### **描述**
-阻止即将获得的魔法效果
-##### **参数**
-无
+##### **describe**
+Blocks incoming magic effects
+##### **parameters**
+none
 
-##### **返回值**
-`Bool` : 返回值
+##### **return value**
+`Bool` : return value
 
 ### `api_remove` <span id="api_remove"></span>
-##### **描述**
-删除魔法效果
-##### **参数**
-无
+##### **describe**
+remove magic effect
+##### **parameters**
+none
 
-##### **返回值**
-`Bool` : 返回值
+##### **return value**
+`Bool` : return value
 
 ### `api_get_owner` <span id="api_get_owner"></span>
-##### **描述**
-获取效果携带者
-##### **参数**
-无
+##### **describe**
+Get the effect carrier
+##### **parameters**
+none
 
-##### **返回值**
-`Unit` : 效果携带者
+##### **return value**
+`Unit` : the effect carrier
 
 ### `api_get_releaser` <span id="api_get_releaser"></span>
-##### **描述**
-获取效果释放者
-##### **参数**
-无
+##### **describe**
+Get the effect releaser
+##### **parameters**
+none
 
-##### **返回值**
-`Unit` : 效果释放者
+##### **return value**
+`Unit` : the effector
 
 ### `api_get_residue_time` <span id="api_get_residue_time"></span>
-##### **描述**
-获取剩余持续时间
-##### **参数**
-无
+##### **describe**
+Get remaining duration
+##### **parameters**
+none
 
-##### **返回值**
-`Fixed` : 剩余持续时间
+##### **return value**
+`Fixed` : remaining duration
 
 ### `api_get_passed_time` <span id="api_get_passed_time"></span>
-##### **描述**
-获取已经持续时间
-##### **参数**
-无
+##### **describe**
+get elapsed duration
+##### **parameters**
+none
 
-##### **返回值**
-`Fixed` : 已经持续时间
+##### **return value**
+`Fixed` : has duration
 
 ### `api_get_int_attr` <span id="api_get_int_attr"></span>
-##### **描述**
-获取buff整数属性效果
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
+##### **describe**
+Get the buff integer attribute effect
+##### **parameters**
+parameter name | description | type | default value
 :----------- | :----------- | :----------- | :----
-`attr_name` | 属性名称  | [`Str`](../etype#Str) | 
+`attr_name` | attribute name | [`Str`](../etype#Str) |
 
-##### **返回值**
-`UInt32` : 整数类型返回值
+##### **return value**
+`UInt32` : Integer type return value
 
 ### `api_get_modifier_type` <span id="api_get_modifier_type"></span>
-##### **描述**
-获取buff类别
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
+##### **describe**
+Get the buff category
+##### **parameters**
+parameter name | description | type | default value
 :----------- | :----------- | :----------- | :----
-`attr_name` | 属性名称  | [`Str`](../etype#Str) | 
+`attr_name` | attribute name | [`Str`](../etype#Str) |
 
-##### **返回值**
-`ModifierType` : 魔法效果类别
+##### **return value**
+`ModifierType` : the type of magic effect
 
 ### `api_get_modifier_effect_type` <span id="api_get_modifier_effect_type"></span>
-##### **描述**
-获取buff影响类型
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
+##### **describe**
+Get the buff effect type
+##### **parameters**
+parameter name | description | type | default value
 :----------- | :----------- | :----------- | :----
-`attr_name` | 属性名称  | [`Str`](../etype#Str) | 
+`attr_name` | attribute name | [`Str`](../etype#Str) |
 
-##### **返回值**
-`ModifierEffectType` : 魔法效果影响类别
+##### **return value**
+`ModifierEffectType` : the magic effect effect type
 
 ### `api_get_float_attr` <span id="api_get_float_attr"></span>
-##### **描述**
-获取buff浮点属性效果
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
+##### **describe**
+Get the effect of the buff floating point attribute
+##### **parameters**
+parameter name | description | type | default value
 :----------- | :----------- | :----------- | :----
-`attr_name` | 属性名称  | [`Str`](../etype#Str) | 
+`attr_name` | attribute name | [`Str`](../etype#Str) |
 
-##### **返回值**
-`Fixed` : 浮点数返回类型
+##### **return value**
+`Fixed` : float return type
 
 ### `api_get_sub_halo_modifier_key` <span id="api_get_sub_halo_modifier_key"></span>
-##### **描述**
-获取光环魔法效果的子光环类型
-##### **参数**
-无
+##### **describe**
+Get the sub-aura type of the aura magic effect
+##### **parameters**
+none
 
-##### **返回值**
-`ModifierKey` : 魔法效果编号
+##### **return value**
+`ModifierKey` : the magic effect number
 
 ### `api_get_halo_modifier_instance` <span id="api_get_halo_modifier_instance"></span>
-##### **描述**
-获取子光环的光环实体
-##### **参数**
-无
+##### **describe**
+Get the halo entity of the sub halo
+##### **parameters**
+none
 
-##### **返回值**
-`ModifierEntity` : 魔法效果对象
+##### **return value**
+`ModifierEntity` : the magic effect object
 
 ### `api_get_halo_inf_rng` <span id="api_get_halo_inf_rng"></span>
-##### **描述**
-获取光环的范围
-##### **参数**
-无
+##### **describe**
+Get the range of the aura
+##### **parameters**
+none
 
-##### **返回值**
-`Float` : 光环影响范围
+##### **return value**
+`Float` : Aura's area of ​​influence
 
 ### `api_get_will_modifier_unit` <span id="api_get_will_modifier_unit"></span>
-##### **描述**
-获取即将获得魔法效果的单位
-##### **参数**
-无
+##### **describe**
+Get the unit that is about to get the magic effect
+##### **parameters**
+none
 
-##### **返回值**
-`Unit` : 单位
+##### **return value**
+`Unit` : unit
 
 ### `api_get_will_modifier_key` <span id="api_get_will_modifier_key"></span>
-##### **描述**
-获取即将获得魔法效果类型
-##### **参数**
-无
+##### **describe**
+Get the type of magic effect that is about to get
+##### **parameters**
+none
 
-##### **返回值**
-`ModifierKey` : 魔法效果编号
+##### **return value**
+`ModifierKey` : the magic effect number
 
 ### `api_get_modifier_unique_id` <span id="api_get_modifier_unique_id"></span>
-##### **描述**
-获取buff的唯一id
-##### **参数**
-无
+##### **describe**
+Get the unique id of the buff
+##### **parameters**
+none
 
-##### **返回值**
-`UInt32` : 魔法效果唯一ID
+##### **return value**
+`UInt32` : Unique ID of the magic effect
 
 ### `api_get_modifier_key` <span id="api_get_modifier_key"></span>
-##### **描述**
-获取buff的类型key
-##### **参数**
-无
+##### **describe**
+Get the type key of the buff
+##### **parameters**
+none
 
-##### **返回值**
-`ModifierKey` : 魔法效果key
+##### **return value**
+`ModifierKey` : the magic effect key
 
 ### `api_get_str_attr` <span id="api_get_str_attr"></span>
-##### **描述**
-获取buff字符属性效果
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
+##### **describe**
+Get the buff character attribute effect
+##### **parameters**
+parameter name | description | type | default value
 :----------- | :----------- | :----------- | :----
-`attr_name` | 属性名称  | [`Str`](../etype#Str) | 
+`attr_name` | attribute name | [`Str`](../etype#Str) |
 
-##### **返回值**
-`Str` : 字符类型返回值
+##### **return value**
+`Str` : return value of character type
 
 ### `api_set_buff_max_layer` <span id="api_set_buff_max_layer"></span>
-##### **描述**
-设置buff整数属性效果
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
+##### **describe**
+Set the buff integer attribute effect
+##### **parameters**
+parameter name | description | type | default value
 :----------- | :----------- | :----------- | :----
-`attr_num` | 整数属性值  | [`UInt32`](../etype#UInt32) | 
+`attr_num` | integer attribute value | [`UInt32`](../etype#UInt32) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_set_buff_layer` <span id="api_set_buff_layer"></span>
-##### **描述**
-设置buff实例层数
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
+##### **describe**
+Set the number of buff instance layers
+##### **parameters**
+parameter name | description | type | default value
 :----------- | :----------- | :----------- | :----
-`attr_num` | 整数属性值  | [`UInt32`](../etype#UInt32) | 
+`attr_num` | integer attribute value | [`UInt32`](../etype#UInt32) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_set_buff_residue_time` <span id="api_set_buff_residue_time"></span>
-##### **描述**
-设置buff的剩余持续时间
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
+##### **describe**
+Sets the remaining duration of the buff
+##### **parameters**
+parameter name | description | type | default value
 :----------- | :----------- | :----------- | :----
-`residue_time` | 浮点数剩余时间  | [`Fixed`](../etype#Fixed) | 
+`residue_time` | float remaining time | [`Fixed`](../etype#Fixed) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_set_float_shield` <span id="api_set_float_shield"></span>
-##### **描述**
-设置buff浮点属性效果
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
+##### **describe**
+Set the buff floating point property effect
+##### **parameters**
+parameter name | description | type | default value
 :----------- | :----------- | :----------- | :----
-`attr_name` | 属性名称  | [`Str`](../etype#Str) | 
-`attr_num` | 浮点数属性值  | [`Fixed`](../etype#Fixed) | 
+`attr_name` | attribute name | [`Str`](../etype#Str) |
+`attr_num` | float attribute value | [`Fixed`](../etype#Fixed) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_set_cycle_time` <span id="api_set_cycle_time"></span>
-##### **描述**
-设置循环周期事件
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
+##### **describe**
+Set recurring events
+##### **parameters**
+parameter name | description | type | default value
 :----------- | :----------- | :----------- | :----
-`new_cycle_time` | 浮点数属性值  | [`Fixed`](../etype#Fixed) | 
+`new_cycle_time` | float property value | [`Fixed`](../etype#Fixed) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_set_duration` <span id="api_set_duration"></span>
-##### **描述**
-设置魔法效果的持续时间
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
+##### **describe**
+Set the duration of the magic effect
+##### **parameters**
+parameter name | description | type | default value
 :----------- | :----------- | :----------- | :----
-`residue_time` | 非负数实数值  | [`Fixed`](../etype#Fixed) | 
+`residue_time` | non-negative real value | [`Fixed`](../etype#Fixed) |
 
-##### **返回值**
-无
+##### **return value**
+none
 
 ### `api_set_buff_str_attr` <span id="api_set_buff_str_attr"></span>
-##### **描述**
-设置buff的字符串属性
-##### **参数**
-参数名        | 描述         | 类型         | 默认值
+##### **describe**
+Set the string property of the buff
+##### **parameters**
+parameter name | description | type | default value
 :----------- | :----------- | :----------- | :----
-`name` | 属性名称  | [`Str`](../etype#Str) | 
-`value` | 属性值  | [`Str`](../etype#Str) | 
+`name` | attribute name | [`Str`](../etype#Str) |
+`value` | attribute value | [`Str`](../etype#Str) |
 
-##### **返回值**
-无
+##### **return value**
+none

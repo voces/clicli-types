@@ -23,8 +23,10 @@ for await (const dirEntry of Deno.readDir("./docs")) {
     // Skip class description/list of functions
     if (
       line.type === "heading" && line.depth === 2 &&
-      (line.text === "Description" || line.text === "描述" ||
-        line.text === "List of Functions" || line.text === "方法列表")
+      (line.text === "Description" || line.text === "describe" ||
+        line.text === "描述" ||
+        line.text === "List of Functions" || line.text === "method list" ||
+        line.text === "方法列表")
     ) {
       index++; // skip actual description/functions
       continue;
@@ -33,7 +35,8 @@ for await (const dirEntry of Deno.readDir("./docs")) {
     // Entering class/object defintiion
     if (
       line.type === "heading" && line.depth === 2 &&
-      (line.text === "方法" || line.text === "Functions")
+      (line.text === "方法" || line.text === "Functions" ||
+        line.text === "method")
     ) {
       await Deno.writeTextFile(
         `types/${name}.d.ts`,
@@ -43,7 +46,10 @@ for await (const dirEntry of Deno.readDir("./docs")) {
     }
 
     // Entering enum definition
-    if (line.type === "heading" && line.depth === 2 && line.text === "基本类型") {
+    if (
+      line.type === "heading" && line.depth === 2 &&
+      (line.text === "基本类型" || line.text === "basic type")
+    ) {
       await Deno.writeTextFile(
         `types/${name}.d.ts`,
         genEnum(name, ast, index),

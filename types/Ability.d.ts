@@ -1,119 +1,119 @@
 declare interface Ability {
   /**
-   * 获取技能字符串属性
-   * @param attr 标记名
+   * Get skill string attribute
+   * @param attr tagname
    * @returns string
    */
   api_get_str_attr: (
-    /** 标记名 */
+    /** tagname */
     attr: AbilityStrAttr,
   ) => string;
 
   /**
-   * 设置技能字符串属性
-   * @param attr 标记名
-   * @param value 字符串值
+   * Set skill string properties
+   * @param attr tagname
+   * @param value String value
    */
   api_set_str_attr: (
-    /** 标记名 */
+    /** tagname */
     attr: AbilityStrAttr,
-    /** 字符串值 */
+    /** String value */
     value: string,
   ) => void;
 
   /**
-   * 设置技能名字
-   * @param value 字符串值
+   * set skill name
+   * @param value String value
    */
   api_set_name: (
-    /** 字符串值 */
+    /** String value */
     value: string,
   ) => void;
 
   /**
-   * 获取技能拥有者
+   * Get the skill owner
    * @returns Unit
    */
   api_get_owner: () => Unit;
 
   /**
-   * 获取技能类型
+   * Get skill type
    * @returns AbilityType
    */
   api_get_type: () => AbilityType;
 
   /**
-   * 获取技能类型
+   * Get skill type
    * @returns AbilityIndex
    */
   api_get_ability_index: () => AbilityIndex;
 
   /**
-   * 获取技能拥有者
+   * Get the skill owner
    * @returns AbilitySeq
    */
   api_get_ability_seq: () => AbilitySeq;
 
   /**
-   * 获取技能释放类型
+   * Get skill release type
    * @returns AbilityCastType
    */
   api_get_ability_cast_type: () => AbilityCastType;
 
   /**
-   * 移除技能
+   * remove skill
    */
   api_remove: () => void;
 
   /**
-   * 获取技能的等级
+   * Acquire skill level
    * @returns Int32
    */
   api_get_level: () => Int32;
 
   /**
-   * 是否拥有标记
-   * @param tag 标记名
+   * Has a marker
+   * @param tag tag name
    * @returns boolean
    */
   has_tag: (
-    /** 标记名 */
+    /** tag name */
     tag: string,
   ) => boolean;
 
   /**
-   * 移除键值对
-   * @param k 键
+   * remove key-value pairs
+   * @param k key
    */
   api_remove_kv: (
-    /** 键 */
+    /** key */
     k: string,
   ) => void;
 
   /**
-   * 计算公式类型KV
-   * @param k 键
+   * Calculation formula type KV
+   * @param k key
    * @returns Fixed
    */
   api_calc_ability_formula_kv: (
-    /** 键 */
+    /** key */
     k: string,
   ) => Fixed;
 
   /**
-   * 添加定时器
-   * @param time 定时时长
-   * @param callback 超时函数
+   * Add timer
+   * @param time timer duration
+   * @param callback timeout function
    */
   add_timer: (
-    /** 定时时长 */
+    /** timer duration */
     time: Fixed,
-    /** 超时函数 */
+    /** timeout function */
     callback: () => void,
   ) => void;
 
   /**
-   * 技能对象是否拥有目标
+   * Whether the skill object has a target
    * @param runtime_id runtime_id
    * @returns boolean
    */
@@ -123,7 +123,7 @@ declare interface Ability {
   ) => boolean;
 
   /**
-   * 获取技能释放的位置
+   * Get the location of the skill release
    * @param runtime_id runtime_id
    * @returns FPoint
    */
@@ -133,7 +133,7 @@ declare interface Ability {
   ) => FPoint;
 
   /**
-   * 获取技能释放的方向
+   * Get the direction of skill release
    * @param runtime_id runtime_id
    * @returns Fixed
    */
@@ -143,242 +143,242 @@ declare interface Ability {
   ) => Fixed;
 
   /**
-   * 获取技能实数属性值
-   * @param attr 属性名
+   * Get the real attribute value of the skill
+   * @param attr attribute name
    * @returns Fixed
    */
   api_get_float_attr: (
-    /** 属性名 */
+    /** attribute name */
     attr: string,
   ) => Fixed;
 
   /**
-   * 获取技能整数属性值
-   * @param attr 属性名
+   * Get skill integer attribute value
+   * @param attr attribute name
    * @returns Int32
    */
   api_get_int_attr: (
-    /** 属性名 */
+    /** attribute name */
     attr: string,
   ) => Int32;
 
   /**
-   * 获取技能布尔属性值
-   * @param attr 属性名
+   * Get skill boolean attribute value
+   * @param attr attribute name
    * @returns boolean
    */
   api_get_bool_attr: (
-    /** 属性名 */
+    /** attribute name */
     attr: string,
   ) => boolean;
 
   /**
-   * 设置技能等级
-   * @param level 技能等级
+   * Set skill level
+   * @param level skill level
    */
   api_set_level: (
-    /** 技能等级 */
+    /** skill level */
     level: Int32,
   ) => void;
 
   /**
-   * 学习技能
+   * learning skills
    */
   api_learn_ability: () => void;
 
   /**
-   * 增加技能等级
-   * @param level 技能等级
+   * Increase skill level
+   * @param level skill level
    */
   api_add_level: (
-    /** 技能等级 */
+    /** skill level */
     level: Int32,
   ) => void;
 
   /**
-   * 增量修改技能实数属性值
-   * @param attr 属性名
-   * @param value 实数属性值
+   * Incrementally modify the real attribute value of the skill
+   * @param attr attribute name
+   * @param value real property value
    */
   api_add_float_attr: (
-    /** 属性名 */
+    /** attribute name */
     attr: string,
-    /** 实数属性值 */
+    /** real property value */
     value: Fixed,
   ) => void;
 
   /**
-   * 设置技能实数属性值
-   * @param attr 属性名
-   * @param value 实数属性值
+   * Set skill real number attribute value
+   * @param attr attribute name
+   * @param value real property value
    */
   api_set_float_attr: (
-    /** 属性名 */
+    /** attribute name */
     attr: string,
-    /** 实数属性值 */
+    /** real property value */
     value: Fixed,
   ) => void;
 
   /**
-   * 增量修改技能整数属性值
-   * @param attr 属性名
-   * @param value 整数属性值
+   * Incremental modification skill integer attribute value
+   * @param attr attribute name
+   * @param value integer property value
    */
   api_add_int_attr: (
-    /** 属性名 */
+    /** attribute name */
     attr: string,
-    /** 整数属性值 */
+    /** integer property value */
     value: Int32,
   ) => void;
 
   /**
-   * 设置技能整数属性值
-   * @param attr 属性名
-   * @param value 整数属性值
+   * Set skill integer attribute value
+   * @param attr attribute name
+   * @param value integer property value
    */
   api_set_int_attr: (
-    /** 属性名 */
+    /** attribute name */
     attr: string,
-    /** 整数属性值 */
+    /** integer property value */
     value: Int32,
   ) => void;
 
   /**
-   * 设置技能布尔属性值
-   * @param attr 属性名
-   * @param value 布尔属性值
+   * Set skill boolean attribute value
+   * @param attr attribute name
+   * @param value boolean property value
    */
   api_set_bool_attr: (
-    /** 属性名 */
+    /** attribute name */
     attr: string,
-    /** 布尔属性值 */
+    /** boolean property value */
     value: boolean,
   ) => void;
 
   /**
-   * 阻止当前技能施法
+   * Prevents the current skill from casting
    */
   api_break_ability_in_cs: () => void;
 
   /**
-   * 获取技能编号
+   * Get skill number
    * @returns AbilityKey
    */
   api_get_ability_id: () => AbilityKey;
 
   /**
-   * 是否是近战技能
+   * Is it a melee skill?
    * @returns boolean
    */
   api_is_melee_ability: () => boolean;
 
   /**
-   * 是否是普攻
+   * Is it a general attack
    * @returns boolean
    */
   api_is_common_atk: () => boolean;
 
   /**
-   * 是否是被动
+   * Is it passive
    * @returns boolean
    */
   is_passive_ability: () => boolean;
 
   /**
-   * 获取技能名称
+   * Get skill name
    * @returns string
    */
   api_get_name: () => string;
 
   /**
-   * 获取技能的充能层数
+   * Acquires the charge stacks of the skill
    * @returns Int32
    */
   api_get_ability_stack: () => Int32;
 
   /**
-   * 增加技能充能层数
-   * @param value 充能层数
+   * Increase skill charge stacks
+   * @param value Charge stacks
    */
   api_add_ability_stack_count: (
-    /** 充能层数 */
+    /** Charge stacks */
     value: Int32,
   ) => void;
 
   /**
-   * 设置技能充能层数
-   * @param value 充能层数
+   * Set skill charge levels
+   * @param value Charge stacks
    */
   api_set_ability_stack_count: (
-    /** 充能层数 */
+    /** Charge stacks */
     value: Int32,
   ) => void;
 
   /**
-   * 获取当前技能剩余冷却时间
+   * Get the remaining cooldown of the current skill
    * @returns Fixed
    */
   api_get_cd_left_time: () => Fixed;
 
   /**
-   * 技能立即冷却
+   * Skill cools down immediately
    */
   api_immediately_clear_cd: () => void;
 
   /**
-   * 改变技能冷却时间
-   * @param value 冷却时间
+   * Change skill cooldown
+   * @param value cooldown
    */
   api_change_ability_cd_cold_down: (
-    /** 冷却时间 */
+    /** cooldown */
     value: Fixed,
   ) => void;
 
   /**
-   * 设置技能冷却时间
-   * @param value 冷却时间
+   * Set skill cooldown
+   * @param value cooldown
    */
   api_set_ability_cd: (
-    /** 冷却时间 */
+    /** cooldown */
     value: Fixed,
   ) => void;
 
   /**
-   * 增加技能冷却时间
-   * @param value 冷却时间
+   * Increase skill cooldown
+   * @param value cooldown
    */
   api_add_ability_cd: (
-    /** 冷却时间 */
+    /** cooldown */
     value: Fixed,
   ) => void;
 
   /**
-   * 从头开始冷却
+   * Cool from scratch
    */
   api_restart_cd: () => void;
 
   /**
-   * 改变当次充能时间
-   * @param value 冷却时间
+   * Change the current charging time
+   * @param value cooldown
    */
   api_set_ability_cur_stack_cd: (
-    /** 冷却时间 */
+    /** cooldown */
     value: Fixed,
   ) => void;
 
   /**
-   * 获取技能当前剩余充能时间
+   * Get the current remaining charge time of the skill
    * @returns Fixed
    */
   api_get_stack_cd_left_time: () => Fixed;
 
   /**
-   * 启用技能
+   * enable skills
    */
   api_enable: () => void;
 
   /**
-   * 禁用技能
+   * Disable skills
    */
   api_disable: () => void;
 }

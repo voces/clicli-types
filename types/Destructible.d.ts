@@ -1,221 +1,221 @@
 declare interface Destructible {
   /**
-   * 移动可破坏物到点
-   * @param point 点
+   * Move destructible to point
+   * @param point point
    */
   api_transmit: (
-    /** 点 */
+    /** point */
     point: Point,
   ) => void;
 
   /**
-   * 杀死可破坏物
-   * @param unit 凶手单位
+   * kill destructibles
+   * @param unit Killer unit
    */
   api_kill: (
-    /** 凶手单位 */
+    /** Killer unit */
     unit: Unit,
   ) => void;
 
   /**
-   * 使可破坏物枯竭
-   * @param unit 采集单位
+   * deplete destructibles
+   * @param unit acquisition unit
    */
   api_set_dest_dry: (
-    /** 采集单位 */
+    /** acquisition unit */
     unit: Unit,
   ) => void;
 
   /**
-   * 删除可破坏物
+   * remove destructibles
    */
   api_delete: () => void;
 
   /**
-   * 复活可破坏物
-   * @param point 复活点
+   * Revive Destructibles
+   * @param point resurrection point
    */
   api_revivie: (
-    /** 复活点 */
+    /** resurrection point */
     point: Point,
   ) => void;
 
   /**
-   * 显示隐藏可破坏物
-   * @param is_show 是否显示
+   * show hidden destructibles
+   * @param is_show whether to show
    */
   api_show_hide: (
-    /** 是否显示 */
+    /** whether to show */
     is_show: boolean,
   ) => void;
 
   /**
-   * 设置可破坏物生命值
-   * @param hp_value 生命值
+   * Set destructible health
+   * @param hp_value health value
    */
   api_set_hp: (
-    /** 生命值 */
+    /** health value */
     hp_value: UInt64,
   ) => void;
 
   /**
-   * 设置可破坏物最大生命值
-   * @param hp_value 最大生命值
+   * Set destructible max health
+   * @param hp_value max health
    */
   api_set_max_hp: (
-    /** 最大生命值 */
+    /** max health */
     hp_value: UInt64,
   ) => void;
 
   /**
-   * 设置可破坏物的名称
-   * @param name 名称
+   * Set the name of the destructible
+   * @param name name
    */
   api_set_name: (
-    /** 名称 */
+    /** name */
     name: string,
   ) => void;
 
   /**
-   * 设置可破坏物的资源数量
-   * @param num 资源数量
+   * Sets the amount of destructible resources
+   * @param num Number of resources
    */
   api_set_source_num: (
-    /** 资源数量 */
+    /** Number of resources */
     num: UInt64,
   ) => void;
 
   /**
-   * 设置可破坏物的大小
-   * @param x x大小
-   * @param y y大小
-   * @param z z大小
+   * Set the size of the destructible
+   * @param x x size
+   * @param y y size
+   * @param z z size
    */
   api_set_scale: (
-    /** x大小 */
+    /** x size */
     x: UInt64,
-    /** y大小 */
+    /** y size */
     y: UInt64,
-    /** z大小 */
+    /** z size */
     z: UInt64,
   ) => void;
 
   /**
-   * 设置可破坏物的角度
-   * @param angle 角度
+   * Set the angle of the destructible
+   * @param angle angle
    */
   api_set_face_angle: (
-    /** 角度 */
+    /** angle */
     angle: UInt64,
   ) => void;
 
   /**
-   * 获取可破坏物的整型属性
-   * @param attr_name 属性名称
+   * Get the integer property of the destructible
+   * @param attr_name attribute name
    * @returns UInt32
    */
   api_get_int_attr: (
-    /** 属性名称 */
+    /** attribute name */
     attr_name: string,
   ) => UInt32;
 
   /**
-   * 获取可破坏物的编号
+   * Get the number of the destructible object
    * @returns DestructibleKey
    */
   api_get_key: () => DestructibleKey;
 
   /**
-   * 获取可破坏物的字符串属性
-   * @param attr_name 属性名称
+   * Get the string property of the destructible
+   * @param attr_name attribute name
    * @returns string
    */
   api_get_str_attr: (
-    /** 属性名称 */
+    /** attribute name */
     attr_name: string,
   ) => string;
 
   /**
-   * 设置可破坏物的字符串属性
-   * @param attr_name 属性名称
-   * @param value 属性取值
+   * Set the string property of the destructible
+   * @param attr_name attribute name
+   * @param value attribute value
    */
   api_set_str_attr: (
-    /** 属性名称 */
+    /** attribute name */
     attr_name: string,
-    /** 属性取值 */
+    /** attribute value */
     value: string,
   ) => void;
 
   /**
-   * 获取可破坏物的布尔值属性
-   * @param attr_name 属性名称
+   * Get the boolean property of the destructible
+   * @param attr_name attribute name
    * @returns boolean
    */
   api_get_bool_attr: (
-    /** 属性名称 */
+    /** attribute name */
     attr_name: string,
   ) => boolean;
 
   /**
-   * 获取可破坏物的浮点数属性
-   * @param attr_name 属性名称
+   * Get the float property of the destructible
+   * @param attr_name attribute name
    * @returns Fixed
    */
   api_get_float_attr: (
-    /** 属性名称 */
+    /** attribute name */
     attr_name: string,
   ) => Fixed;
 
   /**
-   * 获取可破坏物所属阵营id
+   * Get the faction id of the destructible object
    * @returns CampID
    */
   api_get_camp_id: () => CampID;
 
   /**
-   * 获取可破坏物位置
+   * Get destructible location
    * @returns FVector3
    */
   api_get_position: () => FVector3;
 
   /**
-   * 获取可破坏物的描述
+   * Get the description of the destructible
    * @returns string
    */
   api_get_desc: () => string;
 
   /**
-   * 获取可破坏物的id
+   * Get the id of the destructible
    */
   api_get_id: () => void;
 
   /**
-   * 获取可破坏物的x轴缩放
+   * Get the x-axis scaling of the destructible
    * @returns Float
    */
   api_get_x_scale: () => Float;
 
   /**
-   * 获取可破坏物的y轴缩放
+   * Get the y-axis scaling of the destructible
    * @returns Float
    */
   api_get_y_scale: () => Float;
 
   /**
-   * 获取可破坏物的z轴缩放
+   * Get the z-axis scaling of the destructible
    * @returns Float
    */
   api_get_z_scale: () => Float;
 
   /**
-   * 获取可破坏物的旋转角度
+   * Get the rotation angle of the destructible
    * @returns Float
    */
   api_get_angle: () => Float;
 
   /**
-   * 获取可破坏物模型
+   * Get the destructible model
    * @returns ModelKey
    */
   api_get_dest_model: () => ModelKey;

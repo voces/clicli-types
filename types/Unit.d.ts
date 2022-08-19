@@ -1,612 +1,612 @@
 declare interface Unit {
   /**
-   * 获取单位ID
+   * Get unit ID
    * @returns UnitID
    */
   api_get_id: () => UnitID;
 
   /**
-   * 获取单位编号
+   * Get unit number
    * @returns UnitKey
    */
   api_get_key: () => UnitKey;
 
   /**
-   * 获取单位所属阵营id
+   * Get the faction id the unit belongs to
    * @returns CampID
    */
   api_get_camp_id: () => CampID;
 
   /**
-   * 获取单位所属玩家ID
+   * Get the ID of the player the unit belongs to
    * @returns RoleID
    */
   api_get_role_id: () => RoleID;
 
   /**
-   * 获取单位所属玩家
+   * Get the player the unit belongs to
    * @returns Role
    */
   api_get_role: () => Role;
 
   /**
-   * 获取单位所属阵营
+   * Get the faction the unit belongs to
    * @returns Camp
    */
   api_get_camp: () => Camp;
 
   /**
-   * 获取单位类型
+   * Get unit type
    * @returns UnitType
    */
   api_get_type: () => UnitType;
 
   /**
-   * 获取单位名称
+   * Get unit name
    * @returns string
    */
   api_get_name: () => string;
 
   /**
-   * 添加定时器
-   * @param time 定时时长
-   * @param callback 超时函数
+   * Add timer
+   * @param time timer duration
+   * @param callback timeout function
    * @returns UInt32
    */
   add_timer: (
-    /** 定时时长 */
+    /** timer duration */
     time: Fixed,
-    /** 超时函数 */
+    /** timeout function */
     callback: () => void,
   ) => UInt32;
 
   /**
-   * 添加周期定时器
-   * @param time 定时时长
-   * @param callback 超时函数
+   * Add periodic timer
+   * @param time timer duration
+   * @param callback timeout function
    * @returns UInt32
    */
   add_repeat_timer: (
-    /** 定时时长 */
+    /** timer duration */
     time: Fixed,
-    /** 超时函数 */
+    /** timeout function */
     callback: () => void,
   ) => UInt32;
 
   /**
-   * 取消定时器
-   * @param timer_id 定时器ID
+   * cancel timer
+   * @param timer_id Timer ID
    */
   cancel_timer: (
-    /** 定时器ID */
+    /** Timer ID */
     timer_id: UInt32,
   ) => void;
 
   /**
-   * 单位移除键值对
-   * @param k 键名
+   * Unit removal key-value pair
+   * @param k key name
    */
   api_remove_kv: (
-    /** 键名 */
+    /** key name */
     k: string,
   ) => void;
 
   /**
-   * 单位是否存活
+   * Is the unit alive
    * @returns boolean
    */
   api_is_alive: () => boolean;
 
   /**
-   * 隐藏头顶信息
-   * @param show 是否隐藏头顶信息
+   * Hide overhead information
+   * @param show whether to hide overhead information
    */
   api_hide_head_bar: (
-    /** 是否隐藏头顶信息 */
+    /** whether to hide overhead information */
     show: boolean,
   ) => void;
 
   /**
-   * 单位是否拥有标签
-   * @param tag 标签
+   * Whether the organization has a label
+   * @param tag tag
    * @returns boolean
    */
   has_tag: (
-    /** 标签 */
+    /** tag */
     tag: string,
   ) => boolean;
 
   /**
-   * 复活单位
-   * @param position 复活位置
+   * resurrection unit
+   * @param position resurrection position
    */
   api_revive: (
-    /** 复活位置 */
+    /** resurrection position */
     position: Point | null,
   ) => void;
 
   /**
-   * 单位是否已销毁
+   * Whether the unit has been destroyed
    * @returns boolean
    */
   api_is_destroyed: () => boolean;
 
   /**
-   * 删除单位
+   * delete unit
    */
   api_delete: () => void;
 
   /**
-   * 强制单位死亡
-   * @param source_unit 杀手单位
+   * Force unit to die
+   * @param source_unit Killer unit
    */
   api_kill: (
-    /** 杀手单位 */
+    /** Killer unit */
     source_unit: Unit | null,
   ) => void;
 
   /**
-   * 获取单位图标路径
+   * Get the unit icon path
    * @returns string
    */
   api_get_icon: () => string;
 
   /**
-   * 获取单位图片路径
-   * @param pic_type 图片类型
+   * Get unit image path
+   * @param pic_type picture type
    * @returns string
    */
   api_get_unit_pic: (
-    /** 图片类型 */
+    /** picture type */
     pic_type: string,
   ) => string;
 
   /**
-   * 获取单位的父单位
+   * Get the parent unit of the unit
    * @returns Unit
    */
   api_get_parent_unit: () => Unit;
 
   /**
-   * 改变单位血条颜色
-   * @param color 单位血条颜色值
+   * Change unit health bar color
+   * @param color unit health bar color value
    */
   api_set_hp_color: (
-    /** 单位血条颜色值 */
+    /** unit health bar color value */
     color: string,
   ) => void;
 
   /**
-   * 开启/关闭伤害及助攻统计
-   * @param enable 开启
+   * Turn damage and assist statistics on/off
+   * @param enable enable
    */
   api_switch_atk_assist_record: (
-    /** 开启 */
+    /** enable */
     enable: boolean,
   ) => void;
 
   /**
-   * 单位/点是否在范围内
-   * @param unit 单位
-   * @param radius 范围
+   * Is the unit/point in range
+   * @param unit unit
+   * @param radius range
    * @returns boolean
    */
   api_is_in_range: (
-    /** 单位 */
+    /** unit */
     unit: Unit,
-    /** 范围 */
+    /** range */
     radius: Float,
   ) => boolean;
 
   /**
-   * 点是否在范围内
-   * @param point 点
-   * @param radius 范围
+   * Is the point in range
+   * @param point point
+   * @param radius range
    * @returns boolean
    */
   api_is_point_in_range: (
-    /** 点 */
+    /** point */
     point: Point,
-    /** 范围 */
+    /** range */
     radius: Float,
   ) => boolean;
 
   /**
-   * 设置单位生命周期
-   * @param life_time 生命周期
+   * Set unit life cycle
+   * @param life_time Lifetime
    */
   api_set_life_cycle: (
-    /** 生命周期 */
+    /** Lifetime */
     life_time: Float,
   ) => void;
 
   /**
-   * 暂停单位生命周期
-   * @param pause 是否暂停
+   * Pause unit life cycle
+   * @param pause whether to pause
    */
   api_pause_life_cycle: (
-    /** 是否暂停 */
+    /** whether to pause */
     pause: boolean,
   ) => void;
 
   /**
-   * 获取单位当前生命周期
+   * Get the current lifetime of the unit
    * @returns Fixed
    */
   api_get_life_cycle: () => Fixed;
 
   /**
-   * 获取单位总生命周期时长
+   * Get the total lifetime of the unit
    * @returns Fixed
    */
   api_get_total_life_cycle: () => Fixed;
 
   /**
-   * 获取单位攻击类型
+   * Get unit attack type
    * @returns UInt32
    */
   api_get_atk_type: () => UInt32;
 
   /**
-   * 获取单位护甲类型
+   * Get unit armor type
    * @returns UInt32
    */
   api_get_def_type: () => UInt32;
 
   /**
-   * 获取 attr_other
-   * @param key 属性名
+   * get attr_other
+   * @param key attribute name
    * @returns Fixed
    */
   api_get_attr_other: (
-    /** 属性名 */
+    /** attribute name */
     key: string,
   ) => Fixed;
 
   /**
-   * 获取attr_base
-   * @param key 属性名
+   * get attr_base
+   * @param key attribute name
    * @returns Fixed
    */
   api_get_attr_base: (
-    /** 属性名 */
+    /** attribute name */
     key: string,
   ) => Fixed;
 
   /**
-   * 获取attr_base_ratio
-   * @param key 属性名
+   * get attr_base_ratio
+   * @param key attribute name
    * @returns Fixed
    */
   api_get_attr_base_ratio: (
-    /** 属性名 */
+    /** attribute name */
     key: string,
   ) => Fixed;
 
   /**
-   * 获取attr_bonus
-   * @param key 属性名
+   * get attr_bonus
+   * @param key attribute name
    * @returns Fixed
    */
   api_get_attr_bonus: (
-    /** 属性名 */
+    /** attribute name */
     key: string,
   ) => Fixed;
 
   /**
-   * 获取attr_bonus_ratio
-   * @param key 属性名
+   * get attr_bonus_ratio
+   * @param key attribute name
    * @returns Fixed
    */
   api_get_attr_bonus_ratio: (
-    /** 属性名 */
+    /** attribute name */
     key: string,
   ) => Fixed;
 
   /**
-   * 获取attr_all_ratio
-   * @param key 属性名
+   * get attr_all_ratio
+   * @param key attribute name
    * @returns Fixed
    */
   api_get_attr_all_ratio: (
-    /** 属性名 */
+    /** attribute name */
     key: string,
   ) => Fixed;
 
   /**
-   * 获取单位主属性
+   * Get the unit main attribute
    * @returns string
    */
   api_get_main_attr: () => string;
 
   /**
-   * 设置纯值类型的值
-   * @param key 属性名
-   * @param val 值
+   * Set the value of a pure value type
+   * @param key attribute name
+   * @param val value
    */
   api_set_attr: (
-    /** 属性名 */
+    /** attribute name */
     key: string,
-    /** 值 */
+    /** value */
     val: Fixed,
   ) => void;
 
   /**
-   * 设置单位属性（根据属性分类）
-   * @param key 属性名
-   * @param val 值
-   * @param attr_element 属性分类
+   * Set unit attributes (classified by attribute)
+   * @param key attribute name
+   * @param val value
+   * @param attr_element attribute classification
    */
   api_set_attr_by_attr_element: (
-    /** 属性名 */
+    /** attribute name */
     key: string,
-    /** 值 */
+    /** value */
     val: Fixed,
-    /** 属性分类 */
+    /** attribute classification */
     attr_element: string,
   ) => void;
 
   /**
-   * 设置单位属性基础值部分
-   * @param key 属性名
-   * @param val 基础值
+   * Set Unit Property Base Values ​​section
+   * @param key attribute name
+   * @param val base value
    */
   api_set_attr_base: (
-    /** 属性名 */
+    /** attribute name */
     key: string,
-    /** 基础值 */
+    /** base value */
     val: Fixed,
   ) => void;
 
   /**
-   * 增加单位属性（根据属性分类）
-   * @param key 属性名
-   * @param val 值
-   * @param attr_element 属性分类
+   * Added unit attributes (classified by attributes)
+   * @param key attribute name
+   * @param val value
+   * @param attr_element attribute classification
    */
   api_add_attr_by_attr_element: (
-    /** 属性名 */
+    /** attribute name */
     key: string,
-    /** 值 */
+    /** value */
     val: Fixed,
-    /** 属性分类 */
+    /** attribute classification */
     attr_element: string,
   ) => void;
 
   /**
-   * 增加单位属性基础值
-   * @param key 属性名
-   * @param delta 增加值
+   * Increase unit attribute base value
+   * @param key attribute name
+   * @param delta increment value
    */
   api_add_attr_base: (
-    /** 属性名 */
+    /** attribute name */
     key: string,
-    /** 增加值 */
+    /** increment value */
     delta: Fixed,
   ) => void;
 
   /**
-   * 设置单位属性 attr_bonus
-   * @param key 属性名
-   * @param val 设置值
+   * Set the unit attribute attr_bonus
+   * @param key attribute name
+   * @param val set value
    */
   api_set_attr_bonus: (
-    /** 属性名 */
+    /** attribute name */
     key: string,
-    /** 设置值 */
+    /** set value */
     val: Fixed,
   ) => void;
 
   /**
-   * 增加单位属性 attr_bonus
-   * @param key 属性名
-   * @param delta 增加值
+   * Added unit attribute attr_bonus
+   * @param key attribute name
+   * @param delta increment value
    */
   api_add_attr_bonus: (
-    /** 属性名 */
+    /** attribute name */
     key: string,
-    /** 增加值 */
+    /** increment value */
     delta: Fixed,
   ) => void;
 
   /**
-   * 设置单位属性 attr_bouns_ratio
-   * @param key 属性名
-   * @param val 设置值
+   * Set the unit attribute attr_bouns_ratio
+   * @param key attribute name
+   * @param val set value
    */
   api_set_attr_bonus_ratio: (
-    /** 属性名 */
+    /** attribute name */
     key: string,
-    /** 设置值 */
+    /** set value */
     val: Fixed,
   ) => void;
 
   /**
-   * 增加单位属性 attr_bouns_ratio
-   * @param key 属性名
-   * @param delta 加成比例
+   * Added unit attribute attr_bouns_ratio
+   * @param key attribute name
+   * @param delta Addition ratio
    */
   api_add_attr_bonus_ratio: (
-    /** 属性名 */
+    /** attribute name */
     key: string,
-    /** 加成比例 */
+    /** Addition ratio */
     delta: Fixed,
   ) => void;
 
   /**
-   * 设置单位属性 基础值和额外值 加成比例
-   * @param key 属性名
-   * @param val 设置值
+   * Set the unit attribute base value and bonus value ratio
+   * @param key attribute name
+   * @param val set value
    */
   api_set_attr_all_ratio: (
-    /** 属性名 */
+    /** attribute name */
     key: string,
-    /** 设置值 */
+    /** set value */
     val: Fixed,
   ) => void;
 
   /**
-   * 增加单位属性 基础值和额外值 加成比例
-   * @param key 属性名
-   * @param delta 加成比例
+   * Increase the unit attribute base value and bonus value ratio
+   * @param key attribute name
+   * @param delta Addition ratio
    */
   api_add_attr_all_ratio: (
-    /** 属性名 */
+    /** attribute name */
     key: string,
-    /** 加成比例 */
+    /** Addition ratio */
     delta: Fixed,
   ) => void;
 
   /**
-   * 设置单位属性 基础值 加成比例
-   * @param key 属性名
-   * @param val 设置值
+   * Set the unit attribute base value bonus ratio
+   * @param key attribute name
+   * @param val set value
    */
   api_set_attr_base_ratio: (
-    /** 属性名 */
+    /** attribute name */
     key: string,
-    /** 设置值 */
+    /** set value */
     val: Fixed,
   ) => void;
 
   /**
-   * 增加单位属性基础值百分比加成
-   * @param key 属性名
-   * @param delta 加成比例
+   * Increase unit attribute base value percentage bonus
+   * @param key attribute name
+   * @param delta Addition ratio
    */
   api_add_attr_base_ratio: (
-    /** 属性名 */
+    /** attribute name */
     key: string,
-    /** 加成比例 */
+    /** Addition ratio */
     delta: Fixed,
   ) => void;
 
   /**
-   * 设置单位等级
-   * @param level 等级
+   * Set unit level
+   * @param level level
    */
   api_set_level: (
-    /** 等级 */
+    /** level */
     level: Int32,
   ) => void;
 
   /**
-   * 增加单位等级
-   * @param level 等级
+   * increase unit level
+   * @param level level
    */
   api_add_level: (
-    /** 等级 */
+    /** level */
     level: Int32,
   ) => void;
 
   /**
-   * 获取单位实数属性
-   * @param attr 属性名
+   * Get unit real property
+   * @param attr attribute name
    * @returns Fixed
    */
   api_get_float_attr: (
-    /** 属性名 */
+    /** attribute name */
     attr: string,
   ) => Fixed;
 
   /**
-   * 获取单位字符串属性
-   * @param attr 属性名
+   * Get the unit string property
+   * @param attr attribute name
    * @returns string
    */
   api_get_str_attr: (
-    /** 属性名 */
+    /** attribute name */
     attr: string,
   ) => string;
 
   /**
-   * 设置单位字符串属性
-   * @param attr 属性名
-   * @param value 字符串值
+   * Set the unit string property
+   * @param attr attribute name
+   * @param value String value
    */
   api_set_str_attr: (
-    /** 属性名 */
+    /** attribute name */
     attr: string,
-    /** 字符串值 */
+    /** String value */
     value: string,
   ) => void;
 
   /**
-   * 获取单位等级
+   * Get unit level
    * @returns UInt32
    */
   api_get_level: () => UInt32;
 
   /**
-   * 获取单位血量
+   * Get unit blood volume
    * @returns Fixed
    */
   api_get_hp: () => Fixed;
 
   /**
-   * 获取单位血量百分比
+   * Get the percentage of unit blood volume
    * @returns Fixed
    */
   api_get_hpp: () => Fixed;
 
   /**
-   * 治疗单位
-   * @param hp_change 治疗的数值
-   * @param jump_word 是否跳字
+   * treatment unit
+   * @param hp_change value of healing
+   * @param jump_word whether to jump words
    */
   api_heal: (
-    /** 治疗的数值 */
+    /** value of healing */
     hp_change: Fixed,
     /**
-     * 是否跳字
+     * whether to jump words
      * @defaultValue `false`
      */
     jump_word: boolean | null,
   ) => void;
 
   /**
-   * 获取输出伤害统计值
+   * Get output damage stats
    * @returns Fixed
    */
   api_get_dmg_statistics: () => Fixed;
 
   /**
-   * 清空输出伤害统计值
+   * Clear output damage stats
    */
   api_clear_dmg_statistics: () => void;
 
   /**
-   * 增加经验，增加值为正数
-   * @param exp 经验
+   * Increase experience, the increase value is a positive number
+   * @param exp experience
    */
   api_add_exp: (
-    /** 经验 */
+    /** experience */
     exp: Fixed,
   ) => void;
 
   /**
-   * 设置经验
-   * @param exp 经验
+   * Set up experience
+   * @param exp experience
    */
   api_set_exp: (
-    /** 经验 */
+    /** experience */
     exp: Fixed,
   ) => void;
 
   /**
-   * 获取单位当前经验, 如果达到了顶级，就返回-1
+   * Get the unit's current experience, if it reaches the top level, return -1
    * @returns UInt32
    */
   api_get_exp: () => UInt32;
 
   /**
-   * 获取当前升级所需经验, 如果达到了顶级，就返回-1
+   * Get the experience required for the current level up, if you reach the top level, return -1
    * @returns Fixed
    */
   api_get_upgrade_exp: () => Fixed;
 
   /**
-   * 单位移除键值对
+   * Unit removal key-value pair
    * @param tag TAG
    */
   api_add_tag: (
@@ -615,7 +615,7 @@ declare interface Unit {
   ) => void;
 
   /**
-   * 单位移除键值对
+   * Unit removal key-value pair
    * @param tag TAG
    */
   api_remove_tag: (
@@ -624,435 +624,435 @@ declare interface Unit {
   ) => void;
 
   /**
-   * 设置单位名称
-   * @param name 名称
+   * set unit name
+   * @param name name
    */
   api_set_name: (
-    /** 名称 */
+    /** name */
     name: string,
   ) => void;
 
   /**
-   * 设置单位白天视野
-   * @param value 视野
+   * Set the unit's daytime field of view
+   * @param value field of view
    */
   api_set_unit_day_vision: (
-    /** 视野 */
+    /** field of view */
     value: Float,
   ) => void;
 
   /**
-   * 设置单位夜晚视野
-   * @param value 视野
+   * Set unit night vision
+   * @param value field of view
    */
   api_set_unit_night_vision: (
-    /** 视野 */
+    /** field of view */
     value: Float,
   ) => void;
 
   /**
-   * 获取单位装备栏数量
+   * Get the number of unit equipment slots
    */
   api_get_unit_pkg_cnt: () => void;
 
   /**
-   * 获取单位背包栏数量
+   * Gets the number of units in the backpack
    */
   api_get_unit_bag_cnt: () => void;
 
   /**
-   * 获取单位动态碰撞半径
+   * Get the unit dynamic collision radius
    * @returns Fixed
    */
   api_get_unit_collision_radius: () => Fixed;
 
   /**
-   * 单位停止移动
+   * Unit stops moving
    */
   api_stop_move: () => void;
 
   /**
-   * 单位传送到指定坐标
-   * @param point 目标坐标
+   * Units are teleported to the specified coordinates
+   * @param point target coordinates
    */
   api_transmit: (
-    /** 目标坐标 */
+    /** target coordinates */
     point: FVector3,
   ) => void;
 
   /**
-   * 单位强制传送到指定坐标
-   * @param pos 目标坐标
+   * Units are forced to be teleported to the specified coordinates
+   * @param pos target coordinates
    */
   api_force_transmit: (
-    /** 目标坐标 */
+    /** target coordinates */
     pos: FVector3,
   ) => void;
 
   /**
-   * 单位设置朝向
-   * @param face_dir 朝向
-   * @param speed_effect 是否受转身速度影响
+   * Unit setting orientation
+   * @param face_dir facing
+   * @param speed_effect Whether to be affected by turning speed
    */
   api_set_face_dir: (
-    /** 朝向 */
+    /** facing */
     face_dir: FVector3,
     /**
-     * 是否受转身速度影响
+     * Whether to be affected by turning speed
      * @defaultValue `false`
      */
     speed_effect: boolean | null,
   ) => void;
 
   /**
-   * 单位设置朝向角度
-   * @param face_angle 朝向角度
-   * @param turn_time_ms 转身时间毫秒
+   * Units set the orientation angle
+   * @param face_angle facing angle
+   * @param turn_time_ms turn time in milliseconds
    */
   api_set_face_angle: (
-    /** 朝向角度 */
+    /** facing angle */
     face_angle: Fixed,
     /**
-     * 转身时间毫秒
+     * turn time in milliseconds
      * @defaultValue `-1`
      */
     turn_time_ms: Int32 | null,
   ) => void;
 
   /**
-   * 单位是否能传送到目标点
-   * @param pos 目标点
+   * Whether the unit can teleport to the target point
+   * @param pos target point
    * @returns boolean
    */
   api_can_teleport_to: (
-    /** 目标点 */
+    /** target point */
     pos: FVector3,
   ) => boolean;
 
   /**
-   * 获取单位位置
+   * Get unit location
    * @returns FVector3
    */
   api_get_position: () => FVector3;
 
   /**
-   * 获取单位朝向
+   * Get unit orientation
    * @returns FVector3
    */
   api_get_face_dir: () => FVector3;
 
   /**
-   * 获取单位面向角度
+   * Get unit orientation angle
    * @returns Fixed
    */
   get_face_angle: () => Fixed;
 
   /**
-   * 单位碰撞到的障碍的法线方向
+   * The normal direction of the obstacle the unit hits
    * @returns FVector3
    */
   api_collide_obstacle_normal: () => FVector3;
 
   /**
-   * 设置单位转身速度
-   * @param turn_speed 转身速度
+   * Set the unit's turn speed
+   * @param turn_speed turn speed
    */
   api_set_turn_speed: (
-    /** 转身速度 */
+    /** turn speed */
     turn_speed: Fixed,
   ) => void;
 
   /**
-   * 获得单位转身速度
+   * Get unit turn speed
    * @returns Fixed
    */
   api_get_turn_speed: () => Fixed;
 
   /**
-   * 单位是否在移动
+   * Is the unit moving
    * @returns boolean
    */
   api_is_moving: () => boolean;
 
   /**
-   * 设置单位是否计算某种碰撞类型
-   * @param collision_layer 碰撞mask
-   * @param enable 开启状态
+   * Sets whether the unit calculates a certain collision type
+   * @param collision_layer collision mask
+   * @param enable enable state
    */
   api_set_move_collision: (
-    /** 碰撞mask */
+    /** collision mask */
     collision_layer: Int32,
-    /** 开启状态 */
+    /** enable state */
     enable: boolean,
   ) => void;
 
   /**
-   * 获取单位是否计算某种碰撞类型
-   * @param collision_layer 碰撞mask
+   * Gets whether the unit calculates a certain collision type
+   * @param collision_layer collision mask
    * @returns boolean
    */
   api_get_move_collision: (
-    /** 碰撞mask */
+    /** collision mask */
     collision_layer: Int32,
   ) => boolean;
 
   /**
-   * 播放动画
-   * @param name 动画名称
-   * @param rate 播放倍率
-   * @param init_time 开始时间(s)
-   * @param end_time 结束时间(s)，正数 -1 表示不结束
-   * @param loop 是否循环
-   * @param return_idle 播放结束后是否恢复idle
+   * play animation
+   * @param name animation name
+   * @param rate playback rate
+   * @param init_time start time (s)
+   * @param end_time end time (s), positive number -1 means no end
+   * @param loop whether to loop
+   * @param return_idle Whether to resume idle after playback ends
    */
   api_play_animation: (
-    /** 动画名称 */
+    /** animation name */
     name: string,
     /**
-     * 播放倍率
+     * playback rate
      * @defaultValue `1`
      */
     rate: Float | null,
     /**
-     * 开始时间(s)
+     * start time (s)
      * @defaultValue `0`
      */
     init_time: Float | null,
     /**
-     * 结束时间(s)，正数 -1 表示不结束
+     * end time (s), positive number -1 means no end
      * @defaultValue `-1`
      */
     end_time: Float | null,
     /**
-     * 是否循环
+     * whether to loop
      * @defaultValue `false`
      */
     loop: boolean | null,
     /**
-     * 播放结束后是否恢复idle
+     * Whether to resume idle after playback ends
      * @defaultValue `false`
      */
     return_idle: boolean | null,
   ) => void;
 
   /**
-   * 停止播放动画
-   * @param name 动画名称
+   * stop animation
+   * @param name animation name
    */
   api_stop_animation: (
-    /** 动画名称 */
+    /** animation name */
     name: string,
   ) => void;
 
   /**
-   * 停止当前正在播放的动画
+   * Stop the currently playing animation
    */
   api_stop_cur_animation: () => void;
 
   /**
-   * 单位播放特效
-   * @param socket_name 挂节点名字
-   * @param sfx_res_id 特效编号
-   * @param keep_time 持续时间，单位：秒
-   * @param scale 缩放比例
-   * @param inherit_pos 是否跟随单位位置
-   * @param inherit_rotate 是否跟随单位旋转
-   * @param inherit_scale 是否跟随缩放
-   * @param role 所属单位
-   * @param visible_type 可见性规则
-   * @param rotation 初始旋转 角度制
+   * unit play effect
+   * @param socket_name Socket name
+   * @param sfx_res_id Effect ID
+   * @param keep_time duration in seconds
+   * @param scale scale scale
+   * @param inherit_pos Whether to follow the unit position
+   * @param inherit_rotate whether to follow the unit rotation
+   * @param inherit_scale whether to follow scaling
+   * @param role Organization
+   * @param visible_type visibility rules
+   * @param rotation initial rotation angle system
    */
   api_play_sfx: (
-    /** 挂节点名字 */
+    /** Socket name */
     socket_name: string,
-    /** 特效编号 */
+    /** Effect ID */
     sfx_res_id: SfxKey,
-    /** 持续时间，单位：秒 */
+    /** duration in seconds */
     keep_time: Fixed,
     /**
-     * 缩放比例
+     * scale scale
      * @defaultValue `1.0`
      */
     scale: Float | null,
     /**
-     * 是否跟随单位位置
+     * Whether to follow the unit position
      * @defaultValue `true`
      */
     inherit_pos: boolean | null,
     /**
-     * 是否跟随单位旋转
+     * whether to follow the unit rotation
      * @defaultValue `true`
      */
     inherit_rotate: boolean | null,
     /**
-     * 是否跟随缩放
+     * whether to follow scaling
      * @defaultValue `true`
      */
     inherit_scale: boolean | null,
-    /** 所属单位 */
+    /** Organization */
     role: Role | null,
     /**
-     * 可见性规则
+     * visibility rules
      * @defaultValue `1`
      */
     visible_type: SfxVisibleType | null,
     /**
-     * 初始旋转 角度制
+     * initial rotation angle system
      * @defaultValue `0`
      */
     rotation: Float | null,
   ) => void;
 
   /**
-   * 在单位上播放特效并返回特效实体
-   * @param socket_name 挂节点名字
-   * @param sfx_res_id 特效编号
-   * @param keep_time 持续时间，单位：秒
-   * @param scale 缩放比例
-   * @param inherit_pos 是否跟随单位位置
-   * @param inherit_rotate 是否跟随单位旋转
-   * @param inherit_scale 是否跟随缩放
-   * @param role 所属单位
-   * @param visible_type 可见性规则
-   * @param rotation 初始旋转 角度制
+   * Play the effect on the unit and return the effect entity
+   * @param socket_name Socket name
+   * @param sfx_res_id Effect ID
+   * @param keep_time duration in seconds
+   * @param scale scale scale
+   * @param inherit_pos Whether to follow the unit position
+   * @param inherit_rotate whether to follow the unit rotation
+   * @param inherit_scale whether to follow scaling
+   * @param role Organization
+   * @param visible_type visibility rules
+   * @param rotation initial rotation angle system
    * @returns Sfx
    */
   api_play_sfx_with_return: (
-    /** 挂节点名字 */
+    /** Socket name */
     socket_name: string,
-    /** 特效编号 */
+    /** Effect ID */
     sfx_res_id: SfxKey,
-    /** 持续时间，单位：秒 */
+    /** duration in seconds */
     keep_time: Fixed,
     /**
-     * 缩放比例
+     * scale scale
      * @defaultValue `1.0`
      */
     scale: Float | null,
     /**
-     * 是否跟随单位位置
+     * Whether to follow the unit position
      * @defaultValue `true`
      */
     inherit_pos: boolean | null,
     /**
-     * 是否跟随单位旋转
+     * whether to follow the unit rotation
      * @defaultValue `true`
      */
     inherit_rotate: boolean | null,
     /**
-     * 是否跟随缩放
+     * whether to follow scaling
      * @defaultValue `true`
      */
     inherit_scale: boolean | null,
-    /** 所属单位 */
+    /** Organization */
     role: Role | null,
     /**
-     * 可见性规则
+     * visibility rules
      * @defaultValue `1`
      */
     visible_type: SfxVisibleType | null,
     /**
-     * 初始旋转 角度制
+     * initial rotation angle system
      * @defaultValue `0.0`
      */
     rotation: Float | null,
   ) => Sfx;
 
   /**
-   * 在两个单位之间挂链接特效
-   * @param from_socket_name 起始挂节点
-   * @param target_unit 目标单位
-   * @param target_socket_name 目标挂节点
-   * @param sfx_res_id 特效编号
-   * @param scale 缩放比例
-   * @param keep_time 最多持续时间 单位：秒
-   * @param role 所属玩家
-   * @param visible_type 可见性规则
+   * Hang link effect between two units
+   * @param from_socket_name starting node
+   * @param target_unit target unit
+   * @param target_socket_name target socket
+   * @param sfx_res_id Effect ID
+   * @param scale scale
+   * @param keep_time maximum duration unit: seconds
+   * @param role owning player
+   * @param visible_type visibility rules
    */
   api_play_link_sfx: (
-    /** 起始挂节点 */
+    /** starting node */
     from_socket_name: string,
-    /** 目标单位 */
+    /** target unit */
     target_unit: Unit,
-    /** 目标挂节点 */
+    /** target socket */
     target_socket_name: string,
-    /** 特效编号 */
+    /** Effect ID */
     sfx_res_id: SfxKey,
-    /** 缩放比例 */
+    /** scale */
     scale: Float,
-    /** 最多持续时间 单位：秒 */
+    /** maximum duration unit: seconds */
     keep_time: Float,
-    /** 所属玩家 */
+    /** owning player */
     role: Role | null,
     /**
-     * 可见性规则
+     * visibility rules
      * @defaultValue `1`
      */
     visible_type: SfxVisibleType | null,
   ) => void;
 
   /**
-   * 在两个单位之间挂链接特效并返回特效实体
-   * @param from_socket_name 起始挂节点
-   * @param target_unit 目标单位
-   * @param target_socket_name 目标挂节点
-   * @param sfx_res_id 特效编号
-   * @param scale 缩放比例
-   * @param keep_time 最多持续时间 单位：秒
-   * @param role 所属玩家
-   * @param visible_type 可见性规则
+   * Link effect between two units and return effect entity
+   * @param from_socket_name starting node
+   * @param target_unit target unit
+   * @param target_socket_name target socket
+   * @param sfx_res_id Effect ID
+   * @param scale scale
+   * @param keep_time maximum duration unit: seconds
+   * @param role owning player
+   * @param visible_type visibility rules
    * @returns Sfx
    */
   api_play_link_sfx_with_return: (
-    /** 起始挂节点 */
+    /** starting node */
     from_socket_name: string,
-    /** 目标单位 */
+    /** target unit */
     target_unit: Unit,
-    /** 目标挂节点 */
+    /** target socket */
     target_socket_name: string,
-    /** 特效编号 */
+    /** Effect ID */
     sfx_res_id: SfxKey,
-    /** 缩放比例 */
+    /** scale */
     scale: Float,
-    /** 最多持续时间 单位：秒 */
+    /** maximum duration unit: seconds */
     keep_time: Float,
-    /** 所属玩家 */
+    /** owning player */
     role: Role | null,
     /**
-     * 可见性规则
+     * visibility rules
      * @defaultValue `1`
      */
     visible_type: SfxVisibleType | null,
   ) => Sfx;
 
   /**
-   * 在单位和投射物之间挂链接特效
-   * @param from_socket_name 起始挂节点
-   * @param target_unit 目标投射物
-   * @param target_socket_name 目标挂节点
-   * @param sfx_res_id 特效编号
-   * @param scale 缩放比例
-   * @param keep_time 最多持续时间 单位：秒
-   * @param role 所属玩家
-   * @param visible_type 可见性规则
+   * Attach link effect between unit and projectile
+   * @param from_socket_name starting node
+   * @param target_unit target projectile
+   * @param target_socket_name target socket
+   * @param sfx_res_id Effect ID
+   * @param scale scale
+   * @param keep_time maximum duration unit: seconds
+   * @param role owning player
+   * @param visible_type visibility rules
    */
   api_play_link_sfx_to_projectile: (
-    /** 起始挂节点 */
+    /** starting node */
     from_socket_name: string,
-    /** 目标投射物 */
+    /** target projectile */
     target_unit: Projectile,
-    /** 目标挂节点 */
+    /** target socket */
     target_socket_name: string,
-    /** 特效编号 */
+    /** Effect ID */
     sfx_res_id: SfxKey,
-    /** 缩放比例 */
+    /** scale */
     scale: Float,
-    /** 最多持续时间 单位：秒 */
+    /** maximum duration unit: seconds */
     keep_time: Float,
-    /** 所属玩家 */
+    /** owning player */
     role: Role | null,
     /**
-     * 可见性规则
+     * visibility rules
      * @defaultValue `1`
      */
     visible_type: SfxVisibleType | null,
@@ -1110,430 +1110,430 @@ declare interface Unit {
   ) => void;
 
   /**
-   * 取消单位所有替换播放动画
-   * @param source_ani 原动画名字
+   * Cancel all unit replacement play animations
+   * @param source_ani original animation name
    */
   api_clear_change_animation: (
-    /** 原动画名字 */
+    /** original animation name */
     source_ani: string,
   ) => void;
 
   /**
-   * 单位替换模型
-   * @param target_model 目标模型编号
-   * @param source_model 原模型编号
+   * unit replacement model
+   * @param target_model target model number
+   * @param source_model source model number
    */
   api_change_model: (
-    /** 目标模型编号 */
+    /** target model number */
     target_model: ModelKey,
-    /** 原模型编号 */
+    /** source model number */
     source_model: ModelKey,
   ) => void;
 
   /**
-   * 取消单位替换模型
-   * @param target_model 目标模型编号
-   * @param source_model 原模型编号
+   * Cancel Unit Replacement Model
+   * @param target_model target model number
+   * @param source_model source model number
    */
   api_cancel_change_model: (
-    /** 目标模型编号 */
+    /** target model number */
     target_model: ModelKey,
-    /** 原模型编号 */
+    /** source model number */
     source_model: ModelKey,
   ) => void;
 
   /**
-   * 取消单位所有替换模型
-   * @param source_model 原模型编号
+   * Cancel all replacement models for the unit
+   * @param source_model source model number
    */
   api_clear_change_model: (
-    /** 原模型编号 */
+    /** source model number */
     source_model: ModelKey,
   ) => void;
 
   /**
-   * 单位替换模型
-   * @param target_model 目标模型编号
+   * unit replacement model
+   * @param target_model target model number
    */
   api_replace_model: (
-    /** 目标模型编号 */
+    /** target model number */
     target_model: ModelKey,
   ) => void;
 
   /**
-   * 取消单位替换模型
-   * @param target_model 目标模型名字
+   * Cancel Unit Replacement Model
+   * @param target_model target model name
    */
   api_cancel_replace_model: (
-    /** 目标模型名字 */
+    /** target model name */
     target_model: ModelKey,
   ) => void;
 
   /**
-   * 显示血条倒计时
-   * @param left_time 倒计时时长, 单位秒
+   * Show health bar countdown
+   * @param left_time countdown time, in seconds
    */
   api_show_health_bar_count_down: (
-    /** 倒计时时长, 单位秒 */
+    /** countdown time, in seconds */
     left_time: Fixed,
   ) => void;
 
   /**
-   * 获取单位模型
+   * get unit model
    * @returns ModelKey
    */
   api_get_model: () => ModelKey;
 
   /**
-   * 获取单位原模型
+   * Get the original model of the unit
    * @returns ModelKey
    */
   api_get_source_model: () => ModelKey;
 
   /**
-   * 显示单位头顶文本
-   * @param text 显示信息
-   * @param second 持续时间, 单位秒
-   * @param localize 多语言环境
+   * Display unit overhead text
+   * @param text Display information
+   * @param second duration, in seconds
+   * @param localize multi-locale
    */
   api_show_text: (
-    /** 显示信息 */
+    /** Display information */
     text: string,
-    /** 持续时间, 单位秒 */
+    /** duration, in seconds */
     second: Fixed,
     /**
-     * 多语言环境
+     * multi-locale
      * @defaultValue `0`
      */
     localize: Int32 | null,
   ) => void;
 
   /**
-   * 更改单位称号
-   * @param title_str 称号
-   * @param localize 多语言转化
+   * Change unit name
+   * @param title_str title
+   * @param localize Multilingual translation
    */
   api_set_title: (
-    /** 称号 */
+    /** title */
     title_str: string,
     /**
-     * 多语言转化
+     * Multilingual translation
      * @defaultValue `false`
      */
     localize: boolean | null,
   ) => void;
 
   /**
-   * 设置单位称号可见性
-   * @param visible 是否显示
+   * Set Unit Title Visibility
+   * @param visible whether to show
    */
   api_set_title_visible: (
-    /** 是否显示 */
+    /** whether to show */
     visible: boolean,
   ) => void;
 
   /**
-   * 隐藏显示单位名称,对于无头顶UI的单位该API不生效,每次隐藏计数+1,每次显示计数-1,计数归零显示单位名称
-   * @param visible 是否显示
+   * Hide the display unit name. For units without overhead UI, this API does not take effect. Each time the hidden count is +1, each time the display count is -1, the count returns to zero to display the unit name.
+   * @param visible whether to show
    */
   api_set_name_visible: (
-    /** 是否显示 */
+    /** whether to show */
     visible: boolean,
   ) => void;
 
   /**
-   * 隐藏显示单位名称,对于无头顶UI的单位该API不生效,每次隐藏计数+1,每次显示计数-1,计数归零显示单位名称
-   * @param visible 是否显示
+   * Hide the display unit name. For units without overhead UI, this API does not take effect. Each time the hidden count is +1, each time the display count is -1, the count returns to zero to display the unit name.
+   * @param visible whether to show
    */
   api_set_bar_name_visible: (
-    /** 是否显示 */
+    /** whether to show */
     visible: boolean,
   ) => void;
 
   /**
-   * 设置血条显示名字
-   * @param name 名字
+   * Set the health bar display name
+   * @param name name
    */
   api_set_bar_name: (
-    /** 名字 */
+    /** name */
     name: string,
   ) => void;
 
   /**
-   * 设置血条显示名字缩放
-   * @param scale 缩放
+   * Set health bar display name scaling
+   * @param scale scale
    */
   set_bar_name_scale: (
-    /** 缩放 */
+    /** scale */
     scale: Float,
   ) => void;
 
   /**
-   * 设置血条显示名字字体
-   * @param font_name 字体名称
+   * Set the blood bar display name font
+   * @param font_name font name
    */
   api_set_bar_name_font_type: (
-    /** 字体名称 */
+    /** font name */
     font_name: string,
   ) => void;
 
   /**
-   * 设置血条显示名字字体大小
-   * @param size 字号
+   * Set the font size of the blood bar display name
+   * @param size font size
    */
   api_set_bar_name_font_size: (
-    /** 字号 */
+    /** font size */
     size: UInt32,
   ) => void;
 
   /**
-   * 隐藏显示单位头顶文本,每次隐藏计数+1,每次显示计数-1,计数归零显示单位头顶文本
-   * @param visible 是否显示
+   * Hide and display the text above the head of the unit, the count of each hide is +1, the count of each display is -1, and the count is reset to zero to display the text above the head of the unit
+   * @param visible whether to show
    */
   api_set_bar_text_visible: (
-    /** 是否显示 */
+    /** whether to show */
     visible: boolean,
   ) => void;
 
   /**
-   * 设置头顶显示文字缩放
-   * @param scale 缩放
+   * Sets the overhead display text zoom
+   * @param scale scale
    */
   api_set_bar_text_scale: (
-    /** 缩放 */
+    /** scale */
     scale: Float,
   ) => void;
 
   /**
-   * 设置头顶显示文字类型
-   * @param bar_text_type 类型
+   * Set the type of text displayed on the top of the head
+   * @param bar_text_type type
    */
   api_set_bar_text_type: (
-    /** 类型 */
+    /** type */
     bar_text_type: UInt32,
   ) => void;
 
   /**
-   * 设置头顶显示文字字体
-   * @param font_type 字体
+   * Set the font of the text displayed on the top of the head
+   * @param font_type font
    */
   api_set_bar_text_font_type: (
-    /** 字体 */
+    /** font */
     font_type: string,
   ) => void;
 
   /**
-   * 设置头顶显示文字字号
-   * @param font_size 字号
+   * Set the font size of the text displayed on the top of the head
+   * @param font_size font size
    */
   api_set_bar_text_font_size: (
-    /** 字号 */
+    /** font size */
     font_size: UInt32,
   ) => void;
 
   /**
-   * 设置血条名称显示样式
-   * @param t 样式,具体参见**HeadBarShowNameType**
+   * Set the display style of the health bar name
+   * @param t Style, see **HeadBarShowNameType**
    */
   api_set_bar_name_show_type: (
-    /** 样式,具体参见**HeadBarShowNameType** */
+    /** Style, see **HeadBarShowNameType** */
     t: UInt32,
   ) => void;
 
   /**
-   * 隐藏显示单位血条,对于无头顶UI的单位该API不生效,每次隐藏计数+1,每次显示计数-1,计数归零显示单位血条
-   * @param visible 是否显示
+   * Hide and display unit health bar. For units without overhead UI, this API does not take effect. Each time you hide the count +1, each time you display the count -1, the count returns to zero to display the unit health bar.
+   * @param visible whether to show
    */
   api_set_hp_bar_visible: (
-    /** 是否显示 */
+    /** whether to show */
     visible: boolean,
   ) => void;
 
   /**
-   * 设置单位血条显示样式,对于无头顶UI的单位该API不生效
-   * @param t 显示样式,具体参见**HeadBarShowType**
+   * Set the display style of the unit's health bar. This API does not take effect for units without overhead UI.
+   * @param t Display style, see **HeadBarShowType**
    */
   api_set_hp_bar_show_type: (
-    /** 显示样式,具体参见**HeadBarShowType** */
+    /** Display style, see **HeadBarShowType** */
     t: UInt32,
   ) => void;
 
   /**
-   * 设置单位血条样式,对于无头顶UI的单位该API不生效
-   * @param t 血条样式
+   * Set the unit health bar style, this API does not take effect for units without overhead UI
+   * @param t Health bar style
    */
   api_set_hp_bar_type: (
-    /** 血条样式 */
+    /** Health bar style */
     t: UInt32,
   ) => void;
 
   /**
-   * 绑定UI控件
-   * @param ui_comp UI控件
-   * @param socket_name 挂接点(需确认模型拥有该挂接点,挂接点可在模型属性中查看,具体挂接点类型参见**ModelSocket**)
+   * Bind UI controls
+   * @param ui_comp UI Controls
+   * @param socket_name mount point (need to confirm that the model has this mount point, the mount point can be viewed in the model properties, see **ModelSocket** for the specific mount point type)
    */
   api_add_ui_comp: (
-    /** UI控件 */
+    /** UI Controls */
     ui_comp: WorldUINode,
-    /** 挂接点(需确认模型拥有该挂接点,挂接点可在模型属性中查看,具体挂接点类型参见**ModelSocket**) */
+    /** mount point (need to confirm that the model has this mount point, the mount point can be viewed in the model properties, see **ModelSocket** for the specific mount point type) */
     socket_name: string,
   ) => void;
 
   /**
-   * 修改单位称号字号
-   * @param font_size 字号
+   * Modify unit name and font size
+   * @param font_size font size
    */
   api_change_title_font_size: (
-    /** 字号 */
+    /** font size */
     font_size: UInt32,
   ) => void;
 
   /**
-   * 修改单位称号缩放
-   * @param scale 缩放比例
+   * Modify unit title scaling
+   * @param scale scale
    */
   api_change_title_scale: (
-    /** 缩放比例 */
+    /** scale */
     scale: Float,
   ) => void;
 
   /**
-   * 修改单位称号字体
-   * @param font_name 字体
+   * Modify unit title font
+   * @param font_name font
    */
   api_change_title_font_type: (
-    /** 字体 */
+    /** font */
     font_name: string,
   ) => void;
 
   /**
-   * 修改单位称号样式
-   * @param style_type 称号样式
+   * Modify unit title style
+   * @param style_type title style
    */
   api_change_title_type: (
-    /** 称号样式 */
+    /** title style */
     style_type: UInt32,
   ) => void;
 
   /**
-   * 修改单位称号背景不透明度
-   * @param opacity 不透明度
+   * Modify unit title background opacity
+   * @param opacity opacity
    */
   api_set_title_bg_opacity: (
-    /** 不透明度 */
+    /** opacity */
     opacity: Float,
   ) => void;
 
   /**
-   * 修改单位称号背景缩放
-   * @param scale 缩放
+   * Modify unit title background scaling
+   * @param scale scale
    */
   api_set_title_bg_scale: (
-    /** 缩放 */
+    /** scale */
     scale: Float,
   ) => void;
 
   /**
-   * 修改单位血条刻度可见性
-   * @param visible 可见性
+   * Modify unit health bar scale visibility
+   * @param visible visibility
    */
   api_set_blood_scale_visible: (
-    /** 可见性 */
+    /** visibility */
     visible: boolean,
   ) => void;
 
   /**
-   * 修改单位称号位置偏移
-   * @param offset 位置偏移
+   * Modify unit title position offset
+   * @param offset position offset
    */
   api_set_title_bar_pos_offset: (
-    /** 位置偏移 */
+    /** position offset */
     offset: Vector2,
   ) => void;
 
   /**
-   * 修改单位血条位置偏移
-   * @param offset 位置偏移
+   * Modify unit health bar position offset
+   * @param offset position offset
    */
   api_set_hp_bar_pos_offset: (
-    /** 位置偏移 */
+    /** position offset */
     offset: Vector2,
   ) => void;
 
   /**
-   * 修改单位名称位置偏移
-   * @param offset 位置偏移
+   * Modify unit name position offset
+   * @param offset position offset
    */
   api_set_name_bar_pos_offset: (
-    /** 位置偏移 */
+    /** position offset */
     offset: Vector2,
   ) => void;
 
   /**
-   * 修改单位文本位置偏移
-   * @param offset 位置偏移
+   * Modify unit text position offset
+   * @param offset position offset
    */
   api_set_text_bar_pos_offset: (
-    /** 位置偏移 */
+    /** position offset */
     offset: Vector2,
   ) => void;
 
   /**
-   * 修改单位倒计时位置偏移
-   * @param offset 位置偏移
+   * Modify unit countdown position offset
+   * @param offset position offset
    */
   api_set_countdown_bar_pos_offset: (
-    /** 位置偏移 */
+    /** position offset */
     offset: Vector2,
   ) => void;
 
   /**
-   * 单位抬高
-   * @param y 抬高高度
-   * @param dt 时间
+   * unit raised
+   * @param y raise height
+   * @param dt time
    */
   api_raise_height: (
-    /** 抬高高度 */
+    /** raise height */
     y: Fixed,
-    /** 时间 */
+    /** time */
     dt: Fixed,
   ) => void;
 
   /**
-   * 获取单位高度
+   * Get unit height
    * @returns Fixed
    */
   api_get_height: () => Fixed;
 
   /**
-   * 设置单位缩放
-   * @param scale 缩放
+   * Set unit scaling
+   * @param scale scale
    */
   api_set_scale: (
-    /** 缩放 */
+    /** scale */
     scale: Float,
   ) => void;
 
   /**
-   * 修改单位血条样式
-   * @param blood_bar_type 血条样式
+   * Modify unit health bar style
+   * @param blood_bar_type blood bar style
    */
   api_set_blood_bar_type: (
-    /** 血条样式 */
+    /** blood bar style */
     blood_bar_type: UInt64,
   ) => void;
 
   /**
-   * 修改单位血条显示模式
-   * @param blood_bar_show_type 血条显示模式
+   * Modify unit health bar display mode
+   * @param blood_bar_show_type Blood bar display mode
    */
   api_set_blood_bar_show_type: (
-    /** 血条显示模式 */
+    /** Blood bar display mode */
     blood_bar_show_type: UInt64,
   ) => void;
 
   /**
-   * 开启残影
+   * Enable afterimage
    * @param r r
    * @param g g
    * @param b b
@@ -1587,12 +1587,12 @@ declare interface Unit {
   ) => void;
 
   /**
-   * 关闭残影
+   * Turn off afterimages
    */
   api_stop_ghost: () => void;
 
   /**
-   * 设置残影颜色
+   * Set afterimage color
    * @param r r
    * @param g g
    * @param b b
@@ -1610,7 +1610,7 @@ declare interface Unit {
   ) => void;
 
   /**
-   * 设置残影时间
+   * Set afterimage time
    * @param interval interval
    * @param duration duration
    * @param start start
@@ -1628,810 +1628,810 @@ declare interface Unit {
   ) => void;
 
   /**
-   * 单位添加指定编号的效果
-   * @param modifier_key 效果编号
-   * @param from_unit 来源单位对象
-   * @param from_ability 关联技能
-   * @param time 持续时间
-   * @param cycle_time 循环周期
-   * @param stack_count 效果层数
+   * Unit adds the effect of the specified number
+   * @param modifier_key effect number
+   * @param from_unit source unit object
+   * @param from_ability associated ability
+   * @param time duration
+   * @param cycle_time cycle period
+   * @param stack_count effect stacks
    */
   api_add_modifier: (
-    /** 效果编号 */
+    /** effect number */
     modifier_key: ModifierKey,
-    /** 来源单位对象 */
+    /** source unit object */
     from_unit: Unit | null,
-    /** 关联技能 */
+    /** associated ability */
     from_ability: Ability | null,
     /**
-     * 持续时间
+     * duration
      * @defaultValue `Fix32(-1.0)`
      */
     time: Fixed | null,
     /**
-     * 循环周期
+     * cycle period
      * @defaultValue `Fix32(0.0)`
      */
     cycle_time: Fixed | null,
     /**
-     * 效果层数
+     * effect stacks
      * @defaultValue `1`
      */
     stack_count: Int32 | null,
   ) => void;
 
   /**
-   * 获取单位身上指定编号的的效果层数
-   * @param modifier_key 效果编号
+   * Get the number of effect layers with the specified number on the unit
+   * @param modifier_key effect number
    * @returns Int32
    */
   api_get_modifier_stack_count: (
-    /** 效果编号 */
+    /** effect number */
     modifier_key: ModifierKey,
   ) => Int32;
 
   /**
-   * 单位身上是否拥有指定编号的效果
-   * @param modifier_key 效果编号
+   * Whether the unit has the effect of the specified number
+   * @param modifier_key effect number
    * @returns boolean
    */
   api_has_modifier: (
-    /** 效果编号 */
+    /** effect number */
     modifier_key: ModifierKey,
   ) => boolean;
 
   /**
-   * 单位身上是否拥有指定标签的效果
-   * @param tag 标签
+   * Whether the unit has the effect of the specified tag
+   * @param tag tag
    * @returns boolean
    */
   api_has_modifier_with_tag: (
-    /** 标签 */
+    /** tag */
     tag: string,
   ) => boolean;
 
   /**
-   * 获取单位身上指定编号的第i个效果实例
-   * @param add_index 效果位置
-   * @param modifier_key 效果编号
+   * Get the i-th effect instance with the specified number on the unit
+   * @param add_index effect position
+   * @param modifier_key effect number
    */
   api_get_modifier: (
-    /** 效果位置 */
+    /** effect position */
     add_index: Int32,
-    /** 效果编号 */
+    /** effect number */
     modifier_key: ModifierKey,
   ) => void;
 
   /**
-   * 获取单位身上指定编号的第i个效果的个数
-   * @param modifier_key 效果编号
+   * Get the number of the i-th effect with the specified number on the unit
+   * @param modifier_key effect number
    */
   api_get_modifier_count: (
-    /** 效果编号 */
+    /** effect number */
     modifier_key: ModifierKey,
   ) => void;
 
   /**
-   * 移除目标单位身上的目标modifier实例
-   * @param tar_modifier 效果编号
+   * Removes the target modifier instance from the target unit
+   * @param tar_modifier effect number
    */
   api_remove_modifier_instance: (
-    /** 效果编号 */
+    /** effect number */
     tar_modifier: Modifier,
   ) => void;
 
   /**
-   * 移除目标单位身上的目标modifier类型的所有实例
-   * @param modifier_key 效果编号
+   * Removes all instances of the target modifier type from the target unit
+   * @param modifier_key effect number
    */
   api_remove_modifier_type: (
-    /** 效果编号 */
+    /** effect number */
     modifier_key: ModifierKey,
   ) => void;
 
   /**
-   * 单位身上是否拥有指定类别的效果
-   * @param modifier_effect_type 魔法效果类型
+   * Whether the unit has the effect of the specified type
+   * @param modifier_effect_type magic effect type
    * @returns boolean
    */
   api_has_modifier_type: (
-    /** 魔法效果类型 */
+    /** magic effect type */
     modifier_effect_type: ModifierEffectType,
   ) => boolean;
 
   /**
-   * 删除单位指定影响类型的魔法效果
-   * @param effect_type 效果影响类型
+   * Removes the magic effect of the specified effect type on the unit
+   * @param effect_type Effect effect type
    */
   api_delete_all_modifiers_by_effect_type: (
-    /** 效果影响类型 */
+    /** Effect effect type */
     effect_type: ModifierEffectType,
   ) => void;
 
   /**
-   * 获取单位身上所有的魔法效果
+   * Get all magic effects on the unit
    * @returns Modifier
    */
   api_get_all_modifiers: () => Modifier;
 
   /**
-   * 单位添加技能
-   * @param ability_type 技能类型
-   * @param ability_id 技能编号
-   * @param ability_index 技能槽位编号
+   * unit add skills
+   * @param ability_type Ability Type
+   * @param ability_id Ability ID
+   * @param ability_index skill slot number
    * @returns Ability
    */
   api_add_ability: (
-    /** 技能类型 */
+    /** Ability Type */
     ability_type: AbilityType,
-    /** 技能编号 */
+    /** Ability ID */
     ability_id: AbilityKey,
     /**
-     * 技能槽位编号
+     * skill slot number
      * @defaultValue `-1`
      */
     ability_index: AbilityIndex | null,
   ) => Ability;
 
   /**
-   * 单位根据槽位移除技能
-   * @param ability_type 技能类型
-   * @param ability_index 技能槽位
+   * Units remove skills based on slot
+   * @param ability_type ability type
+   * @param ability_index Ability slot
    */
   api_remove_ability_by_index: (
-    /** 技能类型 */
+    /** ability type */
     ability_type: Int32,
-    /** 技能槽位 */
+    /** Ability slot */
     ability_index: Int32,
   ) => void;
 
   /**
-   * 单位移除某种类型里所有是指定技能ID的技能
-   * @param ability_type 技能类型
-   * @param ability_id 技能ID
+   * Unit removes all skills of a certain type with the specified skill ID
+   * @param ability_type ability type
+   * @param ability_id Ability ID
    */
   api_remove_abilities_in_type: (
-    /** 技能类型 */
+    /** ability type */
     ability_type: Int32,
-    /** 技能ID */
+    /** Ability ID */
     ability_id: AbilityKey,
   ) => void;
 
   /**
-   * 单位设置技能等级。
-   * @param modify 修改方式
-   * @param ability_type 技能类型
-   * @param ability_index 技能槽位
-   * @param level 技能等级
+   * The unit sets the skill level.
+   * @param modify Modification
+   * @param ability_type Ability Type
+   * @param ability_index skill slot
+   * @param level skill level
    */
   api_set_ability_level: (
-    /** 修改方式 */
+    /** Modification */
     modify: Int32,
-    /** 技能类型 */
+    /** Ability Type */
     ability_type: AbilityType,
-    /** 技能槽位 */
+    /** skill slot */
     ability_index: AbilityIndex,
-    /** 技能等级 */
+    /** skill level */
     level: Int32,
   ) => void;
 
   /**
-   * 单位学习技能
-   * @param ability_key 技能类型
+   * unit study skills
+   * @param ability_key Ability Type
    */
   api_unit_learn_ability: (
-    /** 技能类型 */
+    /** Ability Type */
     ability_key: AbilityKey,
   ) => void;
 
   /**
-   * 获取英雄的技能点
+   * Get hero's skill points
    * @returns Int32
    */
   api_get_ability_point: () => Int32;
 
   /**
-   * 设置英雄的技能点
-   * @param ability_point 技能点
+   * Set hero's skill points
+   * @param ability_point skill point
    */
   api_set_ability_point: (
-    /** 技能点 */
+    /** skill point */
     ability_point: Int32,
   ) => void;
 
   /**
-   * 增加英雄的技能点
-   * @param value 技能点
+   * Increase hero's skill points
+   * @param value skill points
    */
   api_add_ability_point: (
-    /** 技能点 */
+    /** skill points */
     value: Int32,
   ) => void;
 
   /**
-   * 通过技能槽位获取技能
-   * @param ability_type 技能类型
-   * @param ability_index 技能槽位
+   * Acquire skills through skill slots
+   * @param ability_type Ability Type
+   * @param ability_index skill slot
    * @returns Ability
    */
   api_get_ability: (
-    /** 技能类型 */
+    /** Ability Type */
     ability_type: AbilityType,
-    /** 技能槽位 */
+    /** skill slot */
     ability_index: AbilityIndex,
   ) => Ability;
 
   /**
-   * 通过技能类型加技能ID获取技能
-   * @param ability_type 技能类型
-   * @param ability_id 技能编号
+   * Obtain skills by adding skill type and skill ID
+   * @param ability_type Ability Type
+   * @param ability_id Ability ID
    * @returns Ability
    */
   api_get_ability_by_type: (
-    /** 技能类型 */
+    /** Ability Type */
     ability_type: AbilityType,
-    /** 技能编号 */
+    /** Ability ID */
     ability_id: AbilityKey,
   ) => Ability;
 
   /**
-   * 获取某种类型的技能列表
-   * @param ability_type 技能类型
+   * Get a list of skills of a certain type
+   * @param ability_type Ability Type
    * @returns Ability
    */
   api_get_abilities_by_type: (
-    /** 技能类型 */
+    /** Ability Type */
     ability_type: AbilityType,
   ) => Ability;
 
   /**
-   * 是否有对应技能类型的技能
-   * @param ability_id 技能类型
+   * Is there a skill corresponding to the skill type?
+   * @param ability_id Ability Type
    * @returns boolean
    */
   api_check_has_ability_type: (
-    /** 技能类型 */
+    /** Ability Type */
     ability_id: AbilityKey,
   ) => boolean;
 
   /**
-   * 获取单位技能列表
+   * Get a list of unit skills
    * @returns Ability
    */
   api_get_all_abilities_can_show: () => Ability;
 
   /**
-   * 交换技能
-   * @param ability_1 技能
-   * @param ability_2 技能
+   * exchange skills
+   * @param ability_1 Abilities
+   * @param ability_2 Abilities
    */
   api_switch_ability: (
-    /** 技能 */
+    /** Abilities */
     ability_1: Ability,
-    /** 技能 */
+    /** Abilities */
     ability_2: Ability,
   ) => void;
 
   /**
-   * 单位禁用技能。
-   * @param ability_type 技能类型
-   * @param ability_index 技能槽位
+   * Unit disables skills.
+   * @param ability_type Ability Type
+   * @param ability_index skill slot
    */
   api_disable_ability: (
-    /** 技能类型 */
+    /** Ability Type */
     ability_type: AbilityType,
-    /** 技能槽位 */
+    /** skill slot */
     ability_index: AbilityIndex,
   ) => void;
 
   /**
-   * 单位解禁技能。
-   * @param ability_type 技能类型
-   * @param ability_index 技能槽位
+   * Unit unlocking skills.
+   * @param ability_type Ability Type
+   * @param ability_index skill slot
    */
   api_enable_ability: (
-    /** 技能类型 */
+    /** Ability Type */
     ability_type: AbilityType,
-    /** 技能槽位 */
+    /** skill slot */
     ability_index: AbilityIndex,
   ) => void;
 
   /**
-   * 返回单位实体指定槽位技能的字符串属性值
-   * @param ability_type 技能类型
-   * @param ability_index 技能槽位
-   * @param prop 属性名
+   * Returns the string attribute value of the specified slot skill of the unit entity
+   * @param ability_type Ability Type
+   * @param ability_index skill slot
+   * @param prop property name
    * @returns string
    */
   api_get_ability_str_attr_value: (
-    /** 技能类型 */
+    /** Ability Type */
     ability_type: AbilityType,
-    /** 技能槽位 */
+    /** skill slot */
     ability_index: AbilityIndex,
-    /** 属性名 */
+    /** property name */
     prop: string,
   ) => string;
 
   /**
-   * 根据技能序号获取技能对象
-   * @param seq 技能序号
+   * Get the skill object according to the skill serial number
+   * @param seq ​​Skill number
    * @returns Ability
    */
   api_get_ability_by_seq: (
-    /** 技能序号 */
+    /** ​​Skill number */
     seq: AbilitySeq,
   ) => Ability;
 
   /**
-   * 给单位施加状态
-   * @param state_id 状态ID
+   * Apply a state to a unit
+   * @param state_id State ID
    */
   api_add_state: (
-    /** 状态ID */
+    /** State ID */
     state_id: UInt32,
   ) => void;
 
   /**
-   * 给单位去除状态
-   * @param state_id 状态ID
+   * remove state from unit
+   * @param state_id State ID
    */
   api_remove_state: (
-    /** 状态ID */
+    /** State ID */
     state_id: UInt32,
   ) => void;
 
   /**
-   * 是否在战斗状态
+   * Are you in combat
    * @returns boolean
    */
   api_is_in_battle_state: () => boolean;
 
   /**
-   * 单位是否处于某状态
-   * @param state_bit 状态
+   * Is the unit in a state
+   * @param state_bit state
    * @returns boolean
    */
   api_has_state: (
-    /** 状态 */
+    /** state */
     state_bit: Int32,
   ) => boolean;
 
   /**
-   * 单位施放技能
-   * @param ability_type 技能类型
-   * @param ability_index 技能槽位
+   * unit cast skill
+   * @param ability_type ability type
+   * @param ability_index Ability slot
    */
   api_release_ability_by_index: (
-    /** 技能类型 */
+    /** ability type */
     ability_type: Int32,
-    /** 技能槽位 */
+    /** Ability slot */
     ability_index: Int32,
   ) => void;
 
   /**
-   * 单位施放技能，具有释放目标地点
-   * @param ability_type 技能类型
-   * @param ability_index 技能坑位
-   * @param postion 技能目标位置
+   * A unit casts a skill with a release target location
+   * @param ability_type ability type
+   * @param ability_index skill slot
+   * @param postion skill target position
    */
   api_release_ability_at_position: (
-    /** 技能类型 */
+    /** ability type */
     ability_type: Int32,
-    /** 技能坑位 */
+    /** skill slot */
     ability_index: Int32,
-    /** 技能目标位置 */
+    /** skill target position */
     postion: Point,
   ) => void;
 
   /**
-   * 发布建造命令(目标点)
-   * @param build_key 建筑类型
-   * @param point 目标位置
+   * Issue a build order (target point)
+   * @param build_key building type
+   * @param point target position
    */
   api_create_building_on_point: (
-    /** 建筑类型 */
+    /** building type */
     build_key: UnitKey,
-    /** 目标位置 */
+    /** target position */
     point: Point,
   ) => void;
 
   /**
-   * 发布建造命令(坐标)
-   * @param build_key 建筑类型
-   * @param pos_x 坐标X
-   * @param pos_z 坐标Z
+   * Issue a build order (coordinates)
+   * @param build_key building type
+   * @param pos_x coordinate X
+   * @param pos_z coordinate Z
    */
   api_create_building_on_position: (
-    /** 建筑类型 */
+    /** building type */
     build_key: UnitKey,
-    /** 坐标X */
+    /** coordinate X */
     pos_x: Fixed,
-    /** 坐标Z */
+    /** coordinate Z */
     pos_z: Fixed,
   ) => void;
 
   /**
-   * 单位是否拥有物品
-   * @param item 物品
+   * Whether the unit owns the item
+   * @param item item
    * @returns boolean
    */
   api_has_item: (
-    /** 物品 */
+    /** item */
     item: Item,
   ) => boolean;
 
   /**
-   * 单位是否拥有特定编号物品
-   * @param item_no 物品编号
+   * Whether the unit owns a specific numbered item
+   * @param item_no item number
    * @returns boolean
    */
   api_has_item_key: (
-    /** 物品编号 */
+    /** item number */
     item_no: ItemKey,
   ) => boolean;
 
   /**
-   * 给单位添加物品名
-   * @param item_no 物品编号
+   * Add item names to units
+   * @param item_no item number
    * @returns Item
    */
   api_add_item: (
-    /** 物品编号 */
+    /** item number */
     item_no: ItemKey,
   ) => Item;
 
   /**
-   * 给单位删除物品名
-   * @param item_key 物品编号
-   * @param num 数量
+   * Delete item name from unit
+   * @param item_key item number
+   * @param num number
    */
   api_delete_item: (
-    /** 物品编号 */
+    /** item number */
     item_key: ItemKey,
     /**
-     * 数量
+     * number
      * @defaultValue `1`
      */
     num: Int32 | null,
   ) => void;
 
   /**
-   * 单位丢弃物品实体到场景中
-   * @param item 物品
-   * @param pos 点
-   * @param stack_cnt 数量
+   * Units drop item entities into the scene
+   * @param item item
+   * @param pos point
+   * @param stack_cnt number
    */
   api_drop_item: (
-    /** 物品 */
+    /** item */
     item: Item,
-    /** 点 */
+    /** point */
     pos: FPoint,
-    /** 数量 */
+    /** number */
     stack_cnt: Int32,
   ) => void;
 
   /**
-   * 单位删除物品实体
-   * @param stack_cnt 数量
-   * @param item 物品
+   * unit delete item entity
+   * @param stack_cnt number
+   * @param item item
    */
   api_remove_item: (
-    /** 数量 */
+    /** number */
     stack_cnt: Int32,
-    /** 物品 */
+    /** item */
     item: Item,
   ) => void;
 
   /**
-   * 获取单位背包槽位的物品
-   * @param slot_type 背包槽位
-   * @param slot_idx 格子下标
+   * Get items from a unit's backpack slot
+   * @param slot_type Backpack slot
+   * @param slot_idx Slot subscript
    * @returns Item
    */
   api_get_item_by_slot: (
-    /** 背包槽位 */
+    /** Backpack slot */
     slot_type: SlotType,
-    /** 格子下标 */
+    /** Slot subscript */
     slot_idx: Int32,
   ) => Item;
 
   /**
-   * 移动物品
-   * @param item 物品
-   * @param slot_type 背包槽位
-   * @param slot_idx 格子下标
+   * moving items
+   * @param item item
+   * @param slot_type Backpack slot
+   * @param slot_idx Slot subscript
    */
   api_shift_item: (
-    /** 物品 */
+    /** item */
     item: Item,
-    /** 背包槽位 */
+    /** Backpack slot */
     slot_type: SlotType,
-    /** 格子下标 */
+    /** Slot subscript */
     slot_idx: UInt32,
   ) => void;
 
   /**
-   * 单位身上所有物品
+   * All items on the unit
    * @returns ItemGroup
    */
   api_get_all_item_pids: () => ItemGroup;
 
   /**
-   * 单位是否商店
+   * Whether the unit is a store
    * @returns boolean
    */
   api_is_shop: () => boolean;
 
   /**
-   * 获取商店单位范围
+   * Get store unit range
    * @returns Fixed
    */
   api_get_shop_range: () => Fixed;
 
   /**
-   * 添加物品商品到商店
-   * @param tab_name 页签
-   * @param item_no 道具编号
+   * Add items to the store
+   * @param tab_name Tabs
+   * @param item_no item number
    */
   api_add_shop_item: (
-    /** 页签 */
+    /** Tabs */
     tab_name: TabName,
-    /** 道具编号 */
+    /** item number */
     item_no: ItemKey,
   ) => void;
 
   /**
-   * 获取商店某页签的商品列表
-   * @param tab_idx 页签id
+   * Get the list of products on a page of the store
+   * @param tab_idx Tab id
    * @returns ItemKey
    */
   api_get_shop_item_list: (
-    /** 页签id */
+    /** Tab id */
     tab_idx: TabIdx,
   ) => ItemKey;
 
   /**
-   * 获取商店商品的恢复时间
-   * @param tab_idx 页签id
-   * @param item_no 道具编号
+   * Get recovery time for store items
+   * @param tab_idx Tab id
+   * @param item_no item number
    */
   api_get_shop_item_cd: (
-    /** 页签id */
+    /** Tab id */
     tab_idx: TabIdx,
-    /** 道具编号 */
+    /** item number */
     item_no: ItemKey,
   ) => void;
 
   /**
-   * 获取商店页签数量
+   * Get the number of store tabs
    * @returns ItemKey
    */
   api_get_shop_tab_cnt: () => ItemKey;
 
   /**
-   * 获取商店的页签名
-   * @param tab_idx 页签id
+   * Get the store's page signature
+   * @param tab_idx Tab id
    * @returns string
    */
   api_get_shop_tab_name: (
-    /** 页签id */
+    /** Tab id */
     tab_idx: TabIdx,
   ) => string;
 
   /**
-   * 添加单位商品到商店
-   * @param tab_name 页签
-   * @param entity_no 单位编号
+   * Add unit items to the store
+   * @param tab_name Tabs
+   * @param entity_no Unit number
    */
   api_add_shop_unit: (
-    /** 页签 */
+    /** Tabs */
     tab_name: TabName,
-    /** 单位编号 */
+    /** Unit number */
     entity_no: UnitKey,
   ) => void;
 
   /**
-   * 删除商店物品商品
-   * @param tab_name 页签
-   * @param item_no 道具编号
+   * delete shop items
+   * @param tab_name Tabs
+   * @param item_no item number
    */
   api_remove_shop_item: (
-    /** 页签 */
+    /** Tabs */
     tab_name: TabName,
-    /** 道具编号 */
+    /** item number */
     item_no: ItemKey,
   ) => void;
 
   /**
-   * 删除商店单位商品
-   * @param tab_name 页签
-   * @param entity_no 单位编号
+   * Delete store unit items
+   * @param tab_name Tabs
+   * @param entity_no Unit number
    */
   api_remove_shop_unit: (
-    /** 页签 */
+    /** Tabs */
     tab_name: TabName,
-    /** 单位编号 */
+    /** Unit number */
     entity_no: UnitKey,
   ) => void;
 
   /**
-   * 设置物品商品库存
-   * @param tab_name 页签
-   * @param item_no 道具编号
-   * @param cnt 库存
+   * Set item inventory
+   * @param tab_name Tabs
+   * @param item_no item number
+   * @param cnt inventory
    */
   api_set_shop_item_stock: (
-    /** 页签 */
+    /** Tabs */
     tab_name: TabName,
-    /** 道具编号 */
+    /** item number */
     item_no: ItemKey,
-    /** 库存 */
+    /** inventory */
     cnt: UInt32,
   ) => void;
 
   /**
-   * 设置单位商品库存
-   * @param tab_name 页签
-   * @param entity_no 单位编号
-   * @param cnt 库存
+   * Set unit inventory
+   * @param tab_name Tabs
+   * @param entity_no Unit number
+   * @param cnt inventory
    */
   api_set_shop_unit_stock: (
-    /** 页签 */
+    /** Tabs */
     tab_name: TabName,
-    /** 单位编号 */
+    /** Unit number */
     entity_no: UnitKey,
-    /** 库存 */
+    /** inventory */
     cnt: UInt32,
   ) => void;
 
   /**
-   * 设置商店开关
-   * @param is_shop 开关
+   * set store switch
+   * @param is_shop switch
    */
   api_set_is_shop: (
-    /** 开关 */
+    /** switch */
     is_shop: boolean,
   ) => void;
 
   /**
-   * 单位购买物品
-   * @param shop_unit 商店
-   * @param tab_idx 页签id
-   * @param item_no 物品编号
+   * unit purchases
+   * @param shop_unit shop
+   * @param tab_idx Tab id
+   * @param item_no item number
    */
   api_buy_item_with_tab_name: (
-    /** 商店 */
+    /** shop */
     shop_unit: Unit,
-    /** 页签id */
+    /** Tab id */
     tab_idx: TabIdx,
-    /** 物品编号 */
+    /** item number */
     item_no: ItemKey,
   ) => void;
 
   /**
-   * 单位购买单位
-   * @param shop_unit 商店
-   * @param tab_name 页签
-   * @param entity_no 单位编号
+   * unit purchase unit
+   * @param shop_unit shop
+   * @param tab_name Tabs
+   * @param entity_no Unit number
    */
   api_buy_unit_with_tab_name: (
-    /** 商店 */
+    /** shop */
     shop_unit: Unit,
-    /** 页签 */
+    /** Tabs */
     tab_name: TabName,
-    /** 单位编号 */
+    /** Unit number */
     entity_no: UnitKey,
   ) => void;
 
   /**
-   * 单位出售物品
-   * @param shop_unit 商店
-   * @param item 道具
+   * unit for sale
+   * @param shop_unit shop
+   * @param item props
    */
   api_sell_item: (
-    /** 商店 */
+    /** shop */
     shop_unit: Unit,
-    /** 道具 */
+    /** props */
     item: Item,
   ) => void;
 
   /**
-   * 设置商店目标
-   * @param target_unit 目标
+   * Set store goals
+   * @param target_unit target
    */
   api_set_shop_target: (
-    /** 目标 */
+    /** target */
     target_unit: Unit,
   ) => void;
 
   /**
-   * 获取单位商店物品商品库存
-   * @param tab_idx 页签id
-   * @param item_no 物品编号
+   * Get unit store item item inventory
+   * @param tab_idx Tab id
+   * @param item_no item number
    * @returns Int32
    */
   api_get_shop_item_stock: (
-    /** 页签id */
+    /** Tab id */
     tab_idx: TabIdx,
-    /** 物品编号 */
+    /** item number */
     item_no: ItemKey,
   ) => Int32;
 
   /**
-   * 获取单位商店单位商品库存
-   * @param tab_name 页签
-   * @param entity_no 单位编号
+   * Get unit store unit item inventory
+   * @param tab_name Tabs
+   * @param entity_no Unit number
    * @returns Int32
    */
   api_get_shop_unit_stock: (
-    /** 页签 */
+    /** Tabs */
     tab_name: TabName,
-    /** 单位编号 */
+    /** Unit number */
     entity_no: UnitKey,
   ) => Int32;
 
   /**
-   * 获取单位商店单位商品售价
-   * @param tab_name 页签
-   * @param entity_no 单位编号
+   * Get unit store unit price
+   * @param tab_name Tabs
+   * @param entity_no Unit number
    * @returns Fixed
    */
   api_get_shop_item_price: (
-    /** 页签 */
+    /** Tabs */
     tab_name: TabName,
-    /** 单位编号 */
+    /** Unit number */
     entity_no: UnitKey,
   ) => Fixed;
 
   /**
-   * 科技升级
-   * @param tech_no 科技编号
+   * Technology upgrade
+   * @param tech_no Tech number
    */
   api_upgrade_tech: (
-    /** 科技编号 */
+    /** Tech number */
     tech_no: TechKey,
   ) => void;
 
   /**
-   * 获取科技列表
+   * Get a list of technologies
    * @returns TechKey
    */
   api_get_tech_list: () => TechKey;
 
   /**
-   * 获取科技是否满足前置条件
-   * @param tech_no 科技编号
+   * Whether the acquisition technology meets the preconditions
+   * @param tech_no Tech number
    * @returns TechKey
    */
   api_check_tech_precondition: (
-    /** 科技编号 */
+    /** Tech number */
     tech_no: TechKey,
   ) => TechKey;
 
   /**
-   * 添加科技
-   * @param tech_no 科技编号
+   * Add technology
+   * @param tech_no Tech number
    */
   api_add_tech: (
-    /** 科技编号 */
+    /** Tech number */
     tech_no: TechKey,
   ) => void;
 
   /**
-   * 删除科技
-   * @param tech_no 科技编号
+   * delete technology
+   * @param tech_no Tech number
    */
   api_remove_tech: (
-    /** 科技编号 */
+    /** Tech number */
     tech_no: TechKey,
   ) => void;
 
   /**
-   * 发布命令
-   * @param command 命令
+   * issue an order
+   * @param command command
    */
   api_release_command: (
-    /** 命令 */
+    /** command */
     command: UnitCommand,
   ) => void;
 }

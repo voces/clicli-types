@@ -32,7 +32,8 @@ export const genEnum = (
         `expected enum decription: ${Deno.inspect(descriptionNode)}`,
       );
     }
-    const description = descriptionNode.text.match(/\*\*名称:\*\* (.+)/)?.[1];
+    const description = descriptionNode.text.match(/\*\*(名称|name):\*\* (.+)/i)
+      ?.[2];
     // if (!description) {
     //   throw new Error(`expected decription: ${Deno.inspect(descriptionNode)}`);
     // }
@@ -52,7 +53,10 @@ export const genEnum = (
           type: cleanType(row[2].text.match(/`([^`]+)`/)![1]),
         });
       });
-    } else if (paramsNode.type !== "paragraph" || paramsNode.text !== "无") {
+    } else if (
+      paramsNode.type !== "paragraph" ||
+      (paramsNode.text !== "无" && paramsNode.text !== "none")
+    ) {
       throw new Error(`expected params: ${Deno.inspect(paramsNode)}`);
     }
 
@@ -62,7 +66,7 @@ export const genEnum = (
   /**${
           description
             ? `
-   * ${description}}
+   * ${description}
    *`
             : ""
         }${
