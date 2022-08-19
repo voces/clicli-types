@@ -1,0 +1,2 @@
+deno run --allow-read --allow-write gen.ts
+deno fmt types/

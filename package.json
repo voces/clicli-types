@@ -1,0 +1,17 @@
+{
+  "name": "clicli-types",
+  "version": "0.1.0",
+  "description": "TypeScript types for CliCli.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build": "deno run --allow-read --allow-write gen.ts && deno fmt types"
+  },
+  "author": "verit",
+  "license": "ISC",
+  "files": [
+    "types"
+  ]
+}
