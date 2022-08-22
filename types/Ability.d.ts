@@ -1,3 +1,6 @@
+/// <reference path="./aliases.d.ts" />
+/// <reference path="./Unit.d.ts" />
+
 declare interface Ability {
   /**
    * Get skill string attribute

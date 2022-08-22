@@ -1,3 +1,12 @@
+/// <reference path="./Ability.d.ts" />
+/// <reference path="./aliases.d.ts" />
+/// <reference path="./Destructible.d.ts" />
+/// <reference path="./Item.d.ts" />
+/// <reference path="./Modifier.d.ts" />
+/// <reference path="./Projectile.d.ts" />
+/// <reference path="./Role.d.ts" />
+/// <reference path="./Unit.d.ts" />
+
 declare const gameapi: {
   /**
    * Remove the key-value pair of the unit from preset library.

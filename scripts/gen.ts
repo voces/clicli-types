@@ -2,16 +2,18 @@ import { marked } from "https://esm.sh/marked@4.0.18";
 import { genClass } from "./genClass.ts";
 import { genEnum } from "./genEnum.ts";
 
+const files: string[] = [];
+
 for await (const dirEntry of Deno.readDir("./docs")) {
   if (!dirEntry.name.endsWith(".md")) continue;
 
   console.log(`generating types for ${dirEntry.name}`);
 
   const name = dirEntry.name.match(/(.*)\.md/)![1];
-
+  files.push(name);
   const ast = marked.lexer(await Deno.readTextFile(`./docs/${dirEntry.name}`));
-
   let index = 0;
+  let generated = false;
 
   while (index < ast.length) {
     const line = ast[index++];
@@ -40,8 +42,9 @@ for await (const dirEntry of Deno.readDir("./docs")) {
     ) {
       await Deno.writeTextFile(
         `types/${name}.d.ts`,
-        genClass(name, ast, index),
+        genClass(name, ast, index).replace(/\u200b/gu, ""),
       );
+      generated = true;
       break;
     }
 
@@ -52,13 +55,23 @@ for await (const dirEntry of Deno.readDir("./docs")) {
     ) {
       await Deno.writeTextFile(
         `types/${name}.d.ts`,
-        genEnum(name, ast, index),
+        genEnum(name, ast, index).replace(/\u200b/gu, ""),
       );
+      generated = true;
       break;
     }
 
     throw new Error(`Unexpected markdown node: ${Deno.inspect(line)}`);
   }
+
+  if (!generated) {
+    throw new Error(`Did not generate anything for ${dirEntry.name}`);
+  }
 }
+
+await Deno.writeTextFile(
+  "types/index.d.ts",
+  files.map((f) => `/// <reference path="./${f}.d.ts" />`).join("\n"),
+);
 
 console.log("done!\n");

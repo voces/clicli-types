@@ -1,3 +1,10 @@
+/// <reference path="./Ability.d.ts" />
+/// <reference path="./aliases.d.ts" />
+/// <reference path="./Item.d.ts" />
+/// <reference path="./Modifier.d.ts" />
+/// <reference path="./Projectile.d.ts" />
+/// <reference path="./Role.d.ts" />
+
 declare interface Unit {
   /**
    * Get unit ID
@@ -347,7 +354,7 @@ declare interface Unit {
   ) => void;
 
   /**
-   * Set Unit Property Base Values ​​section
+   * Set Unit Property Base Values section
    * @param key attribute name
    * @param val base value
    */
@@ -1954,11 +1961,11 @@ declare interface Unit {
 
   /**
    * Get the skill object according to the skill serial number
-   * @param seq ​​Skill number
+   * @param seq Skill number
    * @returns Ability
    */
   api_get_ability_by_seq: (
-    /** ​​Skill number */
+    /** Skill number */
     seq: AbilitySeq,
   ) => Ability;
 

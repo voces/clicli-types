@@ -1,0 +1,15 @@
+name: tests
+on:
+- push
+- workflow_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Deno
+      uses: denoland/setup-deno@v1
+    - name: Lint
+      run: npm run test-lint
+    - name: Build types
+      run: npm run build

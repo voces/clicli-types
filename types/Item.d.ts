@@ -1,3 +1,7 @@
+/// <reference path="./aliases.d.ts" />
+/// <reference path="./Role.d.ts" />
+/// <reference path="./Unit.d.ts" />
+
 declare interface Item {
   /**
    * Get item number
