@@ -941,7 +941,7 @@ declare const EVENT: {
    *
    * @data `__modifier`: `Modifier` - Triggered magic effect,
    * @data `__owner_unit`: `Unit` - effect carrier,
-   * @data `__layer_change_values`: `Int32` - Layer change values ​​,
+   * @data `__layer_change_values`: `Int32` - Layer change values ,
    * @data `__from_unit_id`: `Unit` - effect applied by
    */
   readonly MODIFIER_LAYER_CHANGE: unique symbol;

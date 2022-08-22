@@ -1,3 +1,8 @@
+/// <reference path="./Ability.d.ts" />
+/// <reference path="./aliases.d.ts" />
+/// <reference path="./Role.d.ts" />
+/// <reference path="./Unit.d.ts" />
+
 declare const globalapi: {
   /**
    * Determine whether the actor has a tag.

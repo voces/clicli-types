@@ -8,6 +8,27 @@ const validParamHeadings = ["**Parameters**", "**parameters**", "**参数**"];
 const validNoParamText = ["No parameter.", "No return value.", "none", "无"];
 const validReturnHeadings = ["**Return Value**", "**return value**", "**返回值**"];
 
+const references: Record<string, string[]> = {
+  Ability: ["aliases", "Unit"],
+  Destructible: ["aliases", "Unit"],
+  gameapi: [
+    "Ability",
+    "aliases",
+    "Destructible",
+    "Item",
+    "Modifier",
+    "Projectile",
+    "Role",
+    "Unit",
+  ],
+  globalapi: ["Ability", "aliases", "Role", "Unit"],
+  Item: ["aliases", "Role", "Unit"],
+  Modifier: ["aliases", "Unit"],
+  Projectile: ["aliases", "Role", "Unit"],
+  Role: ["aliases", "Unit"],
+  Unit: ["Ability", "aliases", "Item", "Modifier", "Projectile", "Role"],
+};
+
 export const genClass = (
   name: string,
   ast: marked.TokensList,
@@ -136,7 +157,16 @@ export const genClass = (
     );
   }
 
-  return `declare ${types.includes(name) ? "const" : "interface"} ${name}${
+  return `${
+    name in references
+      ? `${
+        references[name].map((r) => `/// <reference path="./${r}.d.ts" />`)
+          .join(
+            "\n",
+          )
+      }\n\n`
+      : ""
+  }declare ${types.includes(name) ? "const" : "interface"} ${name}${
     types.includes(name) ? ":" : ""
   } {
 ${methods.join("\n\n")}
